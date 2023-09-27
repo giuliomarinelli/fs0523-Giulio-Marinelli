@@ -50,12 +50,16 @@ h1 {
     margin: 0;
 }
 
-#main-img {
+#image-post {
     width: 100%;
     margin: 13px 0;
 }
 
-#figure-caption {
+#image-post img {
+    width: 100%;
+}
+
+#image-post figcaption {
     text-align: center;
     color: #a8a8a8;
 }
