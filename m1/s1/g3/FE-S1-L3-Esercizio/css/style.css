@@ -24,11 +24,11 @@ header {
     width: 250px;
 }
 
-.thanksgiving {
+#thanksgiving {
     background-color: #fdfbf2;
     padding: 15px 0;
     border-top: 1px solid #f9d985;
-    color: #1e4c4b;
+    color: #367576;
 }
 
 #container {
