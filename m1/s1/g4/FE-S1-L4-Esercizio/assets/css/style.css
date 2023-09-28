@@ -8,8 +8,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    /*background-image: url('../img/sfondo.png');*/
-    background-size: cover;
+    background-image: url('../img/sfondo.png');
     line-height: 1.8rem;
 }
 
@@ -70,9 +69,16 @@ a {
 }
 
 nav ul {
-    list-style-type: none;
-    list-style-position: unset;
+    list-style: none;
+    padding-inline-start: 0;
+    margin-block-start: 0;    
 }
+
+nav li {
+    padding: 0;
+}
+
+
 
 ul {
     list-style-type: disc;
@@ -151,6 +157,7 @@ code {
 
 #main-box {
     box-shadow: -2px 3px 8px rgb(80, 80, 80);
+    background-color: #fff;
 }
 
 /* ELEMENTI NEL MAIN - ARTICLE */
