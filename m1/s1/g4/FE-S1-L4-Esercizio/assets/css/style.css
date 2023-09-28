@@ -71,6 +71,7 @@ a {
 
 nav ul {
     list-style-type: none;
+    list-style-position: unset;
 }
 
 ul {
