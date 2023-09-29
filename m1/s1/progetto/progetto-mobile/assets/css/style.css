@@ -209,11 +209,3 @@ h3 {
     font-size: 1.1rem;
 }
 
-/* DESKTOP
-Nota: la versione mobile è valutata a 500px, qui passo a desktop facendo finta che non
-    esista lo step intermedio di tablet, grosso modo quando l'ingrandimento delle immagini
-    inizia a sgranarle inizia la media query Desktop */
-@media only screen and (min-width: 769px) {
-
-    
-}
