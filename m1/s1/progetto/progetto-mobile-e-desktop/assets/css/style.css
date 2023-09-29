@@ -1,0 +1,210 @@
+/*Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap');
+
+/* General settings */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #393d41;
+    font-size: 1.2rem;
+    font-family: 'Open Sans', serif;
+    line-height: 1.65;
+    font-weight: 400;
+}
+
+em {
+    font-style: italic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #25a2c3;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+h3 {
+    margin-bottom: 14px;
+
+}
+
+/*padding and margin classes */
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+/* Header */
+
+#header {
+    background-color: black;
+    padding: 30px;
+}
+
+#header .logo-container {
+    width: 160px;
+    margin: 0 auto;
+}
+
+#header img {
+    width: 100%;
+}
+
+/* Main */
+
+#banner {
+    background-image: url("../images/banner.jpg");
+    background-size: cover;
+    background-position: 57% 75%;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 70px 35px 45px;
+    font-size: 1.6rem;
+}
+
+#banner h1 {
+    margin-bottom: 30px;
+}
+
+#banner p {
+    margin-bottom: 30px;
+} 
+
+#button {
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    background-color: #f04c2f;
+    border: none;
+    font-size: 1.1rem;
+    padding: 18px 30px;
+    border-radius: 5px;
+}
+
+#main-section {
+    padding: 70px 35px;
+    text-align: center;
+}
+
+#main-section .secondary-section,
+h3 {
+    font-size: 1.5rem;
+}
+
+#main-section .secondary-section {
+    margin-bottom: 30px;
+}
+
+#main-section .circle-image-container {
+    margin: 0 40px 30px;
+}
+
+#main-section .circle-image-container img {
+    width: 100%;
+    border-radius: 100%;
+}
+
+#witness-section {
+    background-color: #e22d0e;
+    color: #fff;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 70px 40px 40px;
+}
+
+#witness {
+    margin: 40px 0;
+}
+
+#witness-author {
+    font-size: 1.7rem;
+}
+
+#author-job {
+    font-size: 1.1rem;
+}
+
+
+/* Aside */
+
+#aside {
+    padding: 30px;
+}
+
+#aside img {
+    width: 100%;
+    display: inline-block;
+}
+
+#aside .epicode-article {
+    margin: 42px 0;
+    text-align: center;
+}
+
+#aside .article-image-container {
+    margin: 0;
+    padding: 0;
+}
+
+#aside .article-text-container h3 {
+    font-size: 1.2rem;
+}
+
+#aside .article-text-container {
+    padding: 20px 30px 45px;
+    border: 1px solid #cacaca;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top: none;
+    margin-top: -8px;
+}
+
+
+/* Footer */
+
+#footer a {
+    color: #c8e7f0;
+}
+
+#footer {
+    color: #fff;
+    background-color: #25a2c3;
+    text-align: center;
+    padding: 45px 0 80px;
+    font-size: 1.3rem;
+}
+
+#footer-main-content {
+    margin: 30px 0;
+}
+
+#footer-white-spacer {
+    width: 240px;
+    height: 7.5px;
+    border-bottom: 1px solid #fff;
+    margin: 0 auto 35px auto;
+}
+
+#footer-copyright {
+    font-size: 1.1rem;
+}
