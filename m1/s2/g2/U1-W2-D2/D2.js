@@ -8,13 +8,13 @@ const numberA = 10;
 const numberB = 100;
 console.log(`ESERCIZIO 1: Qual è il più grande tra ${numberA} e ${numberB}? ` + theMajorBetween(numberA, numberB));
 
-//do per scontato che i due numeri in input siano diversi, altrimenti metterei a monte un meccanismo di validazione che annulla
-// la funzione in caso di uguaglianza
 function theMajorBetween(a, b){
   if(a > b){
     return a;
-  } else {
+  } else if(b > a){
     return b;
+  }else{
+    return 'I due numeri sono uguali'
   }
 }
 
