@@ -247,7 +247,6 @@ for (let i = 0; i < numbersArray.length; i++){
   numbersArray[i] = i + 1;
 }
 
-console.log(numbersArray)
 
 /* ESERCIZIO 15
   Scrivi del codice per sostituire l'ultimo elemento dell'array, ovvero il valore 10, con il valore 100.
