@@ -391,7 +391,7 @@ function randomStarWarsCharacterDescription() {
 
   characterDescription = 'Il nome di questo personaggio è ' + character.name + '. E\' alt' + ending + ' ' + character.height + 'cm e pesa ' + Math.round(character.mass) + 'kg.';
   characterDescription += ' Ha i capelli ' + hairColorItalian + ' e la pelle ' + skinColorItalian + '.';
-  characterDescription += ' E\' di genere maschile, è nat' + ending + ' ' + character.birth_year + '. Ha gli occhi ' + eyeColorItalian + '.'
+  characterDescription += ' E\' di genere' + genderItalian + ', è nat' + ending + ' ' + character.birth_year + '. Ha gli occhi ' + eyeColorItalian + '.'
   return characterDescription;
 }
 
