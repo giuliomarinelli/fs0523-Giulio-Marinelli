@@ -290,15 +290,30 @@ console.log('ESERCIZIO 9. L\'array characters una volta eliminati i personaggi c
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
 
+console.log('ESERCIZIO 10.', randomStarWarsCharacterDescription());
+
 function randomStarWarsCharacterDescription() {
-  let randomIndex = Math.round(Math.floor() * 10); // numero randomico compreso tra 0 e 9
+  let randomIndex = Math.floor(Math.random() * 10);
+ // numero randomico compreso tra 0 e 9
+  const character = starWarsCharacters[randomIndex];
+  console.log(randomIndex);
   let characterDescription = '';
   let hairColorItalian;
   let skinColorItalian;
   let genderItalian;
   let eyeColorItalian;
-  const character = starWarsCharacters[randomIndex];
-  switch(character.eye_color) {
+
+
+  switch (character.birth_year) {
+    case 'unknown':
+      character.birth_year = ' in un anno sconosciuto ';
+      break;
+    default:
+      character.birth_year = 'nel ' + character.birth_year;
+      break;
+  }
+
+  switch (character.eye_color) {
     case 'blue':
       eyeColorItalian = 'blu';
       break;
@@ -311,7 +326,7 @@ function randomStarWarsCharacterDescription() {
     case 'red':
       eyeColorItalian = 'rossi';
       break;
-    case 'blu-':
+    case 'blue-gray':
       eyeColorItalian = 'grigio-blu';
       break;
   }
@@ -357,28 +372,27 @@ function randomStarWarsCharacterDescription() {
       skinColorItalian = 'bianca e rossa';
       break;
   }
-
+  let ending = 'o';
   switch (character.gender) {
     case 'male':
       genderItalian = 'maschile';
+      ending = 'o';
       break;
     case 'female':
       genderItalian = 'femminile';
+      ending = 'a';
       break;
     case 'n/a':
       genderItalian = 'sconosciuto';
+      ending = 'o';
       break;
   }
-  let ending;
-  if (character.gender === 'male' || character.gender === 'n/a') {
-    ending = 'o';
-  } else {
-    ending = 'a';
-  }
 
-  characterDescription = 'Il nome di questo personaggio è ' + character.name + '. E\' alt' + ending + ' ' + character.height + 'cm e pesa ' + character.mass + 'kg.';
-  characterDescription += ' Ha i capelli ' + hairColorItalian + ' e la pelle ' + skinColorItalian +'.';
-  characterDescription += ' E\' di genere maschile, è nat' + ending + ' nel' + character.birth_year + '. Ha gli occhi ' + eyeColorItalian + '.'
+
+  characterDescription = 'Il nome di questo personaggio è ' + character.name + '. E\' alt' + ending + ' ' + character.height + 'cm e pesa ' + Math.round(character.mass) + 'kg.';
+  characterDescription += ' Ha i capelli ' + hairColorItalian + ' e la pelle ' + skinColorItalian + '.';
+  characterDescription += ' E\' di genere maschile, è nat' + ending + ' ' + character.birth_year + '. Ha gli occhi ' + eyeColorItalian + '.'
+  return characterDescription;
 }
 
 /*{
