@@ -382,7 +382,7 @@ function randomStarWarsCharacterDescription() {
       genderItalian = 'femminile';
       ending = 'a';
       break;
-    case 'n/a':
+    default:
       genderItalian = 'sconosciuto';
       ending = 'o';
       break;
