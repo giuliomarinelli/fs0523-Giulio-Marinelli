@@ -274,7 +274,7 @@ console.log('ESERCIZIO 8. newStarWarsCharacters... genere cambiato', starWarsCha
   Una volta fatto crea un console.log per controllare la proprietà length di "characters" prima e dopo l'operazione.
 */
 
-console.log('ESERCIZIO 9. Rimuovo i personaggi identici a femaleCharacters contenuti dentro a characters senza usare metodi degli array. Questo è l\'array characters prima:', characters, `length = ${characters.length}`);
+console.log('ESERCIZIO 9. Rimuovo i personaggi identici a femaleCharacters contenuti dentro a characters. Questo è l\'array characters prima:', characters, `length = ${characters.length}`);
 
 for (i = 0; i < femaleCharacters.length; i++) {
   for (let j = 0; j < starWarsCharacters.length; j++) {
