@@ -142,6 +142,7 @@ let eyeColor = {
   yellow: [],
   brown: [],
   red: [],
+  // Andava anche bene 'blue-gray': []
 }
 
 eyeColor['blue-gray'] = []; // square bracket notation
