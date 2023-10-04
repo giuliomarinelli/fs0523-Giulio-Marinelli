@@ -289,3 +289,105 @@ console.log('ESERCIZIO 9. L\'array characters una volta eliminati i personaggi c
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+
+function randomStarWarsCharacterDescription() {
+  let randomIndex = Math.round(Math.floor() * 10); // numero randomico compreso tra 0 e 9
+  let characterDescription = '';
+  let hairColorItalian;
+  let skinColorItalian;
+  let genderItalian;
+  let eyeColorItalian;
+  const character = starWarsCharacters[randomIndex];
+  switch(character.eye_color) {
+    case 'blue':
+      eyeColorItalian = 'blu';
+      break;
+    case 'yellow':
+      eyeColorItalian = 'gialli';
+      break;
+    case 'brown':
+      eyeColorItalian = 'marroni';
+      break;
+    case 'red':
+      eyeColorItalian = 'rossi';
+      break;
+    case 'blu-':
+      eyeColorItalian = 'grigio-blu';
+      break;
+  }
+  switch (character.hair_color) {
+    case 'blond':
+      hairColorItalian = 'biondi';
+      break;
+    case 'brown':
+      hairColorItalian = 'marroni';
+      break;
+    case 'n/a':
+    case 'none':
+      hairColorItalian = 'di colore sconosciuto';
+      break;
+    case 'brown, grey':
+      hairColorItalian = 'marroni e grigi';
+      break;
+    case 'black':
+      hairColorItalian = 'neri';
+      break;
+    case 'auburn, white':
+      hairColorItalian = 'biondi';
+      break;
+  }
+
+  switch (character.skin_color) {
+    case 'fair':
+      skinColorItalian = 'chiara';
+      break;
+    case 'gold':
+      skinColorItalian = 'dorata';
+      break;
+    case 'white, blue':
+      skinColorItalian = 'bianca e blu';
+      break;
+    case 'white':
+      skinColorItalian = 'bianca';
+      break;
+    case 'light':
+      skinColorItalian = 'particolarmente chiara';
+      break;
+    case 'white, red':
+      skinColorItalian = 'bianca e rossa';
+      break;
+  }
+
+  switch (character.gender) {
+    case 'male':
+      genderItalian = 'maschile';
+      break;
+    case 'female':
+      genderItalian = 'femminile';
+      break;
+    case 'n/a':
+      genderItalian = 'sconosciuto';
+      break;
+  }
+  let ending;
+  if (character.gender === 'male' || character.gender === 'n/a') {
+    ending = 'o';
+  } else {
+    ending = 'a';
+  }
+
+  characterDescription = 'Il nome di questo personaggio è ' + character.name + '. E\' alt' + ending + ' ' + character.height + 'cm e pesa ' + character.mass + 'kg.';
+  characterDescription += ' Ha i capelli ' + hairColorItalian + ' e la pelle ' + skinColorItalian +'.';
+  characterDescription += ' E\' di genere maschile, è nat' + ending + ' nel' + character.birth_year + '. Ha gli occhi ' + eyeColorItalian + '.'
+}
+
+/*{
+    name: "Luke Skywalker",
+    height: 172,
+    mass: 277,
+    hair_color: "blond",
+    skin_color: "fair",
+    eye_color: "blue",
+    birth_year: "19BBY",
+    gender: "male"
+  },*/
