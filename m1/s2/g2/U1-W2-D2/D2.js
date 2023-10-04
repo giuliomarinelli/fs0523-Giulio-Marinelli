@@ -8,12 +8,12 @@ const numberA = 10;
 const numberB = 100;
 console.log(`ESERCIZIO 1: Qual è il più grande tra ${numberA} e ${numberB}? ` + theMajorBetween(numberA, numberB));
 
-function theMajorBetween(a, b){
-  if(a > b){
+function theMajorBetween(a, b) {
+  if (a > b) {
     return a;
-  } else if(b > a){
+  } else if (b > a) {
     return b;
-  }else{
+  } else {
     return 'I due numeri sono uguali'
   }
 }
@@ -27,10 +27,10 @@ const numberD = 5;
 console.log(`ESERCIZIO 2: Is ${numberC} equal to 5? ` + isEqualTo5(numberC));
 console.log(`ESERCIZIO 2: Is ${numberD} equal to 5? ` + isEqualTo5(numberD));
 
-function isEqualTo5(n){
-  if(n !== 5){
+function isEqualTo5(n) {
+  if (n !== 5) {
     return 'not equal';
-  }else{
+  } else {
     return 'equal';
   }
 }
@@ -42,8 +42,8 @@ function isEqualTo5(n){
 console.log(`ESERCIZIO 3. E' ${numberC} divisibile per 5? ` + divisibleBy5(numberC));
 
 
-function divisibleBy5(n){
-  if(n % 5 === 0){
+function divisibleBy5(n) {
+  if (n % 5 === 0) {
     return 'Divisibile per 5';
   }
 }
@@ -58,18 +58,18 @@ console.log(`ESERCIZIO 4. Scrivi un algoritmo per verificare che, dati due numer
 console.log(`ESERCIZIO 4. Scrivi un algoritmo per verificare che, dati due numeri interi (${numberF} e ${numberF}), il valore di uno di essi sia 8 oppure se la loro addizione/sottrazione sia uguale a 8. ` + text(numberF, numberF));
 console.log(`ESERCIZIO 4. Scrivi un algoritmo per verificare che, dati due numeri interi (${numberE} e ${numberG}), il valore di uno di essi sia 8 oppure se la loro addizione/sottrazione sia uguale a 8. ` + text(numberE, numberG));
 
-function text(a, b){
-  if (compare(a, b)){
+function text(a, b) {
+  if (compare(a, b)) {
     return 'Sì';
-  }else{
+  } else {
     return 'No';
   }
-  }
-  
-function compare(a, b){
-  if(a === 8 || b === 8 || a + b === 8 || a - b === 8 || b - a === 8){
+}
+
+function compare(a, b) {
+  if (a === 8 || b === 8 || a + b === 8 || a - b === 8 || b - a === 8) {
     return true;
-  }else{
+  } else {
     return false;
   }
 }
@@ -86,10 +86,10 @@ const myShoppingCart1 = 10;
 console.log(`ESERCIZIO 5. Se spendi fino a 50 paghi 10 di spedizione, altrimenti la spedizione è gratuita. Tu hai speso ${myShoppingCart} quindi il tuo totale è ` + eCommerce(myShoppingCart));
 console.log(`ESERCIZIO 5. Se spendi fino a 50 paghi 10 di spedizione, altrimenti la spedizione è gratuita. Tu hai speso ${myShoppingCart1} quindi il tuo totale è ` + eCommerce(myShoppingCart1));
 
-function eCommerce(totalShoppingCart){
-  if(totalShoppingCart > 50){
+function eCommerce(totalShoppingCart) {
+  if (totalShoppingCart > 50) {
     return totalShoppingCart
-  }else{
+  } else {
     return totalShoppingCart + 10;
   }
 }
@@ -101,11 +101,11 @@ console.log(`ESERCIZIO 6. Se spendi fino a 50 paghi 10 di spedizione, altrimenti
 console.log(`ESERCIZIO 6. Se spendi fino a 50 paghi 10 di spedizione, altrimenti la spedizione è gratuita. Tu hai speso ${myShoppingCart1} a cui applichiamo il 20% di sconto perché c\'è il black Friday (${myShoppingCart1 * 0.8}), quindi il tuo totale è ` + eCommerceBlackFriday(myShoppingCart1));
 
 
-function eCommerceBlackFriday(totalShoppingCart){
+function eCommerceBlackFriday(totalShoppingCart) {
   totalShoppingCart *= 0.8; //sconto del 20%
-  if(totalShoppingCart > 50){
+  if (totalShoppingCart > 50) {
     return totalShoppingCart
-  }else{
+  } else {
     return totalShoppingCart + 10;
   }
 }
@@ -121,38 +121,38 @@ const number2 = 3567;
 const number3 = 1;
 console.log('ESERCIZIO 7' + `. I tre numeri ${number1}, ${number2} e ${number3} in ordine decrescente: ` + descendingOrder(number1, number2, number3));
 
-function descendingOrder(a, b, c){
+function descendingOrder(a, b, c) {
   let small, medium, large;
-  if(a > b && a > c){
+  if (a > b && a > c) {
     large = a;
-  }else if(b > a && b > c){
+  } else if (b > a && b > c) {
     large = b;
-  }else{
+  } else {
     large = c;
   }
-  if (a < b && a < c){
+  if (a < b && a < c) {
     small = a;
-  }else if
-    (b < a && b < c){
-      small = b;
-    }else{
-      small = c;
-    }
-  if(includedIntoInterval(a, b, c)){
+  } else if
+    (b < a && b < c) {
+    small = b;
+  } else {
+    small = c;
+  }
+  if (includedIntoInterval(a, b, c)) {
     medium = c;
-  }else if(includedIntoInterval(a, c, b)){
+  } else if (includedIntoInterval(a, c, b)) {
     medium = b;
-  }else if(includedIntoInterval(b, c, a)){
+  } else if (includedIntoInterval(b, c, a)) {
     medium = a;
   }
-  return large + ' > ' + medium + ' > ' + small; 
-  }
+  return large + ' > ' + medium + ' > ' + small;
+}
 
-  function includedIntoInterval(a, b, n){  // deve cadere nell'intervallo
-    if((n > a && n < b) || (n < a && n > b)){
-      return true;
-    }
+function includedIntoInterval(a, b, n) {  // deve cadere nell'intervallo
+  if ((n > a && n < b) || (n < a && n > b)) {
+    return true;
   }
+}
 
 /* ESERCIZIO 8
   Crea un algoritmo per verificare che un valore fornito sia un numero oppure no (suggerimento: cerca su un motore di ricerca "typeof").
@@ -163,15 +163,15 @@ const number5 = 1;
 console.log(`ESERCIZIO 8. ${number4} è un numero? ` + text2(number4));
 console.log(`ESERCIZIO 8. ${number5} è un numero? ` + text2(number5));
 
-function isANumber(n){
-  if(!(isNaN(n))){
+function isANumber(n) {
+  if (!(isNaN(n))) {
     return true;
   }
 }
-function text2(n){
-  if (isANumber(n)){
+function text2(n) {
+  if (isANumber(n)) {
     return 'E\' un numero';
-  }else{
+  } else {
     {
       return 'Non è un numero';
     }
@@ -184,32 +184,32 @@ function text2(n){
 console.log(`ESERCIZIO 9. ${number1} è un numero pari o dispari? ` + text3(number1));
 console.log(`ESERCIZIO 9. ${number2} è un numero pari o dispari? ` + text3(number2));
 
-function isDivisibleBy2(n){ // divisibile per 2 significa pari, altrimenti è dispari
-  if(n % 2 === 0){
+function isDivisibleBy2(n) { // divisibile per 2 significa pari, altrimenti è dispari
+  if (n % 2 === 0) {
     return true;
-  }else{
+  } else {
     return false;
   }
 }
-function text3(n){
-  if(isDivisibleBy2(n)){
-    return 'E\' un numero pari' 
-  }else{
+function text3(n) {
+  if (isDivisibleBy2(n)) {
+    return 'E\' un numero pari'
+  } else {
     return 'E\' un numero dispari'
   }
 }
 
 /* ESERCIZIO 10
   Modifica la logica del seguente algoritmo in modo che mostri in console il messaggio corretto in ogni circostanza. */
-  console.log('ESERCIZIO 10.')
-  let val = 7;
-  if (val < 10) {
-      console.log("Meno di 10");
-    } else if (val < 5) {
-      console.log("Meno di 5");
-    } else if (val >= 10){
-      console.log("Uguale a 10 o maggiore");
-    }
+console.log('ESERCIZIO 10.')
+let val = 7;
+if (val < 10) {
+  console.log("Meno di 10");
+} else if (val < 5) {
+  console.log("Meno di 5");
+} else if (val >= 10) {
+  console.log("Uguale a 10 o maggiore");
+}
 
 /* ESERCIZIO 11
   Fornito il seguente oggetto, scrivi del codice per aggiungere una proprietà "city", il cui valore sarà "Toronto".
@@ -243,7 +243,7 @@ console.log(me);
 
 numbersArray = [];
 numbersArray.length = 10;
-for (let i = 0; i < numbersArray.length; i++){
+for (let i = 0; i < numbersArray.length; i++) {
   numbersArray[i] = i + 1;
 }
 
