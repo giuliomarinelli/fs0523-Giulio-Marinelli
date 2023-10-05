@@ -113,7 +113,7 @@ function maxShoppingCart(shC) {
     let a = Math.max(...prices);
     let b = {};
     for (let i = 0; i < 15; i++) {
-        if (a === prices[i]){} return shC[i];
+        if (a === prices[i]) return Object(shC[i]);
     }
 }
 
