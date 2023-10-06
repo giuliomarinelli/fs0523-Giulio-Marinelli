@@ -1,0 +1,239 @@
+/* General settings */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    line-height: normal;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+/*header */
+
+#logo-container {
+    padding: 9px 0 9px 30px;
+    width: 150px;
+}
+
+#logo-container img {
+    width: 100%;
+}
+
+#main-menu {
+    padding-left: 10px;
+}
+
+#main-menu li {
+    margin: 0;
+    padding: 0;
+    padding-left: 15px;
+    display: inline-block;
+}
+
+#main-menu a {
+    display: inline-block;
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 8px 0;
+}
+
+#main-menu a:hover {
+    text-decoration: underline;
+}
+
+#main-menu a:last-of-type {
+    margin-right: 0;
+}
+
+/* Main */
+
+#orange-block {
+    margin-bottom: 33px;
+}
+
+#first-block {
+    height: 200px;
+    background-image: url('../images/bg-image.png'), url('../images/bg-img.png');
+    padding-top: 65px;
+    margin-bottom: 33px;
+}
+
+.flex-item-h-image {
+    flex-basis: 23.5%;
+    height: 380px;
+    border-radius: 20px;
+}
+
+.block {
+    min-height: 450px;
+    width: 100%;
+    color: black;
+    background-color: white;
+    
+}
+
+.slogan {
+    font-size: 2.3rem;
+    margin-right: 17px; 
+    color: black;
+}
+
+.slogan a {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #306166;
+    text-decoration: none;
+    
+}
+
+#find-the-perfect-gift {
+    display: flex;
+    align-items: end;
+    min-height: 50px;
+    padding: 14px 30px;
+}
+
+#play-the-gifting-game {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 33px;
+}
+
+#play-the-gifting-game p {
+    margin-top: 3px;
+    margin-right: 20px;
+}
+
+
+#h-images {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 0 30px 15px;
+}
+
+#image_1 {
+    background-image: url('../images/img_1.jpg');
+    background-size: cover;
+    background-position: 25%;
+}
+
+#image_2 {
+    background-image: url('../images/img_2.jpg');
+    background-size: cover;
+    background-position: 55%;
+}
+
+#image_3 {
+    background-image: url('../images/img_3.jpg');
+    background-size: cover;
+    background-position: 42%;;
+}
+
+#image_4 {
+    background-image: url('../images/img_4.jpg');
+    background-size: cover;
+    background-position: 55%;
+}
+
+#image_9 {
+    background-image: url('../images/img_9.png');
+    background-size: cover;
+    background-position-y: 20%;
+    margin-top: 33px;
+}
+
+#image_10 {
+    background-image: url('../images/img_10.png');
+    background-size: cover;
+    background-position: 20%;
+}
+
+/* Footer */
+
+#footer a {
+    color: white;
+}
+
+#footer-logo {
+    padding: 65px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#back-to-top {
+    padding: 15px 0;
+    font-weight: bold;;
+}
+
+#footer img {
+    width: 150px;
+}
+
+
+/* Classes for color, background-colors, margins, paddings and other style items */
+
+.color-white {
+    color: white;
+}
+
+.text-black {
+    color: black;
+}
+
+.bg-light {
+    background-color: #e9eced;
+}
+
+.bg-dark-blue {
+    background-color: #293240;
+}
+
+.bg-light-blue {
+    background-color: #3c4858;
+}
+
+.bg-orange {
+    background-color: #e36e2f;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.p-8 {
+    padding: 8px;
+}
+
+.p-33{
+    padding: 33px;
+}
+
+.lg-shadow {
+    box-shadow: 5px 5px 4px rgba(213, 213, 213, .3);
+}
