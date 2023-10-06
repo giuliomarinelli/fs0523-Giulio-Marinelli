@@ -76,11 +76,6 @@ h2 {
     margin-bottom: 33px;
 }
 
-.flex-item-h-image {
-    flex-basis: 23.5%;
-    height: 380px;
-    border-radius: 20px;
-}
 
 .block {
     min-height: 450px;
@@ -129,6 +124,12 @@ h2 {
     justify-content: space-between;
     align-items: end;
     padding: 0 30px 15px;
+}
+
+.flex-item-h-image {
+    flex-basis: 23.5%;
+    height: 380px;
+    border-radius: 20px;
 }
 
 #image_1 {
