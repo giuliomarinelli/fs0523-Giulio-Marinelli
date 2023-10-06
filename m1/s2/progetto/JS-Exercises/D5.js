@@ -13,7 +13,7 @@ REGOLE
 const pets = ['dog', 'cat', 'hamster', 'redfish'];
 
 console.log('ESERCIZIO 1.');
-pets.forEach((pet, index) => console.log(`Elemento con indice ${index}: ${pet}`));
+pets.forEach((pet, index) => console.log(`Elemento dell'array pets con indice ${index}: ${pet}`));
 
 /* ESERCIZIO 2
     Scrivi del codice per ordinare alfabeticamente gli elementi dell'array "pets".
@@ -28,14 +28,15 @@ console.log('Array pets in ordine alfabetico:', pets, newPets);
 */
 
 console.log('ESERCIZIO 3.');
-console.log(pets.reverse());
+pets.reverse().forEach((pet, index) => console.log(`Elemento di indice ${index} dell\'array pets invertito: ${pet}`));
 
 /* ESERCIZIO 4
     Scrivi del codice per spostare il primo elemento dall'array "pets" in ultima posizione
 */
 
 console.log('ESERCIZIO 4.');
-firstPet = pets.shift();
+console.log(pets);
+const firstPet = pets.shift();
 console.log(firstPet);
 console.log(pets);
 pets.push(firstPet);
@@ -65,8 +66,8 @@ const cars = [
 ]
 console.log('ESERCIZIO 5.');
 
-let generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
-
+let generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min); /* genera numeri randomici interi compresi
+                                                                                  nell'intervallo [min; max] (estremi compresi) */
 function generateCharacterFromNumber(n) {
   switch (n) {
     case 1: return 'A' // il break è superfluo perché il return fa terminare la funzione
@@ -117,7 +118,7 @@ console.log(cars);
     Successivamente, rimuovi l'ultimo elemento della proprietà "trims" da ogni auto.
 */
 console.log('ESERCIZIO 6');
-newCar = {
+let newCar = {
   brand: 'BMW',
   model: '320d',
   color: 'red',
@@ -157,11 +158,11 @@ const numericArray = [
   6, 90, 45, 75, 84, 98, 35, 74, 31, 2, 8, 23, 100, 32, 66, 313, 321, 105,
 ]
 console.log('ESERCIZIO 9.');
-let i = 0;
+let j = 0;
 while (true) {
-    console.log(numericArray[i]);
-    if (numericArray[i] === 32) break;
-    i++; 
+    console.log(numericArray[j]);
+    if (numericArray[j] === 32) break;
+    j++; 
 }
 
 /* ESERCIZIO 10
@@ -170,9 +171,9 @@ while (true) {
     es. [f, b, e] --> [6, 2, 5]
 */
 const charactersArray = ['g', 'n', 'u', 'z', 'd'];
-
+console.log('ESERCIZIO 10');
 const numbersArray = [];
-for (i = 0; i < charactersArray.length; i++) {
+for (let i = 0; i < charactersArray.length; i++) {
   numbersArray.push(generateNumberFromCharacter(charactersArray[i]));
 }
 console.log('Da', charactersArray, 'a', numbersArray);
@@ -205,5 +206,6 @@ function generateNumberFromCharacter(character) {
     case 'x': return 24
     case 'y': return 25
     case 'z': return 26
+    default: return 0
   }
 }
