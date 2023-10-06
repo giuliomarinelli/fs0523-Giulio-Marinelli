@@ -20,7 +20,7 @@ pets.forEach((pet, index) => console.log(`Elemento con indice ${index}: ${pet}`)
 */
 
 console.log('ESERCIZIO 2.');
-const newPets = pets.sort(); // modifica l'array e al contempo lo restituisce modificato quindi revPets e pets saranno uguali
+const newPets = pets.sort(); // modifica l'array e al contempo lo restituisce modificato quindi newPets e pets saranno uguali
 console.log('Array pets in ordine alfabetico:', pets, newPets);
 
 /* ESERCIZIO 3
