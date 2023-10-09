@@ -14,7 +14,7 @@ console.log('ESERCIZIO 1', concatTwoStrings('heilà come va', 'Javascript ES6'))
 function return10randomNumbersArr() {
   let arr = []
   for (let i = 0; i < 10; i++) {
-    arr.push(Math.floor(Math.random() * 100));
+    arr.push(Math.floor(Math.random() * 101));
   }
   return arr;
 }
