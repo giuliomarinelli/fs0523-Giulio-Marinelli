@@ -277,6 +277,35 @@
     /* EXTRA ESERCIZIO 16
     Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
   */
+    /*function removeVowelsFromText(text) {
+      let newText = text.split('').filter(char => {
+        switch(char) {
+          case 'a':
+          case 'e':
+          case 'i':
+          case 'o':
+          case 'u':
+          case 'A':
+          case 'E':
+          case 'I':
+          case 'O':
+          case 'U':
+            return false;          
+        }
+        return true;
+      })
+      return newText.join('');
+    }
+
+    function removeVowelsFromDocument() {
+      let all = document.querySelectorAll('body *');
+      all.forEach(elem => {
+        if (elem.textContent) {
+          elem.textContent = removeVowelsFromText(elem.textContent);
+        }
+      })
+    }
+    removeVowelsFromDocument(); */
 
     // Non mi viene, vorrei farlo insieme all'insegnante
   </script>
