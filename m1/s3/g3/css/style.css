@@ -1,0 +1,169 @@
+/* Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap');
+
+/* general Style Settings */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 4.5rem;
+    color: white;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: white;
+}
+
+.container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+ul,
+ol,
+dl {
+    list-style-type: none;
+}
+
+/* Header */
+
+#header {
+    padding: 30px 0 40px;
+    background-color: rgb(61, 61, 162);
+    text-align: center;
+}
+
+/* Main */
+
+.footer-bottom {
+    min-height: calc(100vh - 174px - 96px - 30px);
+}
+
+#input-container {
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#newTask {
+    width: 500px;
+    height: 35px;
+    margin-right: 20px;
+    font-size: 2.2rem;
+    padding: 8px;
+}
+
+#createTask {
+    background-color: rgb(67, 67, 176);
+    color: white;
+    font-size: 2rem;
+    padding: 5px 10px;
+    border: none;
+    height: 35px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#createTask:hover {
+    background-color: rgb(86, 86, 162);
+    transition: background-color .35s;
+}
+
+#task-container {
+    border-top: 5px solid rgba(94, 94, 94, .3);
+    padding: 20px;
+}
+
+.task {
+    font-size: 1.8rem;
+    border: 1px solid rgb(39, 0, 39);
+    background-color: rgba(152, 17, 152, .5);
+    color: white;
+    padding: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;;
+}
+
+.task:hover {
+    background-color: rgba(152, 17, 152, .35);
+    transform: scale(1.05);
+    transition: all .4s;
+}
+
+li.completed:hover {
+    background-color: rgba(185, 183, 183, .3);
+    transform: scale(1.05);
+    transition: all .4s;
+}
+
+
+.completed p:first-of-type {
+    text-decoration:line-through;
+}
+
+.completed {
+    background-color: rgba(185, 183, 183, .5);
+}
+
+.task p {
+    margin-bottom: 10px;
+}
+
+.task p:nth-of-type(2)  {
+    color: rgb(57, 57, 57);
+    text-align: right;
+    font-size: 1.3rem;
+}
+
+.del-btn {
+    background-color: rgba(197, 79, 79, 1);
+    color: white;
+    font-size: 1.8rem;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.del-btn:hover {
+    background-color: rgba(197, 79, 79, .75);
+    transition: background-color .4s;
+}
+
+
+
+/* footer */
+
+#footer {
+    color: white;
+    background-color: rgb(8, 161, 161);
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 20px 0;
+}
+
+#footer p:not(:last-of-type) {
+    margin-bottom: 8px;
+}
