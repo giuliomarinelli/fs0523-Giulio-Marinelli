@@ -84,7 +84,7 @@ start.addEventListener('click', () => {
 })
 extract.addEventListener('click', () => {
     tabellone.extract();
-    if (tabelline) {
-        tabelline.forEach(e => e.extract());
+    for (let i = 0; i < tabelline.length; i++) {
+        tabelline[i].extract();
     }
 })
