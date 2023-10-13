@@ -478,7 +478,7 @@ const tree = (n) => {
   let arrSpaces = [];
   let strCache = '';
   let strResult = '';
-  
+
   for (let i = 1; i <= n; i++) {
     for (let j = 1; j <= oddArray[i - 1]; j++) {
       strCache += '*'
@@ -489,14 +489,14 @@ const tree = (n) => {
 
   for (i = arrStr.length - 1; i >= 0; i--) {
     for (j = 0; j < arrStr.length - i - 1; j++) {
-      strCache +=' ';
+      strCache += ' ';
     }
     arrSpaces.push(strCache);
     strCache = '';
   }
   arrSpaces.reverse();
   for (i = 0; i < arrStr.length; i++) {
-    strResult += arrSpaces[i] + arrStr[i] + '\n'; 
+    strResult += arrSpaces[i] + arrStr[i] + '\n';
   }
   console.log(strResult);
   return strResult;
