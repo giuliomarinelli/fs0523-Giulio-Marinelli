@@ -293,7 +293,7 @@ const movies = [
 */
 
 const newestMovie = (arrMovies) => {
-  const timeStampArr = []
+  const timeStampArr = [];
   for (let i = 0; i < arrMovies.length; i++) {
     const date = new Date(arrMovies[i].Year);
     timeStampArr.push(date.getTime());
@@ -343,7 +343,7 @@ const searchByTitle = (arrMovies, titleToFind) => {
   arrMovies.forEach(el => {
     if (el.Title.includes(titleToFind)) results.push(el);
   })
-  return results
+  return results;
 }
 
 /* ESERCIZIO 18
@@ -351,10 +351,10 @@ const searchByTitle = (arrMovies, titleToFind) => {
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
 
-const searchAndDivide = (movies, str) => {
+const searchAndDivide = (arrMovies, str) => {
   const match = [];
   const unmatch = [];
-  movies.forEach(el => el.Title.includes(str) ? match.push(el) : unmatch.push(el));
+  arrMovies.forEach(el => el.Title.includes(str) ? match.push(el) : unmatch.push(el));
   return {
     match: match,
     unmatch: unmatch
@@ -466,21 +466,21 @@ const halfTree = (n) => {
 */
 
 const tree = (n) => {
-  const generateEvenArray = () => {
+  const generateOddArray = () => {
     const arr = [];
     for (let i = 1; i <= 10000; i++) {
       if (i % 2 !== 0) arr.push(i);
     }
     return arr;
   }
-  const evenArray = generateEvenArray();
+  const oddArray = generateOddArray();
   let arrStr = [];
   let arrSpaces = [];
   let strCache = '';
   let strResult = '';
   
   for (let i = 1; i <= n; i++) {
-    for (let j = 1; j <= evenArray[i - 1]; j++) {
+    for (let j = 1; j <= oddArray[i - 1]; j++) {
       strCache += '*'
     }
     arrStr.push(strCache);
@@ -501,13 +501,13 @@ const tree = (n) => {
   console.log(strResult);
   return strResult;
 }
-tree(3)
+
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
 
 const isItPrime = (n) => {
-  for (let i = 2; i <= Math.sqrt(n); i++) {
+  for (let i = 2; i <= Math.floor(Math.sqrt(n)); i++) {
     if (n % i === 0) return false;
   }
   return true;
