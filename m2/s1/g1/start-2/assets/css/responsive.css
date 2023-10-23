@@ -1,0 +1,49 @@
+@media screen and (min-width: 576px) {
+    .logo-container {
+        width: 150px;
+        margin: 0 auto;
+    }
+    .logo-container img {
+        width: 100%;
+    }
+    table {
+        margin: 70px auto; 
+    }
+}
+
+.formattazione {
+    font-size: 2rem;
+    font-weight:700;
+}
+
+@media screen and (min-width: 768px) {
+    .left{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .left p {
+        margin-right: 20px;
+    }
+    header {
+        padding: 10px 30px;
+    }
+    .table {
+        width: 500px;
+        margin: 70px auto;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .left {
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+}
