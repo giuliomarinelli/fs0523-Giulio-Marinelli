@@ -1,0 +1,165 @@
+:root {
+    --pallid-yellow: #faf7e5;
+    --intense-yellow: #f0e091;
+    --text-color: #5a280f;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; 
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.product-card {
+    flex-basis: 40%;
+}
+
+#product-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-card .image {
+    height: 300px;
+    background-image: url("../images/honey.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+
+.product-card .items {
+    background-color: var(--pallid-yellow);
+    color: var(--text-color);
+    padding: 40px 25px 20px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    text-align: center;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-between;
+    height: 125px;
+}
+
+.product-card .item-1-1 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.product-card .item-1-2 {
+    font-size: 1rem;
+}
+
+.product-card .item-2 {
+    font-size: 1.6rem;
+}
+
+.product-card .item-3 {
+    background-color: var(--intense-yellow);
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 15px 60px;
+    font-size: 1.6rem;
+    border-radius: 40px;
+}
+
+#main-menu {
+    text-align: center;    
+    font-size: 0.8rem;
+}
+
+#main-menu .menu-container {
+    height: 140px;
+    background-color: var(--pallid-yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-menu .menu-item {
+    background-color: var(--intense-yellow);
+    color: var(--text-color);
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 30px;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+#main-menu .menu-item-big {
+    background-color: var(--intense-yellow);
+    color: var(--text-color);
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+    border-radius: 80px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+#main-menu .menu-item-big .bee {
+    width: 50px;
+}
+
+:root {
+    --pallid-yellow: #faf7e5;
+    --intense-yellow: #f0e091;
+    --text-color: #5a280f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#our-delicious-honey {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    background-color: var(--pallid-yellow);
+    padding: 20px;
+    display: flex;
+    border-radius: 17px;
+    margin: 20px;
+    line-height: 1.4;
+}
+
+#our-delicious-honey h4 {
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+#our-delicious-honey .img-container {
+    flex: 0 0 50%;
+}
+
+#our-delicious-honey .img-container img {
+    width: 100%;
+}
+
+#our-delicious-honey .text {
+    padding: 20px;
+    flex: 0 0 50%;
+}
+
+#our-delicious-honey .text p {
+    font-size: 1rem;
+}
+
