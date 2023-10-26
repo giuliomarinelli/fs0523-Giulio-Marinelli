@@ -1,0 +1,138 @@
+:root {
+    --bg-yellow: #f9facd;
+    --bg-yellow-shadow: #c3c4a863;
+    --bg-green: #d1f6cd;
+    --bg-green-shadow: #abc1aa54;
+    --bg-violet: #c4c4ec;
+    --bg-violet-shadow: #9d9db038;
+    --bg-grey: #666666;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.bg-yellow {
+    background-image: linear-gradient(180deg, var(--bg-yellow) 70%, var(--bg-yellow-shadow));
+}
+
+.bg-green {
+    background-image: linear-gradient(180deg, var(--bg-green) 70%, var(--bg-green-shadow));
+}
+
+.bg-violet {
+    background-image: linear-gradient(180deg, var(--bg-violet) 70%, var(--bg-violet-shadow));
+}
+
+.bg-grey {
+    background-color: var(--bg-grey);
+}
+
+#viewport {
+    background-color: black;
+    height: 100vh;
+    padding: 50px 0;
+}
+
+#board {
+    font-family: 'Indie Flower', sans-serif;
+    height: 100%;
+}
+
+#board .container {
+    margin: 0 auto;
+    width: 1400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    height: 100%;
+    padding: 15px 0;
+}
+
+#board .relief {
+    transform: rotateY(2deg);
+}
+
+#board .postit {
+    height: 250px;
+    flex-basis: 300px;
+    box-shadow: 2px 2px 5px black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+    opacity: 0;
+}
+
+#board .postit:hover {
+    transform: scale(1.25);
+    box-shadow: 4px 4px 10px black;
+    transition: all .4s;
+    z-index: 20;
+}
+
+#board .task-1 {
+    flex-basis: 335px;
+    transform: rotate(-5deg);
+    animation: 1s ease-in-out forwards fade-in;
+}
+
+#board .task-2 {
+    transform: rotate(5deg);
+    animation: 1s ease-in-out 1s forwards fade-in;
+}
+
+#board .task-3 {
+    transform: rotate(-8deg);;
+    animation: 1s ease-in-out 1.5s forwards fade-in;
+}
+
+
+#board .task-4 {
+    transform: rotate(8deg);
+    animation: 1s ease-in-out 2s forwards fade-in;
+}
+
+#board .task-5 {
+    transform: rotate(-8deg);
+    animation: 1s ease-in-out 3s forwards fade-in;
+}
+
+#board .task-6 {
+    transform: rotate(-8deg);
+    animation: 1s ease-in-out 3s forwards fade-in;
+}
+
+#board .task-7 {
+    transform: rotate(-4deg);
+    animation: 1s ease-in-out 4s forwards fade-in;
+}
+
+#board .task-8 {
+    transform: rotate(5deg);
+    animation: 1s ease-in-out 5s forwards fade-in;
+}
+
+#board .task-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 11px;
+}
+
+#board .task-text {
+    font-size: 2rem;
+    margin-top: 11px;
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1
+    }
+}

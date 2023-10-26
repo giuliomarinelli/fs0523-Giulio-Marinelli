@@ -1,0 +1,97 @@
+/*
+1 creazione del testo e formattazione di 1 parola da far ruotare
+2 inserimento delle altre 2 parole
+3 sovrapporre le 3 parole
+4 mostrare 1 parola e nascondere le altre 2
+5 animare 1 parola (fadein - fadeout con spostamento)
+6 animare le altre 2 parole
+7 ritardare progressivamente l'animazione delle altre 2 parole 
+*/
+
+:root {
+    --border: #666666;
+    --words: #708799;
+    --text: #343434;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#panel {
+    background-color: white;
+    height: 82vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#testoAlternato {
+    font-family: 'Bree Serif', serif;
+    line-height: 1.5;
+    font-size: 3rem;
+    width: 80%;
+    padding: 40px;
+    border: 5px solid var(--border);
+}
+
+#testoAlternato .parole {
+    color: var(--words);
+    position: relative;
+}
+
+#testoAlternato .view {
+    position: absolute;
+    width: 500px;
+    left: 8px;
+}
+
+#testoAlternato .view-2,
+.view-3 {
+    opacity: 0;
+}
+
+#testoAlternato .view-1 {
+    animation: 2s ease-in-out 6s infinite slide-down;
+}
+
+#testoAlternato .view-2 {
+    animation: 2s ease-in-out 7s infinite slide-over;
+    animation: 2s ease-in-out 8s infinite slide-down;
+}
+
+#testoAlternato .view-3 {
+    animation: 2s ease-in-out 3s forwards slide-over;
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(30vh);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-over {
+    from {
+        transform: translateY(-50vh);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
