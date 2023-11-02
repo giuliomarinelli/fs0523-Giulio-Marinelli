@@ -1,0 +1,10 @@
+$btn-colors: 'blue', 'orange', 'green';
+@each $btn-color in $btn-colors {
+    .btn-#{$btn-color} {
+        font-family: 'Roboto', sans-serif;
+        background-color: map-get($color-map, $btn-color);
+        color: #fff;
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@mixin font-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+$font-sm: 0.75rem;
+$font-md: 1rem;
+$font-lg: 1.25rem;
+$font-xl: 1.5rem;
+$font-xxl: 1.75rem;
+$big-title: 6rem;
+
+@mixin fontSm {
+    font-size: $font-sm;
+}
+
+@mixin fontMd {
+    font-size: $font-md;
+}
+
+@mixin fontLg {
+    font-size: $font-lg;
+}
+
+@mixin fontXl {
+    font-size: $font-xl;
+}
+
+@mixin fontXxl {
+    font-size: $font-xxl;
+}
+
+@mixin title-big {
+    font-size: $title-big;
+}

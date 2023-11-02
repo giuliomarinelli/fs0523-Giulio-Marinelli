@@ -1,0 +1,52 @@
+$spacers: '4', '8', '12', '16', '20';
+
+@each $spacer in $spacers {
+   .m-#{$spacer} {
+    margin: $spacer + px;
+   }
+   .my-#{$spacer} {
+    margin-top: $spacer + px;
+    margin-bottom: $spacer + px;
+   }
+   .mx-#{$spacer} {
+    margin-left: $spacer + px;
+    margin-right: $spacer + px;
+   }
+   .mt-#{$spacer} {
+    margin-top: $spacer + px;
+   }
+   .me-#{$spacer} {
+    margin-right: $spacer + px;
+   }
+   .mb-#{$spacer} {
+    margin-bottom: $spacer + px;
+   }
+   .ms-#{$spacer} {
+    margin-left: $spacer + px;
+   }
+   
+   .p-#{$spacer} {
+    padding: $spacer + px;
+   }
+   .py-#{$spacer} {
+    padding-top: $spacer + px;
+    margin-bottom: $spacer + px;
+   }
+   .px-#{$spacer} {
+    padding-left: $spacer + px;
+    margin-right: $spacer + px;
+   }
+   .pt-#{$spacer} {
+    padding-top: $spacer + px;
+   }
+   .pe-#{$spacer} {
+    padding-right: $spacer + px;
+   }
+   .pb-#{$spacer} {
+    padding-bottom: $spacer + px;
+   }
+   .ps-#{$spacer} {
+    padding-left: $spacer + px;
+   }
+   
+}
