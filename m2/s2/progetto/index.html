@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+
+<body class="bg-dark">
+    <div class="netflix-container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand w-brand" href="#"><img src="./images/netflix_logo.png" alt="Netflix-logo"
+                    class="netflix-logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" aria-current="page" href="#">TV Shows</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Recently Added</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My List</a>
+                    </li>
+                </ul>
+                <div class="d-flex gap-4 link-white align-items-center">
+                    <a href="#"><i class="bi bi-search icon"></i></a>
+                    <a href="#" class="fs-7">KIDS</i></a>
+                    <a href="#"><i class="bi bi-bell-fill icon"></i></i></a>
+                    <div class="dropdown d_flex align-items-center">
+                        <a class="dropdown-toggle" href="#" role="button" id="profileDropdown" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="./images/avatar.png" alt="Avatar Profile Image" class="avatar-profile-image">
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+        <div class="my-2 d-flex justify-content-between">
+            <div class="d-flex gap-5 align-items-center">
+                <h1 class="h2 ms-2 text-white">TV Shows</h1>
+                <button class="btn-select dropdown-toggle">
+                    Genres<span class="spacer"></span>
+                </button>
+            </div>
+            <div></div>
+        </div>
+    </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

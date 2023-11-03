@@ -1,0 +1,51 @@
+@import '../node_modules/bootstrap/scss/functions';
+@import 'variables';
+@import 'variables-dark';
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.netflix-container {
+    @include make-container(70px);
+}
+
+.w-brand {
+    width: 100px;
+    .netflix-logo {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.link-white {
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.icon {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.fs-7 {
+    font-size: .75rem;
+}
+
+.avatar-profile-image {
+    width: 35px;
+}
+
+.spacer {
+    display: inline-block;
+    width: 30px;
+}
+
+.btn-select {
+    padding: 5px;
+    background-color: transparent;
+    font-weight: bold;
+    border: 1px solid white;
+    color: white;
+    height: fit-content;
+    font-size: .9rem;
+}
