@@ -38,6 +38,7 @@
   --bs-light: #f8f9fa;
   --bs-dark: #141414;
   --bs-white: #fff;
+  --bs-white-contrast: rgba(255, 255, 255, 0.55);
   --bs-primary-rgb: 13, 110, 253;
   --bs-secondary-rgb: 108, 117, 125;
   --bs-success-rgb: 25, 135, 84;
@@ -47,6 +48,7 @@
   --bs-light-rgb: 248, 249, 250;
   --bs-dark-rgb: 20, 20, 20;
   --bs-white-rgb: 255, 255, 255;
+  --bs-white-contrast-rgb: 255, 255, 255;
   --bs-primary-text-emphasis: #052c65;
   --bs-secondary-text-emphasis: #2b2f32;
   --bs-success-text-emphasis: #0a3622;
@@ -701,7 +703,7 @@ progress {
   content: "— ";
 }
 
-.img-fluid {
+.img-fluid, .w-brand .netflix-logo {
   max-width: 100%;
   height: auto;
 }
@@ -2016,13 +2018,13 @@ progress {
 
 .table-light {
   --bs-table-color: #000;
-  --bs-table-bg: #f8f9fa;
-  --bs-table-border-color: #c6c7c8;
-  --bs-table-striped-bg: #ecedee;
+  --bs-table-bg: #dee2e6;
+  --bs-table-border-color: #b2b5b8;
+  --bs-table-striped-bg: #d3d7db;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #dfe0e1;
+  --bs-table-active-bg: #c8cbcf;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #e5e6e7;
+  --bs-table-hover-bg: #cdd1d5;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -3118,6 +3120,23 @@ textarea.form-control-lg {
   --bs-btn-disabled-border-color: #fff;
 }
 
+.btn-white-contrast {
+  --bs-btn-color: #000;
+  --bs-btn-bg: rgba(255, 255, 255, 0.55);
+  --bs-btn-border-color: rgba(255, 255, 255, 0.55);
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: rgba(255, 255, 255, 0.6175);
+  --bs-btn-hover-border-color: rgba(255, 255, 255, 0.595);
+  --bs-btn-focus-shadow-rgb: 174, 174, 174;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: rgba(255, 255, 255, 0.64);
+  --bs-btn-active-border-color: rgba(255, 255, 255, 0.595);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: rgba(255, 255, 255, 0.55);
+  --bs-btn-disabled-border-color: rgba(255, 255, 255, 0.55);
+}
+
 .btn-outline-primary {
   --bs-btn-color: #0d6efd;
   --bs-btn-border-color: #0d6efd;
@@ -3268,6 +3287,23 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: transparent;
   --bs-btn-disabled-border-color: #fff;
+  --bs-gradient: none;
+}
+
+.btn-outline-white-contrast {
+  --bs-btn-color: rgba(255, 255, 255, 0.55);
+  --bs-btn-border-color: rgba(255, 255, 255, 0.55);
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: rgba(255, 255, 255, 0.55);
+  --bs-btn-hover-border-color: rgba(255, 255, 255, 0.55);
+  --bs-btn-focus-shadow-rgb: 255, 255, 255;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: rgba(255, 255, 255, 0.55);
+  --bs-btn-active-border-color: rgba(255, 255, 255, 0.55);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: rgba(255, 255, 255, 0.55);
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: rgba(255, 255, 255, 0.55);
   --bs-gradient: none;
 }
 
@@ -4907,6 +4943,13 @@ textarea.form-control-lg {
   --bs-alert-link-color: var(--bs-white-text-emphasis);
 }
 
+.alert-white-contrast {
+  --bs-alert-color: var(--bs-white-contrast-text-emphasis);
+  --bs-alert-bg: var(--bs-white-contrast-bg-subtle);
+  --bs-alert-border-color: var(--bs-white-contrast-border-subtle);
+  --bs-alert-link-color: var(--bs-white-contrast-text-emphasis);
+}
+
 @keyframes progress-bar-stripes {
   0% {
     background-position-x: 1rem;
@@ -5323,6 +5366,19 @@ textarea.form-control-lg {
   --bs-list-group-active-color: var(--bs-white-bg-subtle);
   --bs-list-group-active-bg: var(--bs-white-text-emphasis);
   --bs-list-group-active-border-color: var(--bs-white-text-emphasis);
+}
+
+.list-group-item-white-contrast {
+  --bs-list-group-color: var(--bs-white-contrast-text-emphasis);
+  --bs-list-group-bg: var(--bs-white-contrast-bg-subtle);
+  --bs-list-group-border-color: var(--bs-white-contrast-border-subtle);
+  --bs-list-group-action-hover-color: var(--bs-emphasis-color);
+  --bs-list-group-action-hover-bg: var(--bs-white-contrast-border-subtle);
+  --bs-list-group-action-active-color: var(--bs-emphasis-color);
+  --bs-list-group-action-active-bg: var(--bs-white-contrast-border-subtle);
+  --bs-list-group-active-color: var(--bs-white-contrast-bg-subtle);
+  --bs-list-group-active-bg: var(--bs-white-contrast-text-emphasis);
+  --bs-list-group-active-border-color: var(--bs-white-contrast-text-emphasis);
 }
 
 .btn-close {
@@ -6860,6 +6916,11 @@ textarea.form-control-lg {
   background-color: RGBA(var(--bs-white-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 
+.text-bg-white-contrast {
+  color: #000 !important;
+  background-color: RGBA(var(--bs-white-contrast-rgb), var(--bs-bg-opacity, 1)) !important;
+}
+
 .link-primary {
   color: RGBA(var(--bs-primary-rgb), var(--bs-link-opacity, 1)) !important;
   text-decoration-color: RGBA(var(--bs-primary-rgb), var(--bs-link-underline-opacity, 1)) !important;
@@ -6937,6 +6998,15 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-white-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-white:hover, .link-white:focus {
+  color: RGBA(255, 255, 255, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(255, 255, 255, var(--bs-link-underline-opacity, 1)) !important;
+}
+
+.link-white-contrast {
+  color: RGBA(var(--bs-white-contrast-rgb), var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(var(--bs-white-contrast-rgb), var(--bs-link-underline-opacity, 1)) !important;
+}
+.link-white-contrast:hover, .link-white-contrast:focus {
   color: RGBA(255, 255, 255, var(--bs-link-opacity, 1)) !important;
   text-decoration-color: RGBA(255, 255, 255, var(--bs-link-underline-opacity, 1)) !important;
 }
@@ -7376,6 +7446,10 @@ textarea.form-control-lg {
   --bs-focus-ring-color: rgba(var(--bs-white-rgb), var(--bs-focus-ring-opacity));
 }
 
+.focus-ring-white-contrast {
+  --bs-focus-ring-color: rgba(var(--bs-white-contrast-rgb), var(--bs-focus-ring-opacity));
+}
+
 .position-static {
   position: static !important;
 }
@@ -7539,6 +7613,11 @@ textarea.form-control-lg {
 .border-white {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-white-rgb), var(--bs-border-opacity)) !important;
+}
+
+.border-white-contrast {
+  --bs-border-opacity: 1;
+  border-color: rgba(var(--bs-white-contrast-rgb), var(--bs-border-opacity)) !important;
 }
 
 .border-black {
@@ -8492,6 +8571,11 @@ textarea.form-control-lg {
   color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
 }
 
+.text-white-contrast {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-white-contrast-rgb), var(--bs-text-opacity)) !important;
+}
+
 .text-black {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important;
@@ -8694,6 +8778,11 @@ textarea.form-control-lg {
   text-decoration-color: rgba(var(--bs-white-rgb), var(--bs-link-underline-opacity)) !important;
 }
 
+.link-underline-white-contrast {
+  --bs-link-underline-opacity: 1;
+  text-decoration-color: rgba(var(--bs-white-contrast-rgb), var(--bs-link-underline-opacity)) !important;
+}
+
 .link-underline {
   --bs-link-underline-opacity: 1;
   text-decoration-color: rgba(var(--bs-link-color-rgb), var(--bs-link-underline-opacity, 1)) !important;
@@ -8790,6 +8879,11 @@ textarea.form-control-lg {
 .bg-white {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-white-contrast {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-white-contrast-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-black {
@@ -11936,24 +12030,32 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.netflix-container {
-  --bs-gutter-x: 70px;
-  --bs-gutter-y: 0;
-  width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
-  padding-left: calc(var(--bs-gutter-x) * 0.5);
-  margin-right: auto;
-  margin-left: auto;
+@media screen and (min-width: 0) {
+  .netflix-container {
+    --bs-gutter-x: 10px;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media screen and (min-width: 992px) {
+  .netflix-container {
+    --bs-gutter-x: 90px;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 .w-brand {
   width: 100px;
 }
-.w-brand .netflix-logo {
-  width: 100%;
-  height: auto;
-}
-
 .link-white a {
   color: white;
   text-decoration: none;
@@ -11977,7 +12079,7 @@ textarea.form-control-lg {
   width: 30px;
 }
 
-.btn-select {
+.btn-select, .profile-row .profile-box .btn-select-language {
   padding: 5px;
   background-color: transparent;
   font-weight: bold;
@@ -11985,4 +12087,163 @@ textarea.form-control-lg {
   color: white;
   height: fit-content;
   font-size: 0.9rem;
+}
+
+.switch-view-btn {
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background-color: transparent;
+  height: 28px;
+  width: 38px;
+  padding: 2px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.switch-view-btn i {
+  color: rgba(255, 255, 255, 0.55);
+}
+.switch-view-btn:hover {
+  border-color: #fff;
+}
+.switch-view-btn:hover i {
+  color: #fff;
+}
+
+#btn-1 {
+  font-size: 0.8rem;
+}
+
+#btn-2 {
+  margin-left: -1px;
+  font-size: 0.575rem;
+}
+
+#footer {
+  margin-top: 150px;
+  color: rgba(255, 255, 255, 0.55);
+  display: flex;
+  justify-content: center;
+}
+#footer a {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+}
+#footer a:hover {
+  text-decoration: underline;
+}
+#footer .footer-content {
+  flex-basis: 55%;
+}
+#footer .fs-sm, #footer .square-link {
+  font-size: 0.7rem;
+}
+#footer .square-link {
+  display: blocl;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.profile-row {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+.profile-row .profile-box {
+  padding-left: 10%;
+  width: 660px;
+}
+.profile-row .profile-box .hr-spacer {
+  border-top: 1px solid rgba(108, 117, 125, 0.4);
+}
+.profile-row .profile-box .edit-profile {
+  font-size: 3.2rem;
+  font-weight: 400;
+}
+.profile-row .profile-box .strive-student, .profile-row .profile-box .all-maturity-ratings {
+  background-color: #495057;
+  color: white;
+  font-size: 1.2rem;
+  padding: 4px 12px;
+}
+.profile-row .profile-box .title {
+  color: #adb5bb;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+.profile-row .profile-box .btn-select-language {
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 3px 12px;
+}
+.profile-row .profile-box .all-maturity-ratings {
+  font-size: 0.9rem;
+  width: fit-content;
+  background-color: #343a40;
+  font-weight: bold;
+}
+.profile-row .profile-box .fs-sm, .profile-row .profile-box #footer .square-link, #footer .profile-row .profile-box .square-link {
+  font-size: 0.9rem;
+}
+.profile-row .profile-box .fs-xs {
+  font-size: 0.75rem;
+}
+.profile-row .profile-box .square-btn-sm, .profile-row .profile-box .square-btn {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  padding: 4px 20px;
+  font-size: 0.8rem;
+  letter-spacing: 1.7px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.profile-row .profile-box .square-btn-sm:hover, .profile-row .profile-box .square-btn:hover {
+  color: rgba(255, 255, 255, 0.65);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+.profile-row .profile-box .square-btn {
+  font-size: 1.1rem;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.profile-row .profile-box .square-btn.emphasis {
+  color: #141414;
+  background-color: #fff;
+}
+.profile-row .profile-box .square-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 18px;
+  user-select: none;
+}
+.profile-row .profile-box .square-checkbox input {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.profile-row .profile-box .square-checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 27px;
+  width: 27px;
+  border: 1px solid rgba(108, 117, 125, 0.4);
+  color: rgba(255, 255, 255, 0.55);
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.profile-row .profile-box .square-checkbox .checkmark:hover {
+  border-color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.6);
 }

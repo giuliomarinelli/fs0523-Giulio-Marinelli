@@ -1,17 +1,25 @@
 @import '../node_modules/bootstrap/scss/functions';
 @import 'variables';
-@import 'variables-dark';
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+$dark-contrast-text-color: rgba($white, .55);
+$dark-contrast-spacer: rgba($gray-600, .4);
+
 .netflix-container {
-    @include make-container(70px);
+    @media screen and (min-width: map-get($grid-breakpoints, xs)) {
+        @include make-container(10px);
+    }
+
+    @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+        @include make-container(90px);
+    }
 }
 
 .w-brand {
     width: 100px;
+
     .netflix-logo {
-        width: 100%;
-        height: auto;
+        @extend .img-fluid;
     }
 }
 
@@ -48,4 +56,193 @@
     color: white;
     height: fit-content;
     font-size: .9rem;
+}
+
+.switch-view-btn {
+    border: 1px solid $dark-contrast-text-color;
+    background-color: transparent;
+    height: 28px;
+    width: 38px;
+    padding: 2px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+
+    i {
+        color: $dark-contrast-text-color;
+    }
+
+    &:hover {
+        border-color: $white;
+
+        i {
+            color: $white;
+        }
+    }
+}
+
+#btn-1 {
+    font-size: .8rem;
+}
+
+#btn-2 {
+    margin-left: -1px;
+    font-size: .575rem;
+}
+
+#footer {
+    margin-top: 150px;
+    color: $dark-contrast-text-color;
+    display: flex;
+    justify-content: center;
+
+    a {
+        color: $dark-contrast-text-color;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .footer-content {
+        flex-basis: 55%;
+    }
+
+    .fs-sm {
+        font-size: .7rem;
+    }
+
+    .square-link {
+        @extend .fs-sm;
+        display: blocl;
+        text-decoration: none;
+        color: $dark-contrast-text-color;
+        padding: 5px;
+        border: 1px solid $dark-contrast-text-color;
+    }
+}
+
+.profile-row {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+
+    .profile-box {
+        padding-left: 10%;
+        width: 660px;
+
+        .hr-spacer {
+            border-top: 1px solid $dark-contrast-spacer;
+        }
+
+        .edit-profile {
+            font-size: 3.2rem;
+            font-weight: 400;
+        }
+
+        .strive-student {
+            background-color: $gray-700;
+            color: white;
+            font-size: 1.2rem;
+            padding: 4px 12px;
+        }
+
+        .title {
+            color: #adb5bb;
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .btn-select-language {
+            @extend .btn-select;
+            font-weight: 500;
+            font-size: .9rem;
+            padding: 3px 12px;
+        }
+
+        .all-maturity-ratings {
+            @extend .strive-student;
+            font-size: .9rem;
+            width: fit-content;
+            background-color: $gray-800;
+            font-weight: bold;
+        }
+
+        .fs-sm {
+            font-size: .9rem;
+        }
+
+        .fs-xs {
+            font-size: .75rem;
+        }
+
+        .square-btn-sm {
+            background-color: transparent;
+            color: $dark-contrast-text-color;
+            border: 1px solid $dark-contrast-text-color;
+            padding: 4px 20px;
+            font-size: .8rem;
+            letter-spacing: 1.7px;
+            cursor: pointer;
+            transition: all .3s;
+
+            &:hover {
+                color: rgba($white, .65);
+                border-color: rgba($white, .65);
+            }
+
+        }
+
+        .square-btn {
+            @extend .square-btn-sm;
+            font-size: 1.1rem;
+            padding-left: 25px;
+            padding-right: 25px;
+
+            &.emphasis {
+                color: $dark;
+                background-color: $white;
+            }
+        }
+
+        .square-checkbox {
+            input {
+                display: none;
+                width: 0;
+                height: 0;
+            }
+
+            display: block;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 18px;
+            user-select: none;
+
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 27px;
+                width: 27px;
+                border: 1px solid $dark-contrast-spacer;
+                color: $dark-contrast-text-color;
+                background-color: transparent;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                transition: all .3s;
+
+                &:hover {
+                    border-color: rgba($white, .65);
+                    color: rgba($white, .60);
+                }
+            }
+        }
+    }
 }

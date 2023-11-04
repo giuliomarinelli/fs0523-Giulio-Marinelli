@@ -17,6 +17,7 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
+$white-contrast: rgba($white, .55);
 // scss-docs-end gray-color-variables
 
 // fusv-disable
@@ -318,7 +319,8 @@ $theme-colors: (
   "danger":     $danger,
   "light":      $light,
   "dark":       $dark,
-  "white":      #fff
+  "white":      $white,
+  "white-contrast": $white-contrast
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -776,7 +778,7 @@ $table-variants: (
   "info":       shift-color($info, $table-bg-scale),
   "warning":    shift-color($warning, $table-bg-scale),
   "danger":     shift-color($danger, $table-bg-scale),
-  "light":      $light,
+  "light":      $gray-300,
   "dark":       $dark,
 ) !default;
 // scss-docs-end table-loop
