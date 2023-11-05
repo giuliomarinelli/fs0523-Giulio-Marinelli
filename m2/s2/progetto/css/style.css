@@ -12063,7 +12063,6 @@ textarea.form-control-lg {
 
 .icon {
   font-size: 1rem;
-  font-weight: bold;
 }
 
 .fs-7 {
@@ -12083,8 +12082,8 @@ textarea.form-control-lg {
   padding: 5px;
   background-color: transparent;
   font-weight: bold;
-  border: 1px solid white;
-  color: white;
+  border: 1px solid #fff;
+  color: #fff;
   height: fit-content;
   font-size: 0.9rem;
 }
@@ -12094,7 +12093,6 @@ textarea.form-control-lg {
   background-color: transparent;
   height: 28px;
   width: 38px;
-  padding: 2px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12128,7 +12126,7 @@ textarea.form-control-lg {
 }
 
 #footer {
-  margin-top: 150px;
+  margin-top: 125px;
   color: rgba(255, 255, 255, 0.55);
   display: flex;
   justify-content: center;
@@ -12145,11 +12143,14 @@ textarea.form-control-lg {
   flex-basis: 66%;
 }
 #footer .square-link {
-  display: blocl;
+  transition: border-color 0.3s;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.55);
   padding: 5px;
   border: 1px solid rgba(255, 255, 255, 0.55);
+}
+#footer .square-link:hover {
+  border-color: #fff;
 }
 
 .profile-row {
@@ -12158,8 +12159,12 @@ textarea.form-control-lg {
   justify-content: center;
 }
 .profile-row .profile-box {
-  padding-left: 10%;
   width: 660px;
+}
+@media screen and (min-width: 992px) {
+  .profile-row .profile-box {
+    padding-left: 10%;
+  }
 }
 .profile-row .profile-box .hr-spacer {
   border-top: 1px solid rgba(108, 117, 125, 0.4);
@@ -12168,11 +12173,27 @@ textarea.form-control-lg {
   font-size: 3.2rem;
   font-weight: 400;
 }
+.profile-row .profile-box .avatar-xs {
+  width: 150px;
+  height: auto;
+}
+@media screen and (min-width: 768px) {
+  .profile-row .profile-box .avatar-xs {
+    width: 100%;
+    height: auto;
+  }
+}
 .profile-row .profile-box .strive-student, .profile-row .profile-box .all-maturity-ratings {
   background-color: #495057;
   color: white;
   font-size: 1.2rem;
   padding: 4px 12px;
+  width: 150px;
+}
+@media screen and (min-width: 768px) {
+  .profile-row .profile-box .strive-student, .profile-row .profile-box .all-maturity-ratings {
+    width: 100%;
+  }
 }
 .profile-row .profile-box .title {
   color: #adb5bb;
@@ -12182,8 +12203,8 @@ textarea.form-control-lg {
 }
 .profile-row .profile-box .btn-select-language {
   font-weight: 500;
-  font-size: 0.9rem;
-  padding: 3px 12px;
+  font-size: 0.85rem;
+  padding: 2px 8px;
 }
 .profile-row .profile-box .all-maturity-ratings {
   font-size: 0.9rem;
@@ -12213,8 +12234,8 @@ textarea.form-control-lg {
 }
 .profile-row .profile-box .square-btn {
   font-size: 1.1rem;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .profile-row .profile-box .square-btn.emphasis {
   color: #141414;
@@ -12264,7 +12285,7 @@ textarea.form-control-lg {
 
 .hr-spacer-2 {
   border-top: 2px solid #ced4da;
-  margin: 10px 0;
+  margin: 8px 0;
 }
 
 .content {
@@ -12276,6 +12297,9 @@ textarea.form-control-lg {
   text-decoration: none;
   font-weight: 600;
 }
+.content a:hover {
+  text-decoration: underline;
+}
 .content .title {
   color: #adb5bd;
   font-weight: 600;
@@ -12284,17 +12308,24 @@ textarea.form-control-lg {
 .content .fs-sm, .content #footer .square-link, #footer .content .square-link {
   font-size: 0.8rem;
 }
-@media screen and (min-width: 768px) {
-  .content .margin-fix {
-    margin-left: -50px;
-  }
-}
 .content .text-gray {
   color: #adb5bd;
   font-weight: 500;
 }
+.content .btn-cancel-membership {
+  background-color: #dee2e6;
+  color: #000;
+  font-size: 0.69rem;
+  padding: 8px 25px;
+  border: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.content .btn-cancel-membership:hover {
+  color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(222, 226, 230, 0.75);
+}
 .content .logo-paypal {
-  margin-top: -5px;
   width: 50px;
   height: auto;
 }
@@ -12302,15 +12333,24 @@ textarea.form-control-lg {
   border: 2px solid #000;
   border-radius: 2px;
   letter-spacing: 1.2px;
+  line-height: 1;
+  padding: 1px;
 }
 .content .avatar {
-  width: 30px;
+  width: 120px;
 }
-.content .lh-0 {
-  line-height: 1.2;
+@media screen and (min-width: 768px) {
+  .content .avatar {
+    width: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .content .lh-0 {
+    line-height: 0.8;
+  }
 }
 @media screen and (min-width: 768px) {
   .content .margin-fix {
-    margin-left: -25px;
+    margin-left: -50px;
   }
 }

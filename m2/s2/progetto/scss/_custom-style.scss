@@ -1,0 +1,359 @@
+.netflix-container {
+    @media screen and (min-width: map-get($grid-breakpoints, xs)) {
+        @include make-container(20px);
+    }
+
+    @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+        @include make-container(90px);
+    }
+}
+
+.w-brand {
+    width: 100px;
+
+    .netflix-logo {
+        @extend .img-fluid;
+    }
+}
+
+.link-white {
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+.icon {
+    font-size: 1rem;
+}
+
+.fs-7 {
+    font-size: .75rem;
+}
+
+.avatar-profile-image {
+    width: 30px;
+}
+
+.spacer {
+    display: inline-block;
+    width: 32px;
+}
+
+.btn-select {
+    padding: 5px;
+    background-color: transparent;
+    font-weight: bold;
+    border: 1px solid $white;
+    color: $white;
+    height: fit-content;
+    font-size: .9rem;
+}
+
+.switch-view-btn {
+    border: 1px solid $dark-contrast-text-color;
+    background-color: transparent;
+    height: 28px;
+    width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+
+    i {
+        color: $dark-contrast-text-color;
+    }
+
+    &:hover {
+        border-color: $white;
+
+        i {
+            color: $white;
+        }
+    }
+}
+
+#btn-1 {
+    font-size: 1rem;
+}
+
+#btn-2 {
+    margin-left: -1px;
+    font-size: .7rem;
+}
+
+.media-item {
+    display: block;
+    transition: transform .3s;
+
+    &:hover {
+        transform: scaleY(1.03);
+    }
+}
+
+#footer {
+    margin-top: 125px;
+    color: $dark-contrast-text-color;
+    display: flex;
+    justify-content: center;
+
+    a {
+        color: $dark-contrast-text-color;
+        text-decoration: none;
+        transition: color .3s;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    .footer-content {
+        flex-basis: 66%;
+    }
+
+    .square-link {
+        @extend .fs-sm;
+        transition: border-color .3s;
+        &:hover {
+            border-color: $white;
+        }
+        text-decoration: none;
+        color: $dark-contrast-text-color;
+        padding: 5px;
+        border: 1px solid $dark-contrast-text-color;
+    }
+}
+
+.profile-row {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+
+    .profile-box {
+        @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+            padding-left: 10%;
+        }
+
+        width: 660px;
+
+        .hr-spacer {
+            border-top: 1px solid $dark-contrast-spacer;
+        }
+
+        .edit-profile {
+            font-size: 3.2rem;
+            font-weight: 400;
+        }
+
+        .avatar-xs {
+            width: 150px;
+            height: auto;
+
+            @media screen and (min-width: map-get($grid-breakpoints, md)) {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .strive-student {
+            background-color: $gray-700;
+            color: white;
+            font-size: 1.2rem;
+            padding: 4px 12px;
+            width: 150px;
+
+            @media screen and (min-width: map-get($grid-breakpoints, md)) {
+                width: 100%;
+            }
+        }
+
+        .title {
+            color: #adb5bb;
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .btn-select-language {
+            @extend .btn-select;
+            font-weight: 500;
+            font-size: .85rem;
+            padding: 2px 8px;
+        }
+
+        .all-maturity-ratings {
+            @extend .strive-student;
+            font-size: .9rem;
+            width: fit-content;
+            background-color: $gray-800;
+            font-weight: bold;
+        }
+
+        .fs-sm {
+            font-size: .9rem;
+        }
+
+        .fs-xs {
+            font-size: .75rem;
+        }
+
+        .square-btn-sm {
+            background-color: transparent;
+            color: $dark-contrast-text-color;
+            border: 1px solid $dark-contrast-text-color;
+            padding: 4px 20px;
+            font-size: .8rem;
+            letter-spacing: 1.7px;
+            cursor: pointer;
+            transition: all .3s;
+
+            &:hover {
+                color: rgba($white, .65);
+                border-color: rgba($white, .65);
+            }
+
+        }
+
+        .square-btn {
+            @extend .square-btn-sm;
+            font-size: 1.1rem;
+            padding-left: 30px;
+            padding-right: 30px;
+
+            &.emphasis {
+                color: $dark;
+                background-color: $white;
+            }
+        }
+
+        .square-checkbox {
+            input {
+                display: none;
+                width: 0;
+                height: 0;
+            }
+
+            display: block;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 18px;
+            user-select: none;
+
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 27px;
+                width: 27px;
+                border: 1px solid $dark-contrast-spacer;
+                color: $dark-contrast-text-color;
+                background-color: transparent;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                transition: all .3s;
+
+                &:hover {
+                    border-color: rgba($white, .65);
+                    color: rgba($white, .60);
+                }
+            }
+        }
+    }
+}
+
+.wrapper {
+    background-color: $white;
+    width: 100%;
+    min-height: calc(100vh - 52px);
+    display: flex;
+    justify-content: center;
+}
+
+.hr-spacer-2 {
+    border-top: 2px solid $gray-400;
+    margin: 8px 0;
+}
+
+
+.content {
+    width: 768px;
+    margin: 20px;
+
+    a {
+        color: $cyan-500;
+        text-decoration: none;
+        font-weight: 600;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .title {
+        color: $gray-500;
+        font-weight: 600;
+        font-size: .9rem;
+    }
+
+    .fs-sm {
+        font-size: .8rem;
+    }
+
+    .text-gray {
+        color: $gray-500;
+        font-weight: 500;
+    }
+
+    .btn-cancel-membership {
+        background-color: $gray-300;
+        color: $black;
+        font-size: .69rem;
+        padding: 8px 25px;
+        border: none;
+        font-weight: bold;
+        transition: all .3s;
+        &:hover {
+            color: rgba($black, .9);
+            background-color: rgba($gray-300, .75);
+        }
+    }
+
+    .logo-paypal {
+        width: 50px;
+        height: auto;
+    }
+
+    .ultra-hd {
+        border: 2px solid $black;
+        border-radius: 2px;
+        letter-spacing: 1.2px;
+        line-height: 1;
+        padding: 1px;
+    }
+
+    .avatar {
+        @media screen and (min-width: map-get($grid-breakpoints, md)) {
+            width: 30px;
+        }
+
+        width: 120px;
+    }
+
+    .lh-0 {
+        @media screen and (min-width: map-get($grid-breakpoints, md)) {
+            line-height: 0.8;
+        }
+    }
+
+
+    .margin-fix {
+        @media screen and (min-width: map-get($grid-breakpoints, md)) {
+
+            margin-left: -50px;
+        }
+    }
+}
