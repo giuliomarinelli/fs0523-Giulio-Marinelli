@@ -12032,7 +12032,7 @@ textarea.form-control-lg {
 }
 @media screen and (min-width: 0) {
   .netflix-container {
-    --bs-gutter-x: 10px;
+    --bs-gutter-x: 20px;
     --bs-gutter-y: 0;
     width: 100%;
     padding-right: calc(var(--bs-gutter-x) * 0.5);
@@ -12057,7 +12057,7 @@ textarea.form-control-lg {
   width: 100px;
 }
 .link-white a {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -12071,12 +12071,12 @@ textarea.form-control-lg {
 }
 
 .avatar-profile-image {
-  width: 35px;
+  width: 30px;
 }
 
 .spacer {
   display: inline-block;
-  width: 30px;
+  width: 32px;
 }
 
 .btn-select, .profile-row .profile-box .btn-select-language {
@@ -12111,12 +12111,20 @@ textarea.form-control-lg {
 }
 
 #btn-1 {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 #btn-2 {
   margin-left: -1px;
-  font-size: 0.575rem;
+  font-size: 0.7rem;
+}
+
+.media-item {
+  display: block;
+  transition: transform 0.3s;
+}
+.media-item:hover {
+  transform: scaleY(1.03);
 }
 
 #footer {
@@ -12128,15 +12136,13 @@ textarea.form-control-lg {
 #footer a {
   color: rgba(255, 255, 255, 0.55);
   text-decoration: none;
+  transition: color 0.3s;
 }
 #footer a:hover {
-  text-decoration: underline;
+  color: #fff;
 }
 #footer .footer-content {
-  flex-basis: 55%;
-}
-#footer .fs-sm, #footer .square-link {
-  font-size: 0.7rem;
+  flex-basis: 66%;
 }
 #footer .square-link {
   display: blocl;
@@ -12246,4 +12252,65 @@ textarea.form-control-lg {
 .profile-row .profile-box .square-checkbox .checkmark:hover {
   border-color: rgba(255, 255, 255, 0.65);
   color: rgba(255, 255, 255, 0.6);
+}
+
+.wrapper {
+  background-color: #fff;
+  width: 100%;
+  min-height: calc(100vh - 52px);
+  display: flex;
+  justify-content: center;
+}
+
+.hr-spacer-2 {
+  border-top: 2px solid #ced4da;
+  margin: 10px 0;
+}
+
+.content {
+  width: 768px;
+  margin: 20px;
+}
+.content a {
+  color: #0dcaf0;
+  text-decoration: none;
+  font-weight: 600;
+}
+.content .title {
+  color: #adb5bd;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.content .fs-sm, .content #footer .square-link, #footer .content .square-link {
+  font-size: 0.8rem;
+}
+@media screen and (min-width: 768px) {
+  .content .margin-fix {
+    margin-left: -50px;
+  }
+}
+.content .text-gray {
+  color: #adb5bd;
+  font-weight: 500;
+}
+.content .logo-paypal {
+  margin-top: -5px;
+  width: 50px;
+  height: auto;
+}
+.content .ultra-hd {
+  border: 2px solid #000;
+  border-radius: 2px;
+  letter-spacing: 1.2px;
+}
+.content .avatar {
+  width: 30px;
+}
+.content .lh-0 {
+  line-height: 1.2;
+}
+@media screen and (min-width: 768px) {
+  .content .margin-fix {
+    margin-left: -25px;
+  }
 }

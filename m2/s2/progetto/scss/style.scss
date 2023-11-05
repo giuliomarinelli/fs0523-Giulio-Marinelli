@@ -7,7 +7,7 @@ $dark-contrast-spacer: rgba($gray-600, .4);
 
 .netflix-container {
     @media screen and (min-width: map-get($grid-breakpoints, xs)) {
-        @include make-container(10px);
+        @include make-container(20px);
     }
 
     @media screen and (min-width: map-get($grid-breakpoints, lg)) {
@@ -25,7 +25,7 @@ $dark-contrast-spacer: rgba($gray-600, .4);
 
 .link-white {
     a {
-        color: white;
+        color: $white;
         text-decoration: none;
     }
 }
@@ -40,12 +40,12 @@ $dark-contrast-spacer: rgba($gray-600, .4);
 }
 
 .avatar-profile-image {
-    width: 35px;
+    width: 30px;
 }
 
 .spacer {
     display: inline-block;
-    width: 30px;
+    width: 32px;
 }
 
 .btn-select {
@@ -83,12 +83,21 @@ $dark-contrast-spacer: rgba($gray-600, .4);
 }
 
 #btn-1 {
-    font-size: .8rem;
+    font-size: 1rem;
 }
 
 #btn-2 {
     margin-left: -1px;
-    font-size: .575rem;
+    font-size: .7rem;
+}
+
+.media-item {
+    display: block;
+    transition: transform .3s;
+
+    &:hover {
+        transform: scaleY(1.03);
+    }
 }
 
 #footer {
@@ -100,18 +109,15 @@ $dark-contrast-spacer: rgba($gray-600, .4);
     a {
         color: $dark-contrast-text-color;
         text-decoration: none;
+        transition: color .3s;
 
         &:hover {
-            text-decoration: underline;
+            color: $white;
         }
     }
 
     .footer-content {
-        flex-basis: 55%;
-    }
-
-    .fs-sm {
-        font-size: .7rem;
+        flex-basis: 66%;
     }
 
     .square-link {
@@ -244,5 +250,77 @@ $dark-contrast-spacer: rgba($gray-600, .4);
                 }
             }
         }
+    }
+}
+
+.wrapper {
+    background-color: $white;
+    width: 100%;
+    min-height: calc(100vh - 52px);
+    display: flex;
+    justify-content: center;
+}
+
+.hr-spacer-2 {
+    border-top: 2px solid $gray-400;
+    margin: 10px 0;
+}
+
+.content {
+    width: 768px;
+    margin: 20px;
+    a {
+        color: $cyan-500;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .title {
+        color: $gray-500;
+        font-weight: 600;
+        font-size: .9rem;
+    }
+
+    .fs-sm {
+        font-size: .8rem;
+    }
+
+    .margin-fix {
+        @media screen and (min-width: map-get($grid-breakpoints, md)) {
+
+            margin-left: -50px;
+        } 
+    }
+
+    .text-gray {
+        color: $gray-500;
+        font-weight: 500;
+    }
+
+    .logo-paypal {
+        margin-top: -5px;
+        width: 50px;
+        height: auto;
+    }
+
+    .ultra-hd {
+        border: 2px solid $black;
+        border-radius: 2px;
+        letter-spacing: 1.2px;
+    }
+
+    .avatar {
+        width: 30px;
+    }
+
+    .lh-0 {
+        line-height: 1.2;
+    }
+
+    .margin-fix {
+        @media screen and (min-width: map-get($grid-breakpoints, md)) {
+
+            margin-left: -25px;
+        } 
     }
 }
