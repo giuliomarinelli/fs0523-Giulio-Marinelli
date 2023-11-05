@@ -12237,6 +12237,26 @@ textarea.form-control-lg {
   padding-left: 30px;
   padding-right: 30px;
 }
+@media screen and (max-width: 576px) {
+  .profile-row .profile-box .square-btn {
+    margin: 0 40px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .profile-row .profile-box .square-btn {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 443px) {
+  .profile-row .profile-box .square-btn {
+    margin: 0 80px;
+  }
+}
+@media screen and (min-width: 576px) {
+  .profile-row .profile-box .square-btn {
+    margin: 0;
+  }
+}
 .profile-row .profile-box .square-btn.emphasis {
   color: #141414;
   background-color: #fff;

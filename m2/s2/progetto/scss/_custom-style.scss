@@ -219,7 +219,18 @@
             font-size: 1.1rem;
             padding-left: 30px;
             padding-right: 30px;
-
+            @media screen and (max-width: map-get($grid-breakpoints, sm)) {
+                margin: 0 40px;
+            }
+            @media screen and (max-width: 375px) {
+                margin: 0;
+            }
+            @media screen and (min-width: 443px) {
+                margin: 0 80px;
+            }
+            @media screen and (min-width: map-get($grid-breakpoints, sm)) {
+                margin: 0;
+            }
             &.emphasis {
                 color: $dark;
                 background-color: $white;
