@@ -60,7 +60,6 @@ class App {
     }
     init() {
         const app = document.getElementById(this.id);
-        console.log(this.id)
         const form = document.createElement('form');
         form.id = this.form;
         this.formFieldsIds.forEach((el, ind) => {
