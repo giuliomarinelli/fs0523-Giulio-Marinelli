@@ -2,7 +2,7 @@ const form = document.getElementById('form');
 const showValue = () => {
     if (localStorage.getItem('utente')) document.getElementById('value').innerText = localStorage.getItem('utente');
 }
-window.addEventListener('load', showValue);
+document.addEventListener('DOMContentLoaded', showValue);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     localStorage.setItem('utente', document.getElementById('nome').value);
