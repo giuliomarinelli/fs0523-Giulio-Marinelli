@@ -1,0 +1,28 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+.card-basis {
+
+    flex-basis: calc(100% - 20px);
+    
+    @media screen and (min-width: map-get($grid-breakpoints, sm)) {
+        flex-basis: calc(50% - 40px);
+    }
+
+    @media screen and (min-width: map-get($grid-breakpoints, md)) {
+        flex-basis: calc(100% / 3 - 60px);
+    }
+
+    @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+        flex-basis: calc(100% / 4 - 20px);
+    }
+
+    transition: all .3s;
+}
