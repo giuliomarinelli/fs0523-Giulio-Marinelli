@@ -9,22 +9,30 @@ document.addEventListener('DOMContentLoaded', async () => {
         clone.querySelector('.card-img-top').src = el.imageUrl;
         clone.querySelector('.price').innerText = el.price;
         clone.querySelector('.modify-btn').href = `./modify.html?id=${el._id}`;
+        clone.querySelector('.del-btn').setAttribute('data-id', el._id);
+
         document.getElementById('content').append(clone);
     })
     console.log(document.querySelectorAll('.del-btn'))
     document.querySelectorAll('.del-btn').forEach(el => el.addEventListener('click', async () => {
         console.log('click');
         Swal.fire({
-            title: "Are you sure?",
-            text: "But you will still be able to retrieve this file.",
-            type: "warning",
+            title: "Sei sicuro di voler eliminare l'articolo?",
+            text: "Confermando, l'articolo selezionato verrà eliminato permanentemente.",
             showCancelButton: true,
             confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Yes, archive it!",
-            cancelButtonText: "No, cancel please!",
-            closeOnConfirm: false,
-            closeOnCancel: false
-        })
+            confirmButtonText: "Sì, procecdi con l'eliminazione!",
+            cancelButtonText: "Annulla",
+        }).then(async (res) => {
+                if (res.value) {
+                    console.log(await App.AJAX())
+                } else if (res.dismiss == 'cancel') {
+                    console.log('cancel');
+                }
+                else if (res.dismiss == 'esc') {
+                    console.log('cancle-esc**strong text**');
+                }
+            });
     }))
     let enable = false;
     const enableLink = document.getElementById('enable');
