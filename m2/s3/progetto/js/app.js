@@ -7,7 +7,7 @@ class App {
             headers: {
                 'Authorization': this.authToken
             }
-        };
+        }
         switch (method) {
             case 'GET':
                 url = this.endpoint;
@@ -32,6 +32,11 @@ class App {
         const res = await fetch(url, options);
         return await res.json();
     }
-   
-}
+    static async clarAllData() {
+        const productsArray = await this.AJAX();
+        productsArray.forEach(async (el) => {
+            await this.AJAX('DELETE', null, el._id);
+        })
+    }
 
+}

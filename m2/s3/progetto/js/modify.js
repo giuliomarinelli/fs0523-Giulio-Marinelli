@@ -29,6 +29,7 @@ document.getElementById('form').addEventListener('submit', async (e) => {
         imageUrl: document.getElementById('imageUrl').value,
         price: document.getElementById('price').value
     }
+    e.target.reset()
     if (!params.size) {
         await App.AJAX('POST', item);
     } else if (IdParam) {
