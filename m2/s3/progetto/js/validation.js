@@ -1,5 +1,5 @@
 class Validation {
-
+    static validation = false;
     static changeClass(item, newClass) {
         if (item.classList.contains('is-valid')) item.classList.remove('is-valid');
         if (item.classList.contains('is-invalid')) item.classList.remove('is-invalid');
@@ -14,7 +14,7 @@ class Validation {
         if (item.value === '') {
             this.changeClass(item, 'is-invalid');
             this.setInvalidMessage(item, 'Campo vuoto!');
-            return false;
+            return;
         }
 
         switch (itemId) {
@@ -23,7 +23,7 @@ class Validation {
                     console.log(item.value)
                     this.changeClass(item, 'is-invalid');
                     this.setInvalidMessage(item, 'Devi selezionare una casa costruttrice!');
-                    return false;
+                    return;
                 }
                 break;
             case 'imageUrl': //ATTENZIONE: è fondamentale Live Server o trovarsi comunque in un server
@@ -32,22 +32,45 @@ class Validation {
                 if (res.status === 404) {
                     this.changeClass(item, 'is-invalid');
                     this.setInvalidMessage(item, 'L\'URL punta ad un\'immagine che non esiste!');
-                    return false;
-                } 
-                if (item.value.slice(-3) === 'png' || item.value.slice(-4) === 'apng' || item.value.slice(-4) === 'avif' || 
-                item.value.slice(-3) === 'jpg' || item.value.slice(-4) === 'jpeg' || item.value.slice(-4) === 'jfif' || 
-                item.value.slice(-5) === 'pjpeg' || item.value.slice(-3) === 'pjp' ||) 
-                this.changeClass(item, 'is-valid');
+                    return;
+                }
+                let str;
+                if (item.value.includes('?')) {
+                    const ind = item.value.indexOf('?');
+                    str = item.value.slice(0, ind);
+                } else {
+                    str = item.value;
+                }
+                if (!(str.slice(-3) === 'png' || str.slice(-4) === 'apng' || str.slice(-4) === 'avif' ||
+                    str.slice(-3) === 'jpg' || str.slice(-4) === 'jpeg' || str.slice(-4) === 'jfif' ||
+                    str.slice(-5) === 'pjpeg' || str.slice(-3) === 'pjp' || str.slice(-3) === 'svg' ||
+                    str.slice(-4) === 'webp')) return false;
                 break;
             case 'price':
-                if (!item.value.match(/([0-9]*[\.]{0,1}[0-9]{0,2})/)) {
+                const regex = new RegExp((/^\d+$/g));
+                if (!regex.test(item.value)) {
+
                     console.log('prezzo errato')
                     this.changeClass(item, 'is-invalid');
                     this.setInvalidMessage(item, 'Il formato con cui è scritto il prezzo non è corretto!');
+                    return;
                 }
+                break;
+
         }
 
+
         this.changeClass(item, 'is-valid');
-        return true;
+        
+    }
+    static validateAll(...ids) {
+        const arrValues = [];
+        ids.forEach(id => {
+            this.validate(id)
+            const item = document.getElementById(id);
+            (item.classList.contains('is-valid') && !item.classList.contains('is-invalis')) ? arrValues.push(true) : arrValues.push(false)
+        })
+        console.log(arrValues)
+        if (arrValues.every(val => val === true)) this.validation = true;
     }
 }
