@@ -33,42 +33,79 @@
         <div class="w-768">
             <h1 class="h1 mt-3 mb-1 text-center" id="h1">Aggiungi una nuova moto</h1>
             <hr class="hr mt-2">
-            <form id="form">
+            <form id="form" class="needs-validation" novalidate>
                 <div class="mb-3">
                     <label for="name" class="form-label">Nome del modello:</label>
                     <input type="text" class="form-control" id="name" placeholder="es. Kawasaki Ninja ZX-4RR">
+                    <div class="valid-feedback">
+                        Campo compilato correttamente.
+                    </div>
+                    <div class="invalid-feedback">
+
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">In sintesi:</label>
-                    <textarea class="form-control" id="description" rows="3" placeholder="Descrivi sinteticamente il tuo prodotto..."></textarea>
+                    <textarea class="form-control" id="description" rows="3"
+                        placeholder="Descrivi sinteticamente il tuo prodotto..."></textarea>
+                    <div class="valid-feedback">
+                        Campo compilato correttamente.
+                    </div>
+                    <div class="invalid-feedback">
+
+                    </div>
                 </div>
-                <label for="brand" class="form-label">Casa produttrice:</label>
-                <select class="form-select mb-3" id="brand" aria-label="Default select example">
-                    <option selected>(seleziona la casa produttrice...)</option>
-                    <option value="Kawasaki">Kawasaki</option>
-                    <option value="Aprilia">Aprilia</option>
-                    <option value="KTM">KTM</option>
-                    <option value="Yamaha">Yamaha</option>
-                    <option value="BMW">BMW</option>
-                </select>
+                <div class="mb-3">
+                    <label for="brand" class="form-label">Casa produttrice:</label>
+                    <select class="form-select" id="brand" aria-label="Default select example">
+                        <option selected value="0">(seleziona la casa produttrice...)</option>
+                        <option value="Kawasaki">Kawasaki</option>
+                        <option value="Aprilia">Aprilia</option>
+                        <option value="KTM">KTM</option>
+                        <option value="Yamaha">Yamaha</option>
+                        <option value="BMW">BMW</option>
+                    </select>
+                    <div class="valid-feedback">
+                        Campo selezionato correttamente.
+                    </div>
+                    <div class="invalid-feedback">
+
+                    </div>
+                </div>
                 <div class="mb-3">
                     <label for="imageUrl" class="form-label">Indirizzo della foto: </label>
                     <input type="text" class="form-control" id="imageUrl" placeholder="es. Kawasaki Ninja ZX-4RR">
+                    <div class="valid-feedback">
+                        Immagine trovata! URL corretto.
+                    </div>
+                    <div class="invalid-feedback">
+
+                    </div>
                 </div>
-                <div class="mb-3 w-200">
+                <div class="mb-3 w-300">
                     <label for="price" class="form-label">Prezzo: </label>
                     <div class="d-flex gap-2 align-items-center">
                         <input type="text" class="form-control d-inline-block" id="price" placeholder="es. 7040.00">
                         <span class="fs-5">€</span>
+                        <div class="valid-feedback">
+                            Il prezzo è scritto correttamente.
+                        </div>
+                        <div class="invalid-feedback">
+
+                        </div>
                     </div>
                 </div>
                 <button class="btn btn-primary" type="submit" id="submit">Carica nuovo prodotto</button>
-                <button class="btn btn-danger d-none" type="button" id="delBtn">Elimina</button>
+                <button class="btn btn-danger" type="button" id="delBtn">Elimina</button>
+                <button class="btn btn-secondary ms-3" type="reset">Reset</button>
             </form>
+            <hr class="hr">
+            <button id="come-back" class="btn btn-info">Torna indietro</button>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/validation.js"></script>
     <script src="./js/modify.js"></script>
 </body>
 
