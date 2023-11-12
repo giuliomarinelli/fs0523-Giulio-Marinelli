@@ -43,4 +43,18 @@ class App {
         })
     }
 
+    static tooManyRequests() {
+        Swal.fire({
+            title: "Errore HTTP 429. Troppe richieste inviate al server",
+            text: `Le tue richieste al server sono state temporaneamente bloccate per evitare sovraccarichi.
+            Se puoi, attendi qualche tempo e riprova. 
+            Soltanto se hai urgenza e non navighi utilizzando un indirizzo IP statico, puoi risolvere così, ma per favore non abusare di questo metodo:
+            Spegni il tuo router, conta fino a 5 e poi riaccendilo. Riconnettiti ad internet. Verrà generato un nuovo indirizzo IP diverso dal precedente e l'accesso sarà nuovamente consentito.
+            Per ulteriori problemi, contatta la nostra assistenza al numero che ti abbiamo fornito.`,
+            showCancelButton: false,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Sì, procecdi con l'eliminazione!"
+        })
+    }
+
 }

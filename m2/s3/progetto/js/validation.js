@@ -38,11 +38,12 @@ class Validation {
                                 effettivamente esista, permettendo anche il caricamento in real time dell'anteprima e
                                 la sua scomparsa quando l'url viene modificato con uno che risulta non valido.
                                 */
-                const res = await fetch(item.value).catch(err => console.log(err));
+                const res = await fetch(item.value);
                 if (res.status !== 200) {
                     this.changeClass(item, 'is-invalid');
                     this.setInvalidMessage(item, `L'URL punta ad un'immagine che non esiste o è inaccessibile! Errore HTTP ${res.status}.`);
                     this.removeh21(item);
+                    if (res.status === 429) App.tooManyRequests();
                     return;
                 }
                 let str;

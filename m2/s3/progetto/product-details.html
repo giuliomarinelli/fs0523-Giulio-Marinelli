@@ -12,59 +12,54 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
+    <div id="body-wrapper">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
+            <div class="container-md">
+                <a class="navbar-brand" href="./index.html">GM MOTO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">Homepage</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./back-office.html">Back-office</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./modify.html">Aggiungi una nuova moto</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="nav-link active fw-bold">Back-office</i></a>
+                        <a href="#" id="enable" title="Abilita la modifica e l'eliminazione"><i
+                                class="bi bi-pencil-fill text-primary"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
         <div class="container-md">
-            <a class="navbar-brand" href="./index.html">GM MOTO</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./index.html">Homepage</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./back-office.html">Back-office</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./modify.html">Aggiungi una nuova moto</a>
-                    </li>
-                </ul>
-                <div class="d-flex gap-3">
-                    <a href="#" class="nav-link active fw-bold">Back-office</i></a>
-                    <a href="#" id="enable" title="Abilita la modifica e l'eliminazione"><i
-                            class="bi bi-pencil-fill text-primary"></i></a>
+            <div id="wrapper">
+                <h1 id="h1" class="h1 mb-1 text-center"></h1>
+                <hr class="hr mt-0">
+                <div class="text-center">
+                    <img id="product-image" class="rounded" src="">
                 </div>
+                <h4 class="h4">In breve</h4>
+                <p id="description"></p>
+                <p><strong>Casa costruttrice: </strong><span id="brand"></span></p>
+                <p><strong>Prezzo: </strong><span id="price"></span>€</p>
+                <button id="come-back" class="btn btn-info my-3">Torna indietro</button>
             </div>
         </div>
-    </nav>
-    <template>
-        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-3">
-            <div class="card h-100">
-                <img src="" class="card-img-top h-img">
-                <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p><strong>Prezzo: </strong><span class="price"></span>€</p>
-                    <a href="#" class="show-details btn btn-primary">Scopri di più...</a>
-                </div>
-            </div>
-        </div>
-    </template>
-    <div class="container-md">
-        <div id="wrapper">
-            <h1 id="h1" class="h1 mb-1 mt-3 text-center"></h1>
-            <hr class="hr mt-0">
-            <div class="text-center">
-                <img id="product-image" class="rounded" src="">
-            </div>
-            <h4 class="h4">In breve</h4>
-            <p id="description"></p>
-            <p><strong>Casa costruttrice: </strong><span id="brand"></span></p>
-            <p><strong>Prezzo: </strong><span id="price"></span>€</p>
-            <button id="come-back" class="btn btn-info my-3">Torna indietro</button>
-        </div>
+    </div>
+    <div id="obscure-viewport">
+        <span id="loader" class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </span>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/app.js"></script>

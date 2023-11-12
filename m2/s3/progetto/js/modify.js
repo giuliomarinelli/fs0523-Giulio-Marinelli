@@ -1,7 +1,8 @@
 const params = new URLSearchParams(location.search);
 const idParam = params.get('id');
-console.log(idParam)
 document.addEventListener('DOMContentLoaded', async () => {
+    const obscureViewport = document.getElementById('obscure-viewport');
+    const loader = document.getElementById('loader');
     const previewImg = document.getElementById('preview-img');
     const showPreviewImg = () => {
         if (imageUrl.classList.contains('is-valid')) {
@@ -28,8 +29,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (params.size) {
         document.getElementById('delBtn').classList.remove('d-none');
         const productsArray = await App.AJAX();
+        if (App.lastHTTPRes.status === 429) App.tooManyRequests();
         [product] = productsArray.filter(el => el._id === idParam);
         if (idParam === null) {
+            loader.classList.add('fade-out-animation');
             Swal.fire({
                 title: "Errore! Id prodotto mancante.",
                 text: `Non posso farti modificare il prodotto in quanto il suo codice identificativo non è correttamente specificato come parametro nell'url della pagina`,
@@ -43,6 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             })
         }
         else if (idParam.length === 0) {
+            loader.classList.add('fade-out-animation');
             Swal.fire({
                 title: "Errore! Id prodotto privo di informazioni.",
                 text: `Non posso farti modificare il prodotto in quanto il suo codice identificativo, specificato nell'url della pagina, non contiene informazioni.`,
@@ -55,6 +59,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             })
         } else if (!product) {
+            loader.classList.add('fade-out-animation');
             Swal.fire({
                 title: "Errore! Id prodotto non riconosciuto.",
                 text: `L'id "${idParam}" specificato nell'url della pagina si riferisce ad un prodotto che non è presente in banca dati, oppure non è formattato nel modo corretto e quindi non punta al prodotto desiderato. Impossibile modificare.`,
@@ -82,6 +87,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         Validation.validateAll('name', 'description', 'brand', 'imageUrl', 'price');
         setTimeout(() => showPreviewImg(), 50);
     }
+    loader.classList.add('fade-out-animation');
+    obscureViewport.classList.add('fade-out-animation');
+    setTimeout(() => {
+        obscureViewport.remove()
+        loader.remove()
+    }
+        , 400)
 
     name.addEventListener('keyup', () => Validation.validate('name'));
     name.addEventListener('blur', () => Validation.validate('name'));
@@ -115,6 +127,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
             if (!params.size) {
                 await App.AJAX('POST', item);
+                if (App.lastHTTPRes.status === 429) App.tooManyRequests();
                 if (App.lastHTTPRes.status === 200) {
                     Swal.fire({
                         title: "Prodotto aggiunto correttamente",
@@ -130,6 +143,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             } else if (idParam) {
                 await App.AJAX('PUT', item, product._id);
+                if (App.lastHTTPRes.status === 429) App.tooManyRequests();
                 if (App.lastHTTPRes.status === 200) {
                     Swal.fire({
                         title: "Prodotto modificato e salvato correttamente",
@@ -168,6 +182,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }).then(async (res) => {
                 if (res.value) {
                     await App.AJAX('DELETE', null, idParam);
+                    if (App.lastHTTPRes.status === 429) App.tooManyRequests();
                     if (App.lastHTTPRes.status === 200) {
                         Swal.fire({
                             title: "Prodotto eliminato",

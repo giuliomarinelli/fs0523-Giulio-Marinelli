@@ -2,6 +2,7 @@ const template = document.getElementsByTagName('template')[0];
 document.addEventListener('DOMContentLoaded', async () => {
 
     const productsArray = await App.AJAX();
+    if (App.lastHTTPRes.status === 429) App.tooManyRequests();
     productsArray.forEach(el => {
         const clone = template.content.firstElementChild.cloneNode(true);
         console.log(clone);

@@ -2,6 +2,7 @@
 const template = document.getElementsByTagName('template')[0];
 document.addEventListener('DOMContentLoaded', async () => {
     const productsArray = await App.AJAX();
+    if (App.lastHTTPRes.status === 429) App.tooManyRequests();
     productsArray.forEach((el, ind) => { 
         const clone = template.content.firstElementChild.cloneNode(true);
         clone.querySelector('.progressive-number').innerText = ind + 1;
@@ -25,19 +26,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         }).then(async (res) => {
                 if (res.value) {
                     await App.AJAX('DELETE', null, id);
+                    if (App.lastHTTPRes.status === 429) App.tooManyRequests();
                     const row = el.closest('tr');
                     row.classList.add('fade-out-animation');
                     setTimeout(
                         () => row.remove(),
                         500
                     )
-                    console.log(row);
-
-                } else if (res.dismiss == 'cancel') {
-                    console.log('cancel');
-                }
-                else if (res.dismiss == 'esc') {
-                    console.log('cancle-esc**strong text**');
                 }
             })
     }))
