@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     const previewImg = document.getElementById('preview-img');
     const showPreviewImg = () => {
         if (imageUrl.classList.contains('is-valid')) {
-            previewImg.classList.add('fade-in-animation');
+            if (previewImg.classList.contains('fade-out-animation'))
+                previewImg.classList.remove('fade-out-animation')
             setTimeout(() => {
-                if (previewImg.classList.contains('fade-out-animation'))
-                    previewImg.classList.remove('fade-out-animation')
                 previewImg.classList.remove('d-none');
-            }, 100)
+                previewImg.classList.add('fade-in-animation');
+            }, 150)
             previewImg.src = imageUrl.value;
         } else if (imageUrl.classList.contains('is-invalid')) {
             if (previewImg.classList.contains('fade-in-animation'))
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         imageUrl.value = product.imageUrl;
         price.value = product.price;
         Validation.validateAll('name', 'description', 'brand', 'imageUrl', 'price');
-        await showPreviewImg();
+        setTimeout(() => showPreviewImg(), 50);
     }
     loader.classList.add('fade-out-animation');
     obscureViewport.classList.add('fade-out-animation');
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     brand.addEventListener('change', () => Validation.validate('brand'))
     imageUrl.addEventListener('keyup', () => {
         Validation.validate('imageUrl');
-        setTimeout(() => showPreviewImg(), 60);
+        setTimeout(showPreviewImg, 60);
     })
     imageUrl.addEventListener('blur', () => {
         Validation.validate('imageUrl')
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     price.addEventListener('blur', () => Validation.validate('price'));
 
     document.getElementById('form').addEventListener('submit', async (e) => {
-
+       
         e.preventDefault();
 
         Validation.validateAll('name', 'description', 'brand', 'imageUrl', 'price');
