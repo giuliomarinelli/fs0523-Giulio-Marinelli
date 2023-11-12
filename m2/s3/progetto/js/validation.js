@@ -8,30 +8,41 @@ class Validation {
     static setInvalidMessage(item, message) {
         item.parentElement.querySelector('.invalid-feedback').innerText = message;
     }
-
+    static removeh21(item) {
+        const h21 = item.parentElement.querySelector('.h-21');
+        if (h21) h21.classList.add('d-none');
+    }
     static async validate(itemId) {
         const item = document.getElementById(itemId);
         if (item.value === '') {
             this.changeClass(item, 'is-invalid');
             this.setInvalidMessage(item, 'Campo vuoto!');
+            this.removeh21(item);
             return;
         }
 
         switch (itemId) {
             case 'brand':
                 if (item.value === '0') {
-                    console.log(item.value)
                     this.changeClass(item, 'is-invalid');
                     this.setInvalidMessage(item, 'Devi selezionare una casa costruttrice!');
+                    this.removeh21(item);
                     return;
                 }
                 break;
-            case 'imageUrl': //ATTENZIONE: è fondamentale Live Server o trovarsi comunque in un server
-                const res = await fetch(item.value);
-                console.log(res);
-                if (res.status === 404) {
+            case 'imageUrl': /*ATTENZIONE: è fondamentale usare Live Server o trovarsi comunque in un server. Controlla le estensioni
+                                e si accerta che si tratti di un'immagine.
+                                In alcuni casi il metodo fetch() potrebbe avere problemi di
+                                cors policy. Per il resto, questo approccio di validazione è in grado di verificare che il
+                                percorso (locale o remoto) inserito corrisponda a quello di un'immagine e di verificare che l'immagine
+                                effettivamente esista, permettendo anche il caricamento in real time dell'anteprima e
+                                la sua scomparsa quando l'url viene modificato con uno che risulta non valido.
+                                */
+                const res = await fetch(item.value).catch(err => console.log(err));
+                if (res.status !== 200) {
                     this.changeClass(item, 'is-invalid');
-                    this.setInvalidMessage(item, 'L\'URL punta ad un\'immagine che non esiste!');
+                    this.setInvalidMessage(item, `L'URL punta ad un'immagine che non esiste o è inaccessibile! Errore HTTP ${res.status}.`);
+                    this.removeh21(item);
                     return;
                 }
                 let str;
@@ -41,36 +52,48 @@ class Validation {
                 } else {
                     str = item.value;
                 }
-                if (!(str.slice(-3) === 'png' || str.slice(-4) === 'apng' || str.slice(-4) === 'avif' ||
-                    str.slice(-3) === 'jpg' || str.slice(-4) === 'jpeg' || str.slice(-4) === 'jfif' ||
-                    str.slice(-5) === 'pjpeg' || str.slice(-3) === 'pjp' || str.slice(-3) === 'svg' ||
-                    str.slice(-4) === 'webp')) return false;
+                const supportedFormats = ['png', 'apng', 'avif', 'jpg', 'jpeg', 'jfif', 'pjpeg', 'pjp', 'svg', 'webp'];
+                let correctFormat = false;
+                supportedFormats.forEach(el => {
+                    if (str.endsWith(el) || str.startsWith(`data:image/${el}`)) correctFormat = true;
+                })
+                if (res.status === 200 && !correctFormat) {
+                    this.changeClass(item, 'is-invalid');
+                    this.setInvalidMessage(item, 'La risorsa ha un formato sconosciuto o non supportato! Probabilmente non è un\'immagine.');
+                    return
+                }
                 break;
             case 'price':
                 const regex = new RegExp((/^\d+$/g));
                 if (!regex.test(item.value)) {
-
-                    console.log('prezzo errato')
                     this.changeClass(item, 'is-invalid');
-                    this.setInvalidMessage(item, 'Il formato con cui è scritto il prezzo non è corretto!');
+                    this.setInvalidMessage(item, 'Il prezzo deve essere un numero intero!');
+                    this.removeh21(item);
                     return;
                 }
                 break;
 
         }
-
-
+        this.removeh21(item);
         this.changeClass(item, 'is-valid');
-        
+
     }
     static validateAll(...ids) {
+        this.validation = false;
         const arrValues = [];
         ids.forEach(id => {
             this.validate(id)
             const item = document.getElementById(id);
-            (item.classList.contains('is-valid') && !item.classList.contains('is-invalis')) ? arrValues.push(true) : arrValues.push(false)
+            (item.classList.contains('is-valid') && !item.classList.contains('is-invalid')) ? arrValues.push(true) : arrValues.push(false)
         })
-        console.log(arrValues)
         if (arrValues.every(val => val === true)) this.validation = true;
+    }
+    static resetAll(...ids) {
+        ids.forEach(id => {
+            const item = document.getElementById(id);
+            if (item.classList.contains('is-valid')) item.classList.remove('is-valid');
+            if (item.classList.contains('is-invalid')) item.classList.remove('is-invalid');
+            item.parentElement.querySelector('.h-21').classList.remove('d-none');
+        })
     }
 }

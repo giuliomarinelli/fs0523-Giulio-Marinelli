@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         clone.querySelector('.del-btn').setAttribute('data-id', el._id);
         document.getElementById('content').append(clone);
     })
+    const loader = document.getElementById('loader');
+    loader.classList.add('fade-out-animation');
     document.querySelectorAll('.del-btn').forEach(el => el.addEventListener('click', () => {
         const id = el.getAttribute('data-id');
         Swal.fire({

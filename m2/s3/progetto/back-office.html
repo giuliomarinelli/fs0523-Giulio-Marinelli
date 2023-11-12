@@ -22,11 +22,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Homepage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./back-office.html">Back-office</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./modify.html">Aggiungi una nuova moto</a>
+                    </li>
                 </ul>
-                <div class="d-flex gap-3">
-                    <a href="#" class="nav-link active fw-bold">Back-office</i></a>
-                </div>
             </div>
         </div>
     </nav>
@@ -50,7 +55,14 @@
         </tr>
     </template>
     <div class="container-md">
-        <h1 class="h1 mb-1 mt-3 text-center">Prodotti</h1>
+        <div id="title-row-wrapper">
+            <h1 id="h1" class="h1 mb-1 mt-3 text-center">Prodotti</h1>
+            <div id="loader-container">
+                <span id="loader" class="spinner-border text-info" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </span>
+            </div>
+        </div>
         <hr class="hr mt-0">
         <table class="table table-striped">
             <thead>
@@ -66,7 +78,7 @@
             </tbody>
         </table>
         <div class="text-end">
-            <a href="./modify.html" class="btn btn-primary mt-2">
+            <a href="./modify.html" class="btn btn-primary mt-2 mb-5">
                 <i class="bi bi-plus-circle-fill"></i> Aggiungi una nuova moto
             </a>
         </div>
