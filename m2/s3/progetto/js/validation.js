@@ -37,6 +37,10 @@ class Validation {
                                 percorso (locale o remoto) inserito corrisponda a quello di un'immagine e di verificare che l'immagine
                                 effettivamente esista, permettendo anche il caricamento in real time dell'anteprima e
                                 la sua scomparsa quando l'url viene modificato con uno che risulta non valido.
+                                Il sistema di validazione non è in grado di funzionare in caso di blocco cors-policy, per il
+                                quale necessiterebbe di implementazioni aggiuntive, ma diverse librerie online di immagini
+                                sono compatibili. Bisogna tenerne conto, è un bug che non sono stato in grado di aggiustare.
+                                Negli esempi diverse immagini sono state prese da remoto da Google immagini.
                                 */
                 let res;
                 try {
@@ -63,7 +67,7 @@ class Validation {
                 supportedFormats.forEach(el => {
                     if (str.endsWith(el) || str.startsWith(`data:image/${el}`)) correctFormat = true;
                 })
-                
+
                 if (res.status === 200 && !correctFormat) {
                     this.changeClass(item, 'is-invalid');
                     this.setInvalidMessage(item, 'La risorsa ha un formato sconosciuto o non supportato! Probabilmente non è un\'immagine.');
@@ -83,13 +87,12 @@ class Validation {
         }
         this.removeh21(item);
         this.changeClass(item, 'is-valid');
-
     }
     static validateAll(...ids) {
         this.validation = false;
         const arrValues = [];
         ids.forEach(id => {
-            this.validate(id)
+            this.validate(id);
             const item = document.getElementById(id);
             (item.classList.contains('is-valid') && !item.classList.contains('is-invalid')) ? arrValues.push(true) : arrValues.push(false)
         })

@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     productsArray.forEach(el => {
         const clone = template.content.firstElementChild.cloneNode(true);
-        console.log(clone);
         clone.querySelector('.card-title').innerText = el.name;
         clone.querySelector('.price').innerText = el.price;
         clone.querySelector('.card-img-top').src = el.imageUrl;

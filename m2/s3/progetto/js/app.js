@@ -35,13 +35,6 @@ class App {
         const res = await fetch(url, options);
         this.lastHTTPRes = res;
         return await res.json();
-
-    }
-    static async clarAllData() {
-        const productsArray = await this.AJAX();
-        productsArray.forEach(async (el) => {
-            await this.AJAX('DELETE', null, el._id);
-        })
     }
 
     static tooManyRequests() {

@@ -8,8 +8,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (imageUrl.classList.contains('is-valid')) {
             if (previewImg.classList.contains('fade-out-animation'))
                 previewImg.classList.remove('fade-out-animation')
-            previewImg.classList.remove('d-none');
-            previewImg.classList.add('fade-in-animation');
+            setTimeout(() => {
+                previewImg.classList.remove('d-none');
+                previewImg.classList.add('fade-in-animation');
+            }, 100)
             previewImg.src = imageUrl.value;
         } else if (imageUrl.classList.contains('is-invalid')) {
             if (previewImg.classList.contains('fade-in-animation'))
@@ -21,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
     const name = document.getElementById('name');
-    const decription = document.getElementById('description');
+    const description = document.getElementById('description');
     const brand = document.getElementById('brand');
     const imageUrl = document.getElementById('imageUrl');
     const price = document.getElementById('price');
@@ -117,6 +119,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     price.addEventListener('blur', () => Validation.validate('price'));
 
     document.getElementById('form').addEventListener('submit', async (e) => {
+
         e.preventDefault();
 
         Validation.validateAll('name', 'description', 'brand', 'imageUrl', 'price');
@@ -135,7 +138,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 } catch {
                     if (App.lastHTTPRes.status === 429) App.tooManyRequests();
                 } finally {
-                    if (App.lastHTTPRes.status === 200) {
+                    if (App.lastHTTPRes.status === 200) { // nella post restituisce 200 anziché 201
                         Swal.fire({
                             title: "Prodotto aggiunto correttamente",
                             text: `L'articolo "${item.name}" è stato correttamente aggiunto alla banca dati.`,
@@ -181,7 +184,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     })
 
-    document.getElementById('delBtn').addEventListener('click', async () => {
+    delBtn.addEventListener('click', async () => {
         if (params.size) {
 
             Swal.fire({
@@ -230,8 +233,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             }).then((res) => {
                 if (res.value) {
                     resetConfirm = true;
-                    e.target.reset();
                     Validation.resetAll('name', 'description', 'brand', 'imageUrl', 'price');
+                    e.target.reset();
                 }
             })
         } else {
