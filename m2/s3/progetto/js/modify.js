@@ -106,9 +106,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     description.addEventListener('keyup', () => Validation.validate('description'));
     description.addEventListener('blur', () => Validation.validate('description'));
     brand.addEventListener('change', () => Validation.validate('brand'))
-    imageUrl.addEventListener('keyup', () => {
+    imageUrl.addEventListener('keyup', () => { // La comparsa dell'immagine di anteprima durante la digitazione può non
+                                                // avvenire in tempo reale se si digita velocemente, ma avviene comunque al blur e al submit
         Validation.validate('imageUrl');
-        setTimeout(showPreviewImg, 60);
+        setTimeout(showPreviewImg, 40);
     })
     imageUrl.addEventListener('blur', () => {
         Validation.validate('imageUrl')
