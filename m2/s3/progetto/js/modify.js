@@ -240,6 +240,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             })
         } else {
             resetConfirm = false;
+            previewImg.classList.add('fade-out-animation')
         }
     })
     document.getElementById('come-back').addEventListener('click', () => history.back())
