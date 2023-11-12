@@ -37,7 +37,7 @@ class Validation {
                                 percorso (locale o remoto) inserito corrisponda a quello di un'immagine e di verificare che l'immagine
                                 effettivamente esista, permettendo anche il caricamento in real time dell'anteprima e
                                 la sua scomparsa quando l'url viene modificato con uno che risulta non valido.
-                                Il sistema di validazione non è in grado di funzionare in caso di blocco cors-policy, per il
+                                Il sistema di validazione non è in grado di funzionare a dovere in caso di blocco cors-policy, per il
                                 quale necessiterebbe di implementazioni aggiuntive, ma diverse librerie online di immagini
                                 sono compatibili. Bisogna tenerne conto, è un bug che non sono stato in grado di aggiustare.
                                 Negli esempi diverse immagini sono state prese da remoto da Google immagini.
@@ -46,6 +46,12 @@ class Validation {
                 try {
                     res = await fetch(item.value);
                 } catch {
+                    if (!res) {
+                        this.changeClass(item, 'is-invalid');
+                        this.setInvalidMessage(item, 'Non c\'è stata risposta da parte del server che ospita l\'immagine, o questa è stata bloccata perché la nostra piattaforma si trova in un dominio diverso! Immagine inaccessibile. Prova a cercare un\'immagine da un altro provider.')
+                        this.removeh21(item);
+                        return;
+                    }
                     if (res.status === 429) App.tooManyRequests();
                 }
 
