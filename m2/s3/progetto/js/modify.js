@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const submit = document.getElementById('submit');
         submit.classList.remove('btn-primary');
         submit.classList.add('btn-warning', 'me-2');
-        submit.innerText = 'Salva le modifiche';
+        submit.innerHTML = '<i class="bi bi-box-arrow-down me-2"></i>Salva le modifiche';
         const delBtn = document.getElementById('delBtn');
         delBtn.classList.remove('d-none');
         name.value = product.name;
