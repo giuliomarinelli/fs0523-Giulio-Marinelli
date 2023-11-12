@@ -193,20 +193,24 @@ document.addEventListener('DOMContentLoaded', async () => {
                 cancelButtonText: "Annulla",
             }).then(async (res) => {
                 if (res.value) {
-                    await App.AJAX('DELETE', null, idParam);
-                    if (App.lastHTTPRes.status === 429) App.tooManyRequests();
-                    if (App.lastHTTPRes.status === 200) {
-                        Swal.fire({
-                            title: "Prodotto eliminato",
-                            text: "L'articolo è stato eliminato correttamente dalla banca dati",
-                            showCancelButton: false,
-                            confirmButtonColor: "#DD6B55",
-                            confirmButtonText: "Ok"
-                        }).then((res) => {
-                            if (res.value) {
-                                window.location.href = './back-office.html';
-                            }
-                        })
+                    try {
+                        await App.AJAX('DELETE', null, idParam);
+                    } catch {
+                        if (App.lastHTTPRes.status === 429) App.tooManyRequests();
+                    } finally {
+                        if (App.lastHTTPRes.status === 200) {
+                            Swal.fire({
+                                title: "Prodotto eliminato",
+                                text: `L'articolo "${product.name}" è stato eliminato correttamente dalla banca dati`,
+                                showCancelButton: false,
+                                confirmButtonColor: "#DD6B55",
+                                confirmButtonText: "Ok"
+                            }).then((res) => {
+                                if (res.value) {
+                                    window.location.href = './back-office.html';
+                                }
+                            })
+                        }
                     }
                 }
             })

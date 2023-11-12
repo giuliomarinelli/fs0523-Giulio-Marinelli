@@ -44,11 +44,11 @@ class Validation {
                 } catch {
                     if (res.status === 429) App.tooManyRequests();
                 }
+
                 if (res.status !== 200) {
                     this.changeClass(item, 'is-invalid');
                     this.setInvalidMessage(item, `L'URL punta ad un'immagine che non esiste o è inaccessibile! Errore HTTP ${res.status}.`);
                     this.removeh21(item);
-
                     return;
                 }
                 let str;
@@ -63,6 +63,7 @@ class Validation {
                 supportedFormats.forEach(el => {
                     if (str.endsWith(el) || str.startsWith(`data:image/${el}`)) correctFormat = true;
                 })
+                
                 if (res.status === 200 && !correctFormat) {
                     this.changeClass(item, 'is-invalid');
                     this.setInvalidMessage(item, 'La risorsa ha un formato sconosciuto o non supportato! Probabilmente non è un\'immagine.');

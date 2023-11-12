@@ -31,11 +31,11 @@ class App {
                 url = `${this.endpoint}/${id}`;
                 break;
         }
-        
+
         const res = await fetch(url, options);
         this.lastHTTPRes = res;
         return await res.json();
-        
+
     }
     static async clarAllData() {
         const productsArray = await this.AJAX();
@@ -45,6 +45,10 @@ class App {
     }
 
     static tooManyRequests() {
+        const loader = document.getElementById('loader');
+        const obscureViewport = document.getElementById('obscure-viewport');
+        if (loader) loader.classList.add('fade-out-animation');
+        if (obscureViewport.classList.contains('d-none')) obscureViewport.classList.remove('d-none');
         Swal.fire({
             title: "Errore HTTP 429. Troppe richieste inviate al server",
             text: `Le tue richieste al server sono state temporaneamente bloccate per evitare sovraccarichi.

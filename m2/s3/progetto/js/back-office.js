@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         productsArray = await App.AJAX();
     } catch {
-    if (App.lastHTTPRes.status === 429) App.tooManyRequests();
-}
+        if (App.lastHTTPRes.status === 429) App.tooManyRequests();
+    }
     productsArray.forEach((el, ind) => {
         const clone = template.content.firstElementChild.cloneNode(true);
         clone.querySelector('.progressive-number').innerText = ind + 1;
@@ -29,14 +29,18 @@ document.addEventListener('DOMContentLoaded', async () => {
             cancelButtonText: "Annulla",
         }).then(async (res) => {
             if (res.value) {
-                await App.AJAX('DELETE', null, id);
-                if (App.lastHTTPRes.status === 429) App.tooManyRequests();
-                const row = el.closest('tr');
-                row.classList.add('fade-out-animation');
-                setTimeout(
-                    () => row.remove(),
-                    500
-                )
+                try {
+                    await App.AJAX('DELETE', null, id);
+                } catch {
+                    if (App.lastHTTPRes.status === 429) App.tooManyRequests();
+                } finally {
+                    const row = el.closest('tr');
+                    row.classList.add('fade-out-animation');
+                    setTimeout(
+                        () => row.remove(),
+                        500
+                    )
+                }
             }
         })
     }))
