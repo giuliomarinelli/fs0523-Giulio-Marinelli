@@ -26,10 +26,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     const imageUrl = document.getElementById('imageUrl');
     const price = document.getElementById('price');
     let product;
+    let productsArray;
     if (params.size) {
         document.getElementById('delBtn').classList.remove('d-none');
-        const productsArray = await App.AJAX();
-        if (App.lastHTTPRes.status === 429) App.tooManyRequests();
+        try {
+            productsArray = await App.AJAX();
+        } catch {
+            if (App.lastHTTPRes.status === 429) App.tooManyRequests();
+        }
         [product] = productsArray.filter(el => el._id === idParam);
         if (idParam === null) {
             loader.classList.add('fade-out-animation');
@@ -126,36 +130,44 @@ document.addEventListener('DOMContentLoaded', async () => {
                 price: price.value
             }
             if (!params.size) {
-                await App.AJAX('POST', item);
-                if (App.lastHTTPRes.status === 429) App.tooManyRequests();
-                if (App.lastHTTPRes.status === 200) {
-                    Swal.fire({
-                        title: "Prodotto aggiunto correttamente",
-                        text: `L'articolo "${item.name}" è stato correttamente aggiunto alla banca dati.`,
-                        showCancelButton: false,
-                        confirmButtonColor: "#DD6B55",
-                        confirmButtonText: "Ok"
-                    }).then((res) => {
-                        if (res.value) {
-                            window.location.href = './back-office.html';
-                        }
-                    })
+                try {
+                    await App.AJAX('POST', item);
+                } catch {
+                    if (App.lastHTTPRes.status === 429) App.tooManyRequests();
+                } finally {
+                    if (App.lastHTTPRes.status === 200) {
+                        Swal.fire({
+                            title: "Prodotto aggiunto correttamente",
+                            text: `L'articolo "${item.name}" è stato correttamente aggiunto alla banca dati.`,
+                            showCancelButton: false,
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "Ok"
+                        }).then((res) => {
+                            if (res.value) {
+                                window.location.href = './back-office.html';
+                            }
+                        })
+                    }
                 }
             } else if (idParam) {
-                await App.AJAX('PUT', item, product._id);
-                if (App.lastHTTPRes.status === 429) App.tooManyRequests();
-                if (App.lastHTTPRes.status === 200) {
-                    Swal.fire({
-                        title: "Prodotto modificato e salvato correttamente",
-                        text: `Le modifiche messe in atto sull'articolo "${item.name}" sono state correttamente salvate nella banca dati.`,
-                        showCancelButton: false,
-                        confirmButtonColor: "#DD6B55",
-                        confirmButtonText: "Ok"
-                    }).then((res) => {
-                        if (res.value) {
-                            window.location.href = './back-office.html';
-                        }
-                    })
+                try {
+                    await App.AJAX('PUT', item, product._id);
+                } catch {
+                    if (App.lastHTTPRes.status === 429) App.tooManyRequests();
+                } finally {
+                    if (App.lastHTTPRes.status === 200) {
+                        Swal.fire({
+                            title: "Prodotto modificato e salvato correttamente",
+                            text: `Le modifiche messe in atto sull'articolo "${item.name}" sono state correttamente salvate nella banca dati.`,
+                            showCancelButton: false,
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "Ok"
+                        }).then((res) => {
+                            if (res.value) {
+                                window.location.href = './back-office.html';
+                            }
+                        })
+                    }
                 }
             }
         } else {

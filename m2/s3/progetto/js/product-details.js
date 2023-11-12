@@ -3,8 +3,12 @@ const idParam = params.get('id');
 document.addEventListener('DOMContentLoaded', async () => {
     const obscureViewport = document.getElementById('obscure-viewport');
     const loader = document.getElementById('loader');
-    const productsArray = await App.AJAX();
+    let productsArray;
+    try {
+        productsArray = await App.AJAX();
+    } catch {
     if (App.lastHTTPRes.status === 429) App.tooManyRequests();
+    }
     const [product] = productsArray.filter(el => el._id === idParam);
     if (idParam === null) {
         loader.classList.add('fade-out-animation');

@@ -1,9 +1,13 @@
 
 const template = document.getElementsByTagName('template')[0];
 document.addEventListener('DOMContentLoaded', async () => {
-    const productsArray = await App.AJAX();
+    let productsArray;
+    try {
+        productsArray = await App.AJAX();
+    } catch {
     if (App.lastHTTPRes.status === 429) App.tooManyRequests();
-    productsArray.forEach((el, ind) => { 
+}
+    productsArray.forEach((el, ind) => {
         const clone = template.content.firstElementChild.cloneNode(true);
         clone.querySelector('.progressive-number').innerText = ind + 1;
         clone.querySelector('.name').innerText = el.name;
@@ -24,17 +28,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             confirmButtonText: "Sì, procecdi con l'eliminazione!",
             cancelButtonText: "Annulla",
         }).then(async (res) => {
-                if (res.value) {
-                    await App.AJAX('DELETE', null, id);
-                    if (App.lastHTTPRes.status === 429) App.tooManyRequests();
-                    const row = el.closest('tr');
-                    row.classList.add('fade-out-animation');
-                    setTimeout(
-                        () => row.remove(),
-                        500
-                    )
-                }
-            })
+            if (res.value) {
+                await App.AJAX('DELETE', null, id);
+                if (App.lastHTTPRes.status === 429) App.tooManyRequests();
+                const row = el.closest('tr');
+                row.classList.add('fade-out-animation');
+                setTimeout(
+                    () => row.remove(),
+                    500
+                )
+            }
+        })
     }))
     document.querySelectorAll('.enable').forEach(el => {
         el.addEventListener('click', (e) => {
@@ -47,9 +51,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 500
             )
         })
-   
+
     })
-    
+
     document.querySelectorAll('.disable').forEach(el => {
         el.addEventListener('click', (e) => {
             e.preventDefault();
@@ -64,10 +68,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 },
                 500
             )
-            
-            
+
+
         })
     })
-    
-    
+
+
 })
