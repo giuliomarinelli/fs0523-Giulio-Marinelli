@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const previewImg = document.getElementById('preview-img');
     const showPreviewImg = () => {
         if (imageUrl.classList.contains('is-valid')) {
-            if (previewImg.classList.contains('fade-out-animation'))
-                previewImg.classList.remove('fade-out-animation')
+            previewImg.classList.add('fade-in-animation');
             setTimeout(() => {
+                if (previewImg.classList.contains('fade-out-animation'))
+                    previewImg.classList.remove('fade-out-animation')
                 previewImg.classList.remove('d-none');
-                previewImg.classList.add('fade-in-animation');
             }, 100)
             previewImg.src = imageUrl.value;
         } else if (imageUrl.classList.contains('is-invalid')) {
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         imageUrl.value = product.imageUrl;
         price.value = product.price;
         Validation.validateAll('name', 'description', 'brand', 'imageUrl', 'price');
-        setTimeout(() => showPreviewImg(), 50);
+        await showPreviewImg();
     }
     loader.classList.add('fade-out-animation');
     obscureViewport.classList.add('fade-out-animation');
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     brand.addEventListener('change', () => Validation.validate('brand'))
     imageUrl.addEventListener('keyup', () => {
         Validation.validate('imageUrl');
-        setTimeout(() => showPreviewImg(), 50);
+        setTimeout(() => showPreviewImg(), 60);
     })
     imageUrl.addEventListener('blur', () => {
         Validation.validate('imageUrl')
