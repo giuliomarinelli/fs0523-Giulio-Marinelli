@@ -15,17 +15,20 @@ class CalcolaTasse extends Tasse {
         this.tasseIRPEF = this.imponibile * this.aliquotaIRPEF * 0.01;
     }
     get getUtileTasse() {
-        return this.tasseINPS + this.tasseIRPEF;
+        return (this.tasseINPS + this.tasseIRPEF).toFixed(2);
     }
     get getTasseINPS() {
-        return this.tasseINPS;
+        return this.tasseINPS.toFixed(2);
     }
     get getTasseIRPEF() {
-        return this.tasseIRPEF;
+        return (this.tasseIRPEF).toFixed(2);
     }
     get getRedditoAnnuoNetto() {
-        return this.redditoAnnuoLordo - this.getUtileTasse;
+        return (this.redditoAnnuoLordo - (Number(this.getUtileTasse))).toFixed(2);
+    }
+    get getRedditoAnnuoLordo() {
+        return this.redditoAnnuoLordo.toFixed(2);
     }
 }
-const prova = new CalcolaTasse(78, 26000);
-console.log(prova, prova.getTasseINPS, prova.getTasseIRPEF, prova.getUtileTasse, prova.getRedditoAnnuoNetto);
+const prova = new CalcolaTasse(75, 27500);
+console.log(prova, `\nReddito annuo lordo: ${prova.getRedditoAnnuoLordo}\n\n`, `Tasse INPS: ${prova.getTasseINPS}\n\n`, `Tasse IRPEF: ${prova.getTasseIRPEF}\n\n`, `Totale imposte: ${prova.getUtileTasse}\n\n`, `Reddito annuo netto: ${prova.getRedditoAnnuoNetto}\n`);

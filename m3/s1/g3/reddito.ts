@@ -5,10 +5,11 @@ abstract class Tasse {
     protected aliquotaIRPEF: number = 27
     protected imponibile!: number
     constructor(protected codeRedd: number, protected redditoAnnuoLordo: number) { }
-    abstract get getUtileTasse(): number
-    abstract get getTasseINPS(): number
-    abstract get getTasseIRPEF(): number
-    abstract get getRedditoAnnuoNetto(): number
+    abstract get getUtileTasse(): string
+    abstract get getTasseINPS(): string
+    abstract get getTasseIRPEF(): string
+    abstract get getRedditoAnnuoNetto(): string
+    abstract get getRedditoAnnuoLordo(): string
 }
 
 class CalcolaTasse extends Tasse {
@@ -18,21 +19,24 @@ class CalcolaTasse extends Tasse {
         this.tasseINPS = this.imponibile * this.aliquotaINPS * 0.01
         this.tasseIRPEF = this.imponibile * this.aliquotaIRPEF * 0.01
     }
-    get getUtileTasse(): number {
-        return this.tasseINPS + this.tasseIRPEF
+    get getUtileTasse(): string {
+        return (this.tasseINPS + this.tasseIRPEF).toFixed(2)
     }
-    get getTasseINPS(): number {
-        return this.tasseINPS
+    get getTasseINPS(): string {
+        return this.tasseINPS.toFixed(2)
     }
-    get getTasseIRPEF(): number {
-        return this.tasseIRPEF
+    get getTasseIRPEF(): string {
+        return (this.tasseIRPEF).toFixed(2)
     }
-    get getRedditoAnnuoNetto(): number {
-        return this.redditoAnnuoLordo - this.getUtileTasse
+    get getRedditoAnnuoNetto(): string {
+        return (this.redditoAnnuoLordo - (Number(this.getUtileTasse))).toFixed(2)
     }
-
+    get getRedditoAnnuoLordo(): string {
+        return this.redditoAnnuoLordo.toFixed(2)
+    }
 }
 
-const prova = new CalcolaTasse(78, 26000)
-console.log(prova, prova.getTasseINPS, prova.getTasseIRPEF, prova.getUtileTasse, prova.getRedditoAnnuoNetto)
+const prova = new CalcolaTasse(75, 27500)
+console.log(prova, `\nReddito annuo lordo: ${prova.getRedditoAnnuoLordo}\n\n`,`Tasse INPS: ${prova.getTasseINPS}\n\n`, `Tasse IRPEF: ${prova.getTasseIRPEF}\n\n`,
+`Totale imposte: ${prova.getUtileTasse}\n\n`, `Reddito annuo netto: ${prova.getRedditoAnnuoNetto}\n`)
 
