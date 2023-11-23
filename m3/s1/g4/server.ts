@@ -13,7 +13,7 @@ const options = {
 
 app.use(cors({
   origin: '*'
-}));
+}))
 app.get('/', (req: any, res: any) => {
   res.status(200).send('<h1>Hello World</h1>')
 })
