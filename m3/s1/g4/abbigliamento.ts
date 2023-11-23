@@ -75,7 +75,7 @@ const capiDiAbbigliamento = async (): Promise<undefined> => {
     objects.forEach((el: CapoDiAbbigliamento, ind: number) => {
         console.log(`------------OGGETTO N° ${ind + 1}\n\nProprietà:\n\n`,
         el,
-        `Prezzo totale:\n\n ${el.getacquistocapo}\n\nPrezzo in saldo: ${el.getsaldocapo}`)
+        `Prezzo totale:\n\n ${el.getacquistocapo}\n\nPrezzo in saldo:\n\n ${el.getsaldocapo}`)
     })
 
 }

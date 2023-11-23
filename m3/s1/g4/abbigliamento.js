@@ -71,7 +71,7 @@ const capiDiAbbigliamento = () => __awaiter(void 0, void 0, void 0, function* ()
     yield CapoDiAbbigliamento.getData();
     const objects = CapoDiAbbigliamento.setDataAndCreateAllObjects();
     objects.forEach((el, ind) => {
-        console.log(`------------OGGETTO N° ${ind + 1}\n\nProprietà:\n\n`, el, `Prezzo totale:\n\n ${el.getacquistocapo}\n\nPrezzo in saldo: ${el.getsaldocapo}`);
+        console.log(`------------OGGETTO N° ${ind + 1}\n\nProprietà:\n\n`, el, `Prezzo totale:\n\n ${el.getacquistocapo}\n\nPrezzo in saldo:\n\n ${el.getsaldocapo}`);
     });
 });
 capiDiAbbigliamento();
