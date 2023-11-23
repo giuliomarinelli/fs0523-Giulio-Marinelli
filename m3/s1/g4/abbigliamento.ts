@@ -69,10 +69,6 @@ class CapoDiAbbigliamento {
     }
 }
 
-
-
-
-
 const capiDiAbbigliamento = async (): Promise<undefined> => {
     await CapoDiAbbigliamento.getData()
     const objects: CapoDiAbbigliamento[] = CapoDiAbbigliamento.setDataAndCreateAllObjects()
