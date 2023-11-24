@@ -92,11 +92,10 @@ class Smartphone implements Sim {
         return Math.floor(Math.random() * (max - min + 1)) + min
     }
 
-    public generaRegistroChiamateFittizio(): void {
+    public generaRegistroChiamateFittizio(n: number): void {
         this.registroChiamate = []
         this.azzeraChiamate()
-        for (let i = 0; i < 100; i++) {
-            this.numeroChiamate++
+        for (let i: number = 0; i < n; i++) {
             const date: Date = new Date()
             date.setFullYear(2023)
             date.setMonth(10)
@@ -112,6 +111,13 @@ class Smartphone implements Sim {
                 secondi: secondi
             })
         }
+    }
+    public mostraRegistroChiamate():string {
+        let registro: string = ''
+        this.registroChiamate.forEach((el: Chiamata) => {
+            
+        })
+        return registro
     }
 }
 
@@ -150,5 +156,5 @@ setTimeout(() => {
 }, 60000)
 console.log('Galaxy Wonder Numero Chiamate:', galaxyW.getNumeroChiamate())
 console.log('Galaxy Wonder Credito Residuo:', galaxyW.numero404())
-galaxyW.generaRegistroChiamateFittizio()
+galaxyW.generaRegistroChiamateFittizio(500)
 console.log(galaxyW)

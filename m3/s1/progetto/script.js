@@ -71,11 +71,10 @@ class Smartphone {
     generateRandomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    generaRegistroChiamateFittizio() {
+    generaRegistroChiamateFittizio(n) {
         this.registroChiamate = [];
         this.azzeraChiamate();
-        for (let i = 0; i < 100; i++) {
-            this.numeroChiamate++;
+        for (let i = 0; i < n; i++) {
             const date = new Date();
             date.setFullYear(2023);
             date.setMonth(10);
@@ -91,6 +90,12 @@ class Smartphone {
                 secondi: secondi
             });
         }
+    }
+    mostraRegistroChiamate() {
+        let registro = '';
+        this.registroChiamate.forEach((el) => {
+        });
+        return registro;
     }
 }
 const iPhone5 = new Smartphone(10);
@@ -128,6 +133,6 @@ setTimeout(() => {
 }, 60000);
 console.log('Galaxy Wonder Numero Chiamate:', galaxyW.getNumeroChiamate());
 console.log('Galaxy Wonder Credito Residuo:', galaxyW.numero404());
-galaxyW.generaRegistroChiamateFittizio();
+galaxyW.generaRegistroChiamateFittizio(500);
 console.log(galaxyW);
 //# sourceMappingURL=script.js.map
