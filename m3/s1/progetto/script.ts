@@ -18,9 +18,9 @@ type Chiamata = {
 }
 
 class Smartphone implements Sim {
-    public costoMinuto:number = 0.20
-    public numeroChiamate:number = 0
-    public carica:number = 0
+    public costoMinuto: number = 0.20
+    public numeroChiamate: number = 0
+    public carica: number = 0
     // una SIM può essere venduta con credito 0 oppure con un credito di base già presente
     constructor(caricaBase?: number) {
         if (caricaBase) this.carica = caricaBase
