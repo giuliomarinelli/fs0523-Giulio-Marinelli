@@ -68,6 +68,7 @@ class Smartphone implements Sim {
 
     public azzeraChiamate(): void {
         this.numeroChiamate = 0
+        this.registroChiamate = []
     }
 
     private registroChiamate: Chiamata[] = []
@@ -76,17 +77,17 @@ class Smartphone implements Sim {
         Di base, la gestione del registro chiamate prevede la generazione di una data nell'istante esatto in cui viene
         invocato il metodo chiamata(). Questo può rivelarsi efficace se visto dalla prospettiva di una classe,
         tuttavia il metodo chiamata() viene invocato sempre in un ambiente privo di eventi, mentre dovrebbe essere
-        sempre invocato in risposta ad un determinato evento di cui il programma dovrebbe restare in ascolto.
+        sempre invocato in risposta ad un determinato evento di cui il programma dovrebbe restare in ascolto nel tempo.
         In questo caso il codice viene compilato fondamentalmente nello stesso istante, pertanto effettuare test
         basati sulla realtà richiederebbe di utilizzare un evento fittizio utilizzando ad esempio setTimeout() e/o
         setInterval() nel corso di alcune ore di tempo per far effettuare alla classe chiamate in momenti diversi.
         Inoltre, i dati sono volatili, ogni volta che si ricarica la pagina (nel caso in cui ci sia un file HTML collegato)
-        vengono persi. Una soluzione semplice potrebbe essere quella di lavorare ad eventi e fare lavoro di lettura/scrittura
+        vengono azzerati. Una soluzione semplice potrebbe essere quella di lavorare ad eventi e fare lavoro di lettura/scrittura
         in localStorage, ma sicuramente la soluzione migliore sarebbe quella di avere alle spalle un back-end che
         lavora con un database.
         Fatte queste considerazioni, invento un metodo che se invocato sovrascrive il "naturale" registro chiamate e ne
         crea uno fittizio, con l'unico scopo di poter testare i metodi mostraRegistroChiamate() e
-        filtraChiamatePerDataOra ()
+        filtraChiamatePerDataOra()
     */
 
     private generateRandomNumber(min: number, max: number): number {
@@ -132,7 +133,7 @@ class Smartphone implements Sim {
         })
         return registro
     }
-    //dataStringa => utilizzo il formato GG/MM/AAAA. Ora: number = [0, 23]
+    //dataStringa => utilizzo il formato GG/MM/AAAA. Ora: number. 0 <= ora <= 23
     public filtraRegistroChiamate(dataStringa: string, ora: number): string {
         const dataStringaArr = dataStringa.split('/')
         const dataFiltro: Date = new Date(
@@ -151,20 +152,20 @@ const iPhone5: Smartphone = new Smartphone(10)
 iPhone5.chiamata(1)
 console.log(iPhone5)
 iPhone5.chiamata(10)
-console.log(`iPhone 5. Numero chiamate: ${iPhone5.getNumeroChiamate()}.\nCredito residuo ${iPhone5.numero404()}`)
+console.log(`iPhone 5. Numero chiamate: ${iPhone5.getNumeroChiamate()}.\nCredito residuo: ${iPhone5.numero404()}`)
 iPhone5.ricarica(-10) // non eseguito perché l'importo è un numero negativo
 iPhone5.chiamata(10000) // non eseguito perché il credito è insufficiente
 iPhone5.azzeraChiamate()
 console.log('Iphone 5 => Chiamate azzerate', iPhone5.getNumeroChiamate())
+console.log('iPhone 5 => Registro chiamate completo svuotato', iPhone5.mostraRegistroChiamate())
 const iPhone8 = new Smartphone()
 console.log(`iPhone 8. Credito residuo: ${iPhone8.numero404()}`)
 iPhone8.ricarica(20)
 for (let i = 1; i <= 10; i++) {
     iPhone8.chiamata(i)
 }
-console.log(`iPhone 8. numero chiamate: ${iPhone8.getNumeroChiamate()}\nCredito residuo ${iPhone8.numero404()}`)
+console.log(`iPhone 8. numero chiamate: ${iPhone8.getNumeroChiamate()}\nCredito residuo: ${iPhone8.numero404()}`)
 iPhone8.ricarica(6)
-iPhone8.azzeraChiamate()
 console.log(`iPhone 8. Credito residuo: ${iPhone8.numero404()}\nNumero chiamate: ${iPhone8.getNumeroChiamate()}`)
 const galaxyW = new Smartphone()
 console.log('Galaxy Wonder credito residuo:', galaxyW.numero404())
@@ -186,6 +187,5 @@ galaxyW.generaRegistroChiamateFittizio(230)
 console.log('Galaxy Wonder => Registro chiamate completo (fittizio)\n\n', galaxyW.mostraRegistroChiamate())
 console.log('Galaxy Wonder => Registro chiamate (fittizio) filtrato per data e ora\n\n', galaxyW.filtraRegistroChiamate('11/11/2023', 19))
 console.log('Galaxy Wonder => Registro chiamate (fittizio) filtrato per data e ora\n\n', galaxyW.filtraRegistroChiamate('10/11/2023', 15))
-console.log('iPhone 5 => Registro chiamate completo\n\n', iPhone5.mostraRegistroChiamate())
 console.log('iPhone 8 => Registro chiamate completo\n\n', iPhone8.mostraRegistroChiamate())
 console.log('iPhone 8 => Registro chiamate completo: entro un minuto nuova chiamata\n\n')
