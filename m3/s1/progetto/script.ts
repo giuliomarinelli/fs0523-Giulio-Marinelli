@@ -188,4 +188,4 @@ console.log('Galaxy Wonder => Registro chiamate completo (fittizio)\n\n', galaxy
 console.log('Galaxy Wonder => Registro chiamate (fittizio) filtrato per data e ora\n\n', galaxyW.filtraRegistroChiamate('11/11/2023', 19))
 console.log('Galaxy Wonder => Registro chiamate (fittizio) filtrato per data e ora\n\n', galaxyW.filtraRegistroChiamate('10/11/2023', 15))
 console.log('iPhone 8 => Registro chiamate completo\n\n', iPhone8.mostraRegistroChiamate())
-console.log('iPhone 8 => Registro chiamate completo: entro un minuto nuova chiamata\n\n')
+console.log('iPhone 8 => Registro chiamate completo: entro un minuto nuova chiamata')
