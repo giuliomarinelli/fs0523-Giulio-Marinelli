@@ -100,7 +100,7 @@ class Smartphone implements Sim {
             date.setFullYear(2023)
             date.setMonth(10)
             date.setDate(this.generateRandomNumber(10, 11))
-            date.setHours(this.generateRandomNumber(0, 23), 0, 0)
+            date.setHours(this.generateRandomNumber(0, 23), 0, 0, 0)
             const minuti: number = this.generateRandomNumber(0, 59)
             const secondi: number = this.generateRandomNumber(0, 59)
             this.registroChiamate.push({
@@ -112,13 +112,42 @@ class Smartphone implements Sim {
             })
         }
     }
-    public mostraRegistroChiamate():string {
+    public mostraRegistroChiamate(arrayFiltrato?: Chiamata[]): string {
         let registro: string = ''
-        this.registroChiamate.forEach((el: Chiamata) => {
-            
+        let arr!: Chiamata[]
+        if (arrayFiltrato) {
+            arr = arrayFiltrato
+        } else {
+            arr = this.registroChiamate
+        }
+        arr.forEach((el: Chiamata) => {
+            el.dataOra.setMinutes(el.minuti)
+            el.dataOra.setSeconds(el.secondi)
+            registro += `id chiamata: ${el.id} | Durata: ${el.durata} minuti | `
+            registro += `Data e ora: ${el.dataOra.toLocaleTimeString('it-IT', {
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric',
+            })}.\n\n`
+            el.dataOra.setMinutes(0)
+            el.dataOra.setSeconds(0)
         })
         return registro
     }
+    //dataStringa => utilizzo il formato GG/MM/AAAA. Ora: number = [0, 23]
+    public filtraRegistroChiamate(dataStringa: string, ora: number): string {
+        let registro: string = ''
+        const dataStringaArr = dataStringa.split('/')
+        const dataFiltro: Date = new Date(
+            Number(dataStringaArr[2]),
+            Number(dataStringaArr[1]) - 1,
+            Number(dataStringaArr[0]),
+            ora)
+        const timeStampFiltro: number = dataFiltro.getTime()
+        const registroChiamateFiltrato: Chiamata[] = this.registroChiamate.filter((el: Chiamata) => el.dataOra.getTime() === timeStampFiltro)
+        return this.mostraRegistroChiamate(registroChiamateFiltrato)
+    }
+
 }
 
 const iPhone5: Smartphone = new Smartphone(10)
@@ -156,5 +185,9 @@ setTimeout(() => {
 }, 60000)
 console.log('Galaxy Wonder Numero Chiamate:', galaxyW.getNumeroChiamate())
 console.log('Galaxy Wonder Credito Residuo:', galaxyW.numero404())
-galaxyW.generaRegistroChiamateFittizio(500)
-console.log(galaxyW)
+galaxyW.generaRegistroChiamateFittizio(100)
+console.log('Galaxy Wonder => Registro chiamate completo\n\n', galaxyW.mostraRegistroChiamate())
+console.log('Galaxy Wonder => Registro chiamate filtrato per data e ora\n\n', galaxyW.filtraRegistroChiamate('11/11/2023', 19))
+console.log('Galaxy Wonder => Registro chiamate filtrato per data e ora\n\n', galaxyW.filtraRegistroChiamate('10/11/2023', 15))
+console.log('iPhone 5 => Registro chiamate completo\n\n', iPhone5.mostraRegistroChiamate())
+console.log('iPhone 8 => Registro chiamate completo\n\n', iPhone8.mostraRegistroChiamate())
