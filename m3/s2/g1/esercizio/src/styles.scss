@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/scss/bootstrap';
+.yellow {
+    color: yellow;
+}
+
+.dark-red {
+    color: $red-600;
+}
+
+.red {
+    color: $red-500;
+}
+
+.cyan {
+    color: $cyan-300;
+}

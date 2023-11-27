@@ -1,0 +1,1 @@
+--no-standalone --routing --ssr=false
