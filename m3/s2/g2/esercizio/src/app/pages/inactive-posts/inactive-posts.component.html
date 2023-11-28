@@ -1,0 +1,8 @@
+<div class="card mt-3" *ngFor="let post of getInactivePosts()">
+  <div class="card-header">
+    <h5 class="h5">{{post.title}}</h5>
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{post.body}}</p>
+  </div>
+</div>
