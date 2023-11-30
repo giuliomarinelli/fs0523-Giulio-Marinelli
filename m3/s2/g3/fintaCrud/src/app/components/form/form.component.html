@@ -1,0 +1,7 @@
+<form>
+  <input type="text" name="modello" [(ngModel)]="newMoto.modello" placeholder="Modello..." class="form-control">
+  <input type="number" name="cavalli" [(ngModel)]="newMoto.cavalli" placeholder="Cavalli..." class="form-control">
+  <input type="number" name="prezzo" [(ngModel)]="newMoto.prezzo" placeholder="Prezzo..." class="form-control">
+  <button (click)="create()" class="btn btn-success">Aggiungi nuova moto</button>
+
+</form>

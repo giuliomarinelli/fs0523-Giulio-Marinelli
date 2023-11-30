@@ -1,0 +1,5 @@
+<div class="container-md">
+  <app-form (onAddMoto)="addNew($event)" [newMoto] = "this.selectedMoto"></app-form>
+  <app-tabella [arrMoto] = "arrMoto" (onSelectMoto)="selectMoto($event)" (onDeleteMoto)="delete($event)"></app-tabella>
+  {{arrMoto | json}}
+</div>
