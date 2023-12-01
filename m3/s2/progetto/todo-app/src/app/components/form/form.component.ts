@@ -16,6 +16,5 @@ export class FormComponent {
     this.newTask.completed = false
     this.onAdd.emit(this.newTask)
     this.newTask = {}
-    this.loading = true
   }
 }

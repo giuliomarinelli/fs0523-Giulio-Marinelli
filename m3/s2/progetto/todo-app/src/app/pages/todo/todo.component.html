@@ -1,12 +1,9 @@
-<app-form (onAdd)="add($event)"> </app-form>
+<app-form (onAdd)="add($event)" [loading]="loadingForm"> </app-form>
 <div *ngIf="contentLoaded" class="flex-wrapper">
   <div class="wrapper-2">
     <div *ngFor="let task of todos">
       <app-task
         [task]="task"
-        [loading]="loading"
-        (onDelete)="deleteTask($event)"
-        (onUpdate)="update($event)"
       ></app-task>
     </div>
   </div>
