@@ -40,5 +40,13 @@ export class TodoComponent {
     })
   }
 
+  deleteTask(id: number) {
+      const ind = this.todos.findIndex(el => el.id === id)
+      this.todos.splice(ind, 1)
+  }
 
+  update(task: Todo) {
+    const ind = this.todos.findIndex(el => el.id === task.id)
+      this.todos.splice(ind, 1, task)
+  }
 }

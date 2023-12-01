@@ -1,4 +1,4 @@
-<div class="task">
+<div [ngClass]="['task', active]">
   <div #taskElement class="task-element">
     {{ task.title }}<app-line-loader *ngIf="loading"></app-line-loader>
   </div>

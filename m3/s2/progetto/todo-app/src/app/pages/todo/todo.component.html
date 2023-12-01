@@ -4,6 +4,8 @@
     <div *ngFor="let task of todos">
       <app-task
         [task]="task"
+        (onDelete)="deleteTask($event)"
+        (onUpdate)="update($event)"
       ></app-task>
     </div>
   </div>

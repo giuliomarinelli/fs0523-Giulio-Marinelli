@@ -9,11 +9,15 @@ import { TodosService } from '../../todos.service';
 })
 export class TaskComponent {
   constructor(private todosSvc: TodosService) {}
+  active: string = ''
   editMode: boolean = false
   loading: boolean = false
   @Input() task!: Todo
   @Output() onDelete: EventEmitter<number> = new EventEmitter()
   @Output() onUpdate: EventEmitter<Todo> = new EventEmitter()
+  ngOnInit() {
+    if (this.task.completed) this.active = 'active'
+  }
   deleteTask() {
     this.loading = true
     this.todosSvc.remove(this.task.id).then(res => {
@@ -44,7 +48,11 @@ export class TaskComponent {
   complete() {
     this.loading = true
     this.task.completed = true
-    this.onUpdate.emit(this.task)
+    this.todosSvc.addOrUpdate(this.task, this.task.id).then(res => {
+      this.onUpdate.emit(this.task)
+      this.loading = false
+      this.active = 'active'
+    })
   }
 
 }
