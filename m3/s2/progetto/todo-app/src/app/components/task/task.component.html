@@ -1,0 +1,11 @@
+<div class="task">
+  <div #taskElement class="task-element">
+    {{ task.title }}<app-line-loader *ngIf="loading"></app-line-loader>
+  </div>
+  <div class="buttons">
+    <button class="del-btn" (click)="deleteTask()"><app-delete-icon></app-delete-icon></button>
+    <button class="edit-btn" #editBtn (click)="edit()"><app-edit-icon></app-edit-icon></button>
+    <button class="complete-btn" (click)="complete()"><app-complete-icon></app-complete-icon></button>
+    <button class="save-btn" *ngIf="editMode" (click)="save()"><app-save-icon></app-save-icon></button>
+  </div>
+</div>

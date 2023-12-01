@@ -1,0 +1,13 @@
+.wrapper-2 {
+  width: 50%;
+}
+.flex-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.no-todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 52.4px - 90px);
+}

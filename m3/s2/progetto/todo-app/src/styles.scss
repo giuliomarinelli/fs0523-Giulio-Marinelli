@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'normalize';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+app-root {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+button {
+  height: 30px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/*input[type="text"], button {
+  font-size: 1.2rem;
+  width: 200px;
+}*/
