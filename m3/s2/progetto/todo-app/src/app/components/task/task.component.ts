@@ -8,8 +8,10 @@ import { TodosService } from '../../todos.service';
   styleUrl: './task.component.scss'
 })
 export class TaskComponent {
-  constructor(private todosSvc: TodosService) {}
+  constructor(private todosSvc: TodosService) { }
   active: string = ''
+  editing: string = ''
+  editTextStyle: string = ''
   editMode: boolean = false
   loading: boolean = false
   @Input() task!: Todo
@@ -25,23 +27,39 @@ export class TaskComponent {
       this.loading = false
     })
   }
-  @ViewChild('taskElement') taskElement!: ElementRef;
+  @ViewChild('taskContent') taskContent!: ElementRef;
   @ViewChild('editBtn') editBtn!: ElementRef;
   edit() {
+    this.editing = 'editing'
+    this.editTextStyle = 'edit-text-style'
     this.editMode = true
-    this.taskElement.nativeElement.contentEditable = "true"
+    this.taskContent.nativeElement.contentEditable = "true"
     this.editBtn.nativeElement.disabled = "true"
-
+    this.taskContent.nativeElement.style.outline = "none"
+    this.taskContent.nativeElement.focus()
+    if (typeof window.getSelection != "undefined"
+      && typeof document.createRange != "undefined") {
+      const range: Range = document.createRange();
+      range.selectNodeContents(this.taskContent.nativeElement);
+      range.collapse(false);
+      const sel: Selection | null = window.getSelection();
+      if (sel) {
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    }
   }
   save() {
     this.loading = true
     this.editMode = false
-    this.taskElement.nativeElement.contentEditable = "false"
+    this.taskContent.nativeElement.contentEditable = "false"
     this.editBtn.nativeElement.disabled = "false"
-    this.task.title = this.taskElement.nativeElement.innerText
+    this.task.title = this.taskContent.nativeElement.innerText
     this.todosSvc.addOrUpdate(this.task, this.task.id).then(res => {
       this.onUpdate.emit(this.task)
       this.loading = false
+      this.editing = ''
+      this.editTextStyle = ''
     })
 
   }

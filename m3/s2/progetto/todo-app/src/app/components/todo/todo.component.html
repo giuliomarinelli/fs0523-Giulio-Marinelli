@@ -1,4 +1,4 @@
-<app-form (onAdd)="add($event)" [loading]="loadingForm"> </app-form>
+<app-form *ngIf="!onlyCompleted" (onAdd)="add($event)" [loading]="loadingForm"></app-form>
 <div *ngIf="contentLoaded" class="flex-wrapper">
   <div class="wrapper-2">
     <div *ngFor="let task of todos">
@@ -11,4 +11,6 @@
   </div>
 </div>
 <app-loader *ngIf="!contentLoaded"></app-loader>
-<div *ngIf="!todos.length" class="no-todo"><div>Nessun toDo presente</div></div>
+<div *ngIf="noTodos" class="no-todo">
+  <div>Nessun toDo presente</div>
+</div>

@@ -4,20 +4,21 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodoComponent } from './pages/todo/todo.component';
+import { TodoComponent } from './components/todo/todo.component';
 import { CompletedComponent } from './pages/completed/completed.component';
-import { NavComponent } from './nav/nav.component';
+import { NavComponent } from './components/nav/nav.component';
 import { TaskComponent } from './components/task/task.component';
 import { FormComponent } from './components/form/form.component';
 import { FormsModule } from '@angular/forms';
 import { TodoHomeComponent } from './pages/todo-home/todo-home.component';
-import { AddIconComponent } from './add-icon/add-icon.component';
-import { EditIconComponent } from './edit-icon/edit-icon.component';
-import { DeleteIconComponent } from './delete-icon/delete-icon.component';
-import { CompleteIconComponent } from './complete-icon/complete-icon.component';
-import { SaveIconComponent } from './save-icon/save-icon.component';
-import { LoaderComponent } from './loader/loader.component';
-import { LineLoaderComponent } from './line-loader/line-loader.component';
+import { AddIconComponent } from './components/add-icon/add-icon.component';
+import { EditIconComponent } from './components/edit-icon/edit-icon.component';
+import { DeleteIconComponent } from './components/delete-icon/delete-icon.component';
+import { CompleteIconComponent } from './components/complete-icon/complete-icon.component';
+import { SaveIconComponent } from './components/save-icon/save-icon.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { BtnLoaderComponent } from './components/btn-loader/btn-loader.component';
+import { RedoIconComponent } from './components/redo-icon/redo-icon.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { LineLoaderComponent } from './line-loader/line-loader.component';
     CompleteIconComponent,
     SaveIconComponent,
     LoaderComponent,
-    LineLoaderComponent
+    BtnLoaderComponent,
+    RedoIconComponent
   ],
   imports: [
     BrowserModule,

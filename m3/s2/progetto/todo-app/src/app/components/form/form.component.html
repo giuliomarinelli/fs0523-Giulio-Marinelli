@@ -6,6 +6,9 @@
       name="title"
       placeholder="Inserisci qui la tua task"
     />
-    <button (click)="add()"><app-add-icon></app-add-icon></button><app-line-loader *ngIf="loading"></app-line-loader>
+    <button (click)="add()">
+      <app-add-icon *ngIf="!loading"></app-add-icon>
+      <app-btn-loader *ngIf="loading"></app-btn-loader>
+    </button>
   </form>
 </div>

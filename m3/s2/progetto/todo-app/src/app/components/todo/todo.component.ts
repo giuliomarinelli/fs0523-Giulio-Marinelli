@@ -13,6 +13,7 @@ export class TodoComponent {
   todos!: Todo[]
   loading: boolean = false
   loadingForm: boolean = false
+  noTodos: boolean = false
   @Input() onlyCompleted!: boolean
   ngOnInit() {
     if(!this.onlyCompleted) {
@@ -20,6 +21,7 @@ export class TodoComponent {
       this.todos = todos
       this.todos.reverse()
       this.contentLoaded = true
+      if (!this.todos.length) this.noTodos = true
 
     })
   } else {
@@ -27,6 +29,7 @@ export class TodoComponent {
       this.todos = todos
       this.todos.reverse()
       this.contentLoaded = true
+      if (!this.todos.length) this.noTodos = true
     })
   }
 

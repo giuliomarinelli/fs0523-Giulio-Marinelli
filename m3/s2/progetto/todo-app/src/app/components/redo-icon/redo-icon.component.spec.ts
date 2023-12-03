@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LineLoaderComponent } from './line-loader.component';
+import { RedoIconComponent } from './redo-icon.component';
 
-describe('LineLoaderComponent', () => {
-  let component: LineLoaderComponent;
-  let fixture: ComponentFixture<LineLoaderComponent>;
+describe('RedoIconComponent', () => {
+  let component: RedoIconComponent;
+  let fixture: ComponentFixture<RedoIconComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LineLoaderComponent]
+      declarations: [RedoIconComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(LineLoaderComponent);
+    fixture = TestBed.createComponent(RedoIconComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
