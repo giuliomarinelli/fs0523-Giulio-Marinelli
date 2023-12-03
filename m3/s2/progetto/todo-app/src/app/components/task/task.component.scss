@@ -50,26 +50,73 @@
 
 .del-btn {
   background-color: rgba(172, 31, 31, 0.5);
+  transition: background-color .35s;
+  padding-top: 6px;
+  &:hover {
+    background-color: rgba(172, 31, 31, 0.35);
+  }
 }
 
 .edit-btn {
   background-color: rgba(198, 210, 67, 0.5);
+  transition: background-color .35s;
+  &:hover {
+    background-color: rgba(198, 210, 67, 0.15);
+  }
 }
 
 .save-btn {
   background-color: rgba(31, 127, 172, 0.5);
+  transition: background-color .35s;
+  padding-top: 6px;
+  &:hover {
+    background-color: rgba(31, 127, 172, 0.35);
+  }
 }
 
 .complete-btn {
   background-color: rgba(45, 172, 31, 0.5);
+  transition: background-color .35s;
+  padding-top: 6px;
+  &:hover {
+    background-color: rgba(45, 172, 31, 0.35);
+  }
+}
+
+.redo-btn {
+  background-color: rgba(213, 184, 213, 0.5);
+  transition: background-color .35s;
+  padding-top: 6px;
+  &:hover {
+    background-color: rgba(213, 184, 213, 0.35);
+  }
+}
+
+.cancel-btn {
+  background-color: rgba(205, 152, 162, .5);
+  transition: background-color .35s;
+  padding-top: 6px;
+
+  &:hover {
+    background-color: rgba(205, 152, 162, .35);
+  }
 }
 
 .spacer {
   width: 10px;
 }
 
+button {
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  height: 30px;
+  width: 28px;
+}
+
 button:disabled {
   cursor: not-allowed;
+  background-color: rgb(202, 202, 202);
 }
 
 .loader-container {

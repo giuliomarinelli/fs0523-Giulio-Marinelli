@@ -66,6 +66,7 @@ export class TaskComponent {
     const objCopy: Todo = {...this.task}
     this.loading = true
     this.taskContent.nativeElement.contentEditable = "false"
+    this.saveBtn.nativeElement.disabled = "true"
     objCopy.title = this.taskContent.nativeElement.innerText
     objCopy.edited = true
     this.todosSvc.addOrUpdate(objCopy, objCopy.id).then(res => {
@@ -75,6 +76,7 @@ export class TaskComponent {
       this.editing = ''
       this.editTextStyle = ''
       this.editMode = false
+      this.saveBtn.nativeElement.disabled = "false"
     })
 
   }
