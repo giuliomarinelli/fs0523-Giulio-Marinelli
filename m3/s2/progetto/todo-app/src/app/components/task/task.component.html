@@ -2,23 +2,36 @@
   <div class="task-element">
     <div class="content">
       <div #taskContent [ngClass]="['task-content', editTextStyle]">{{task.title}}</div>
-      <div class="date-info">data e ora eccc</div>
+      <div #dateInfo class="date-info">
+        <span>Aggiunto il {{task.added | date : 'dd/MM/y ore HH:mm:ss'}}</span>
+        <span *ngIf="task.edited">. Modificato</span>
+        <span *ngIf="task.restoredToIncomplete">. Ripristinato da completo a incompleto</span>
+        <span *ngIf="task.completed">. Completato il {{task.completedDate | date : 'dd/MM/y ore HH:mm:ss'}}</span>
+      </div>
     </div>
   </div>
   <div class="buttons">
-    <button class="del-btn" (click)="deleteTask()">
+    <button #delBtn class="del-btn" (click)="deleteTask()" *ngIf="!editMode">
       <app-delete-icon></app-delete-icon>
     </button>
-    <button class="edit-btn" #editBtn (click)="edit()">
+    <button #editBtn class="edit-btn" (click)="edit()" *ngIf="!editMode">
       <app-edit-icon></app-edit-icon>
     </button>
-    <button class="complete-btn" (click)="complete()">
+    <button #cancelBtn class="cancel-btn" (click)="cancel()" *ngIf="editMode">
+      <app-cancel-icon></app-cancel-icon>
+    </button>
+    <div *ngIf="!editMode">
+    <button #completeBtn class="complete-btn" (click)="setComplete()" *ngIf="!task.completed">
       <app-complete-icon></app-complete-icon>
     </button>
-    <button class="save-btn" *ngIf="editMode" (click)="save()">
+    <button #incompleteBtn class="redo-btn" (click)="setIncomplete()" *ngIf="task.completed">
+      <app-redo-icon></app-redo-icon>
+    </button>
+    </div>
+    <button #saveBtn class="save-btn" *ngIf="editMode" (click)="save()">
       <app-save-icon></app-save-icon>
     </button>
-    <div class="spacer" *ngIf="!editMode"></div>
+    <div class="spacer"></div>
     <div class="loader-container">
       <app-loader *ngIf="loading"></app-loader>
     </div>

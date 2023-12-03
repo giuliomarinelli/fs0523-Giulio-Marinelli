@@ -22,23 +22,33 @@ export class TaskComponent {
   }
   deleteTask() {
     this.loading = true
+    this.setInactiveElement(this.delBtn)
     this.todosSvc.remove(this.task.id).then(res => {
       this.onDelete.emit(this.task.id)
       this.loading = false
     })
   }
-  @ViewChild('taskContent') taskContent!: ElementRef;
-  @ViewChild('editBtn') editBtn!: ElementRef;
+  @ViewChild('taskContent') taskContent!: ElementRef
+  @ViewChild('delBtn') delBtn!: ElementRef
+  @ViewChild('editBtn') editBtn!: ElementRef
+  @ViewChild('cancelBtn') cancelBtn!: ElementRef
+  @ViewChild('completeBtn') completeBtn!: ElementRef
+  @ViewChild('incompleteBtn') incompleteBtn!: ElementRef
+  @ViewChild('saveBtn') saveBtn!: ElementRef
+
+  originalTitle!: string
+
   edit() {
+
+    this.originalTitle = this.task.title
     this.editing = 'editing'
     this.editTextStyle = 'edit-text-style'
     this.editMode = true
     this.taskContent.nativeElement.contentEditable = "true"
-    this.editBtn.nativeElement.disabled = "true"
     this.taskContent.nativeElement.style.outline = "none"
     this.taskContent.nativeElement.focus()
-    if (typeof window.getSelection != "undefined"
-      && typeof document.createRange != "undefined") {
+    if (typeof window.getSelection !== "undefined"
+      && typeof document.createRange !== "undefined") {
       const range: Range = document.createRange();
       range.selectNodeContents(this.taskContent.nativeElement);
       range.collapse(false);
@@ -49,28 +59,73 @@ export class TaskComponent {
       }
     }
   }
+
+  @ViewChild('dateInfo') dateInfo!: ElementRef
+
   save() {
+    const objCopy: Todo = {...this.task}
     this.loading = true
-    this.editMode = false
     this.taskContent.nativeElement.contentEditable = "false"
-    this.editBtn.nativeElement.disabled = "false"
-    this.task.title = this.taskContent.nativeElement.innerText
-    this.todosSvc.addOrUpdate(this.task, this.task.id).then(res => {
+    objCopy.title = this.taskContent.nativeElement.innerText
+    objCopy.edited = true
+    this.todosSvc.addOrUpdate(objCopy, objCopy.id).then(res => {
+      this.task = res
       this.onUpdate.emit(this.task)
       this.loading = false
       this.editing = ''
       this.editTextStyle = ''
+      this.editMode = false
     })
 
   }
-  complete() {
+
+  cancel() {
+    this.editMode = false
+    this.taskContent.nativeElement.innerHTML = this.originalTitle
+    this.task.title = this.originalTitle
+    this.editTextStyle = ''
+    this.editing = ''
+  }
+
+  setIncomplete() {
+    const objCopy: Todo = {...this.task}
+    if (!objCopy.restoredToIncomplete) objCopy.restoredToIncomplete = true
     this.loading = true
-    this.task.completed = true
-    this.todosSvc.addOrUpdate(this.task, this.task.id).then(res => {
+    objCopy.completed = false
+    this.setInactiveElement(this.incompleteBtn)
+    this.todosSvc.addOrUpdate(objCopy, objCopy.id).then(res => {
+      this.task = res
+      this.onUpdate.emit(this.task)
+      this.loading = false
+      this.editing = ''
+      this.editTextStyle = ''
+      this.setActiveElement(this.incompleteBtn)
+    })
+  }
+
+  setComplete() {
+    const objCopy: Todo = {...this.task}
+    if (objCopy.restoredToIncomplete) objCopy.restoredToIncomplete = false
+    objCopy.completedDate = new Date()
+    this.loading = true
+    objCopy.completed = true
+    this.setInactiveElement(this.completeBtn)
+    this.todosSvc.addOrUpdate(objCopy, objCopy.id).then(res => {
+      this.task = res
       this.onUpdate.emit(this.task)
       this.loading = false
       this.active = 'active'
+      this.editing = ''
+      this.editTextStyle = ''
+      this.setActiveElement(this.completeBtn)
     })
   }
 
+  setActiveElement(element: ElementRef) {
+    element.nativeElement.disabled = "false"
+  }
+
+  setInactiveElement(element: ElementRef) {
+    element.nativeElement.disabled = "false"
+  }
 }

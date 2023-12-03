@@ -1,4 +1,4 @@
-form {
+.form {
   padding: 35px 0;
   display: flex;
   align-items: center;
@@ -13,7 +13,12 @@ input[type="text"] {
 .wrapper {
   display: flex;
   justify-content: center;
-  background-color: azure;
+  background-color: rgba(44, 44, 147, .3);
   position: relative;
+  box-shadow: 0px 3px 10px -7px black;
 }
 
+.new-task-label {
+  margin-right: 8px;
+  font-size: 1.15rem;
+}

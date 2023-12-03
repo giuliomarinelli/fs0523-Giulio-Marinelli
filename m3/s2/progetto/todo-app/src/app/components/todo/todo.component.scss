@@ -1,6 +1,10 @@
 .wrapper-2 {
   max-width: 900px;
-  width: 96%;
+  width: 100%;
+  padding: 5px 20px;
+  margin: 25px 0;
+  box-shadow: 0px 0px 5px 0px black;
+  border-radius: 15px;
 }
 .flex-wrapper {
   display: flex;
@@ -10,5 +14,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 52.4px - 90px);
+  font-size: 1.3rem;
+}
+
+.initial-height-home {
+  height: calc(100vh - 183.28px - 94.65px - 101.44px);
+}
+
+.initial-height-completed {
+  height: calc(100vh - 183.28px - 94.65px);
+}
+
+.initial-todo-height-home {
+  min-height: calc(100vh - 183.28px - 94.65px - 101.44px - 50px);
+}
+
+.initial-todo-height-completed {
+  min-height: calc(100vh - 183.28px - 94.65px - 50px);
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

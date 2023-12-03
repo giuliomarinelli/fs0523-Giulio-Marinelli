@@ -19,6 +19,9 @@ import { SaveIconComponent } from './components/save-icon/save-icon.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { BtnLoaderComponent } from './components/btn-loader/btn-loader.component';
 import { RedoIconComponent } from './components/redo-icon/redo-icon.component';
+import { CancelIconComponent } from './components/cancel-icon/cancel-icon.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { RedoIconComponent } from './components/redo-icon/redo-icon.component';
     SaveIconComponent,
     LoaderComponent,
     BtnLoaderComponent,
-    RedoIconComponent
+    RedoIconComponent,
+    CancelIconComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
