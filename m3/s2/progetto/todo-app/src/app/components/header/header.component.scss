@@ -5,6 +5,9 @@
 }
 
 .logo {
-  width: 300px;
+  @media screen and (min-width: 355px) {
+    width: 300px;
+  }
+  width: 96%;
   height: auto;
 }

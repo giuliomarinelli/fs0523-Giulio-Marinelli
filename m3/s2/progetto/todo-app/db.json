@@ -1,30 +1,229 @@
 {
   "todos": [
     {
-      "title": "task 1",
+      "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!",
       "completed": false,
-      "added": "2023-12-03T15:15:38.870Z",
-      "completedDate": "2023-12-03T15:32:39.014Z",
+      "edited": true,
+      "added": "2023-12-03T16:33:14.820Z",
+      "completedDate": "2023-12-03T16:45:25.439Z",
       "restoredToIncomplete": true,
-      "id": 1,
-      "edited": true
+      "id": 1
     },
     {
-      "title": "task 3",
-      "completed": false,
-      "added": "2023-12-03T15:15:49.108Z",
-      "completedDate": "2023-12-03T15:25:24.229Z",
-      "restoredToIncomplete": true,
+      "title": "Imparare Angular (diventa divertente quando hai il tempo per giocarci). Diciamo imparare le basi di Angular più che altro perché è un framework davvero complesso anche se una volta compresa la logica di base diventa divertente e puoi fare un sacco di cose. Faccio diventare verde questo task, ma mi raccomando, parliamo soltanto delle basi.",
+      "completed": true,
+      "edited": true,
+      "added": "2023-12-03T16:33:46.854Z",
+      "completedDate": "2023-12-03T18:46:54.266Z",
+      "restoredToIncomplete": false,
+      "id": 2
+    },
+    {
+      "title": "Finire la CRUD, magari mettere una Guida all'uso per far capire all'utente come funziona l'app",
+      "completed": true,
+      "edited": true,
+      "added": "2023-12-03T16:34:15.027Z",
+      "completedDate": "2023-12-03T18:20:56.793Z",
+      "restoredToIncomplete": false,
       "id": 3
     },
     {
-      "title": "task 4",
+      "title": "Portare fuori il cane e dargli da mangiare",
       "completed": false,
-      "added": "2023-12-03T15:15:54.326Z",
-      "completedDate": "2023-12-03T16:11:17.491Z",
+      "edited": true,
+      "added": "2023-12-03T16:34:32.281Z",
+      "completedDate": "1899-12-30T23:00:00.000Z",
+      "restoredToIncomplete": false,
+      "id": 4
+    },
+    {
+      "title": "Preparare la cena o ordinare qualcosa?",
+      "completed": false,
+      "edited": true,
+      "added": "2023-12-03T16:34:57.898Z",
+      "completedDate": "1899-12-30T23:00:00.000Z",
+      "restoredToIncomplete": false,
+      "id": 5
+    },
+    {
+      "title": "Finire questa applicazione",
+      "completed": true,
+      "edited": false,
+      "added": "2023-12-03T17:16:55.969Z",
+      "completedDate": "2023-12-03T19:30:51.049Z",
+      "restoredToIncomplete": false,
+      "id": 6
+    },
+    {
+      "title": "Nuovo todo: pensare a cosa mangiare per cena, non ci ho ancora pensato",
+      "completed": false,
+      "edited": false,
+      "added": "2023-12-03T18:20:27.012Z",
+      "completedDate": "1899-12-30T23:00:00.000Z",
+      "restoredToIncomplete": false,
+      "id": 7
+    },
+    {
+      "title": "Sognare Angular mentre dormo",
+      "completed": true,
+      "edited": false,
+      "added": "2023-12-03T18:32:02.058Z",
+      "completedDate": "2023-12-03T18:33:56.007Z",
+      "restoredToIncomplete": false,
+      "id": 8
+    },
+    {
+      "title": "Comprare una moto",
+      "completed": true,
+      "edited": true,
+      "added": "2023-12-03T18:42:37.849Z",
+      "completedDate": "2023-12-03T18:42:51.623Z",
+      "restoredToIncomplete": false,
+      "id": 9
+    },
+    {
+      "title": "Comprare due moto",
+      "completed": true,
+      "edited": false,
+      "added": "2023-12-03T18:43:00.645Z",
+      "completedDate": "2023-12-03T18:43:04.501Z",
+      "restoredToIncomplete": false,
+      "id": 10
+    },
+    {
+      "title": "Comprare una terza moto",
+      "completed": false,
+      "edited": false,
+      "added": "2023-12-03T18:43:20.246Z",
+      "completedDate": "1899-12-30T23:00:00.000Z",
+      "restoredToIncomplete": false,
+      "id": 11
+    },
+    {
+      "title": "superare l'esame per la patente A3 (guida di motocicli di qualsiasi cilindrata e potenza)",
+      "completed": true,
+      "edited": false,
+      "added": "2023-12-03T18:43:59.725Z",
+      "completedDate": "2023-12-03T18:44:05.283Z",
+      "restoredToIncomplete": false,
+      "id": 12
+    },
+    {
+      "title": "Smettere di fare il farmacista",
+      "completed": true,
+      "edited": false,
+      "added": "2023-12-03T18:44:36.415Z",
+      "completedDate": "2023-12-03T18:47:32.243Z",
+      "restoredToIncomplete": false,
+      "id": 13
+    },
+    {
+      "title": "ciaooooooooone",
+      "completed": false,
+      "edited": true,
+      "added": "2023-12-03T18:54:46.204Z",
+      "completedDate": "2023-12-03T18:54:57.358Z",
       "restoredToIncomplete": true,
-      "id": 4,
-      "edited": true
+      "id": 14
+    },
+    {
+      "title": "todo esempio completato e ripristinato senza modifiche",
+      "completed": false,
+      "edited": false,
+      "added": "2023-12-03T18:57:24.197Z",
+      "completedDate": "2023-12-03T18:57:45.867Z",
+      "restoredToIncomplete": true,
+      "id": 15
+    },
+    {
+      "title": "creare una UI primitiva ma efficace",
+      "completed": true,
+      "edited": false,
+      "added": "2023-12-03T19:33:54.553Z",
+      "completedDate": "2023-12-03T19:34:00.984Z",
+      "restoredToIncomplete": false,
+      "id": 16
+    },
+    {
+      "title": "Creare un logo e metterlo nella favicon",
+      "completed": true,
+      "edited": false,
+      "added": "2023-12-03T19:34:28.506Z",
+      "completedDate": "2023-12-03T19:34:32.427Z",
+      "restoredToIncomplete": false,
+      "id": 17
+    },
+    {
+      "title": "Creare un todo per poi modificarlo e aggiungere altro testo dopo il punto. ECCO QUA! Del nuovo testo aggiunto dopo il punto. Come faceva Facebook anni fa che scriveva \"modificato\" nei post prima pubblicati e poi modificati, così ho preso spunto per questa applicazione. In basso, dopo data e ora di aggiunta, apparirà la dicitura \"modificato\".",
+      "completed": false,
+      "edited": true,
+      "added": "2023-12-03T19:36:29.318Z",
+      "completedDate": "1899-12-30T23:00:00.000Z",
+      "restoredToIncomplete": false,
+      "id": 18
+    },
+    {
+      "title": "Creare un task senza modificarlo né completarlo!",
+      "completed": false,
+      "edited": false,
+      "added": "2023-12-03T19:40:15.221Z",
+      "completedDate": "1899-12-30T23:00:00.000Z",
+      "restoredToIncomplete": false,
+      "id": 19
+    },
+    {
+      "title": "Creare un task senza modificarlo, completarlo e poi ripristinarlo. Quando sarà completato apparirà anche data e ora di completamento, ma dopo il ripristino questa scomparirà e verrà menzionato il fatto che questo task è stato attivato e poi riportato allo status di non attivo. COMPLETO = verde, INCOMPLETO = rosa. Se modifico, per tutto il tempo della modifica, il task avrà sfondo giallo",
+      "completed": false,
+      "edited": false,
+      "added": "2023-12-03T19:43:05.625Z",
+      "completedDate": "2023-12-03T19:43:13.245Z",
+      "restoredToIncomplete": true,
+      "id": 20
+    },
+    {
+      "title": "task creato, completato, modificato, ripristinato al suo status originale",
+      "completed": false,
+      "edited": true,
+      "added": "2023-12-03T19:44:23.272Z",
+      "completedDate": "2023-12-03T19:44:40.698Z",
+      "restoredToIncomplete": true,
+      "id": 21
+    },
+    {
+      "title": "task creato e mai completato",
+      "completed": false,
+      "edited": false,
+      "added": "2023-12-03T19:45:45.409Z",
+      "completedDate": "1899-12-30T23:00:00.000Z",
+      "restoredToIncomplete": false,
+      "id": 22
+    },
+    {
+      "title": "task creato, successivamente completato",
+      "completed": true,
+      "edited": false,
+      "added": "2023-12-03T19:46:02.070Z",
+      "completedDate": "2023-12-03T19:46:22.181Z",
+      "restoredToIncomplete": false,
+      "id": 23
+    },
+    {
+      "title": "task creato, modificato, completato!",
+      "completed": true,
+      "edited": true,
+      "added": "2023-12-03T19:46:56.545Z",
+      "completedDate": "2023-12-03T19:47:09.228Z",
+      "restoredToIncomplete": false,
+      "id": 24
+    },
+    {
+      "title": "Semplice task, non completato né modificato",
+      "completed": false,
+      "edited": false,
+      "added": "2023-12-03T19:53:27.848Z",
+      "completedDate": "1899-12-30T23:00:00.000Z",
+      "restoredToIncomplete": false,
+      "id": 25
     }
   ]
 }

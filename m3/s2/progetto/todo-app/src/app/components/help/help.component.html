@@ -1,0 +1,67 @@
+  <div class="wrapper">
+    <div class="text-center">
+      <h1>Guida all'uso di myTodo List</h1>
+    </div>
+    <p>Benvenuto in myTodo List. Ti è mai capitato di dover tenere nota di tutte le cose che devi fare? Magari
+       giravi con carta e penna in tasca. Ti capitava a volte di avere dei ripensamenti, così scarabocchiavi di brutto
+       i tuoi appunti per ridefinire i tuoi task. Una volta finito li depennavi, ma poi ti rendevi conto di non aver veramente finito
+       e allora... che disastro.
+    </p>
+    <p>myTodo List è un'applicazione semplice che ti permette di creare una lista di cose da fare in modo estremamente ordinato.
+      Puoi aggiungere nuovi task, puoi modificarli al volo, puoi eliminarli, puoi contrassegnarli come completati. E se ti penti,
+      se non erano veramente completati? No problem, un semplice click dal tuo pc o un semplice tocco dal tuo telefono o dal tuo tablet e
+      puoi ripristinare un task contrassegnato come completato al suo status originale di non completato.
+      Nella pagina <a routerLink="/">Todos</a> potrai vedere e interagire con tutti i task che hai creato. Se vuoi vedere (o anche modificare) soltanto
+      i task che hai completato, allora apri la pagina <a routerLink="/completed">Completati</a>.
+    </p>
+    <h3>Come si usa myTodo List</h3>
+    <ul>
+      <li>
+        <p><strong>Aggiungere un nuovo task. </strong>Vai nella pagina <a routerLink="/completed">Todos</a> e in alto
+        digita il tuo task, premi quindi il bottone <button><app-add-icon></app-add-icon></button>. Attendi che il nuovo task sia caricato
+        nel server, dopodiché apparirà il tuo nuovo task con sfondo rosa. Il colore rosa contraddistingue un task non completato.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Eliminare un task. </strong>Indipendentemente dalla pagina in cui ti trovi, premi il bottone <button class="del-btn"><app-delete-icon></app-delete-icon></button>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Contrassegnare un task come completato. </strong>Clicca sul bottone <button class="complete-btn"><app-complete-icon></app-complete-icon></button>, attendi il caricamento
+          da parte del server e vedrai che lo sfondo del tuo task diventerà verde.
+        </p>
+      </li>
+        <li><p>
+          <strong>Ripristinare un task completato ad uno status di non completato. </strong>Clicca sul bottone <button class="redo-btn"><app-redo-icon></app-redo-icon></button>,
+          apparso dopo che hai attivato il tuo task. Terminato il caricamento da parte del server, vedrai che il tuo task assumerà
+          di nuovo uno sfondo rosa. Attenzione! Se compi questa azione dalla pagina <a routerLink="/completed">Completati</a> il tuo
+          task scomparirà dalla lista. Non lo avrai perso, semplicemente la pagina <a routerLink="/completed">Completati</a> mostra soltanto
+          task completati, e ritroverai il tuo task ripristinato come non completato nella pagina <a routerLink="/">Todos</a>, che mostra
+          tutti i task, completati e non.
+        </p>
+      </li>
+        <li><p>
+          <strong>Modificare il contenuto di un task. </strong>Clicca sul bottone <button class="edit-btn"><app-edit-icon></app-edit-icon></button>
+          ed entrerai in modalità di modifica. Tutti i bottoni che vedevi in precedenza scompariranno, lo sfondo diventerà giallo e
+          il testo del task, ora visualizzato in corsivo, sarà modificabile, noterai infatti immediatamente la comparsa del cursore testuale.
+          Nel box del task che stai modificando compariranno due bottoni:
+        </p>
+          <ul>
+            <li>
+            <p><button class="cancel-btn"><app-cancel-icon></app-cancel-icon></button>: cliccando su questo bottone annullerai ogni modifica
+            eventualmente messa in atto.</p>
+          </li>
+            <li>
+            <p>
+            <button class="save-btn"><app-save-icon></app-save-icon></button>: cliccando su questo bottone salverai le modifiche. Una volta che
+            il server avrà caricato i dati scomparirà lo sfondo giallo e il task assumerà il suo aspetto originale, ma con il testo modificato.<br>
+            Puoi modificare sia task completati sia non completati, puoi entrare in modalità di modifica su più task in parallelo, l'importante
+            è che alla fine ti ricordi di salvare tutte le modifiche.</p>
+          </li>
+          </ul>
+      </li>
+    </ul>
+  </div>
+

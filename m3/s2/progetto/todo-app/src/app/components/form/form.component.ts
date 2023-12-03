@@ -9,12 +9,14 @@ import { TodosService } from '../../todos.service';
 })
 export class FormComponent {
   newTask: Partial<Todo> = {}
-  constructor(private todosSvc: TodosService) {}
+  constructor(private todosSvc: TodosService) { }
   @Output() onAdd: EventEmitter<Partial<Todo>> = new EventEmitter()
   @Input() loading: boolean = false
   add() {
-    this.newTask.completed = false
-    this.onAdd.emit(this.newTask)
-    this.newTask = {}
+    if (this.newTask.title) {
+      this.newTask.completed = false
+      this.onAdd.emit(this.newTask)
+      this.newTask = {}
+    }
   }
 }

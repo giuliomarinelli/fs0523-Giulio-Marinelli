@@ -22,6 +22,8 @@ import { RedoIconComponent } from './components/redo-icon/redo-icon.component';
 import { CancelIconComponent } from './components/cancel-icon/cancel-icon.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HelpReadmeComponent } from './pages/help-readme/help-readme.component';
+import { HelpComponent } from './components/help/help.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { FooterComponent } from './components/footer/footer.component';
     RedoIconComponent,
     CancelIconComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HelpReadmeComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,

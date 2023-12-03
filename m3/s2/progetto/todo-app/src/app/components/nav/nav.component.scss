@@ -1,5 +1,5 @@
 #main-nav {
-  background-color: 	rgba(151, 151, 192, 0.3);
+  background-color: rgba(151, 151, 192, 0.3);
   margin: 0;
   height: 100%;
   padding: 14px 0;
@@ -15,8 +15,14 @@ ul {
   text-align: center;
   list-style-type: none;
   li {
-    display: inline-block;
-    margin: 0 20px;
+    display: block;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    @media screen and (min-width: 550px) {
+      display: inline-block;
+      margin: 0 20px;
+      font-size: 1rem;
+    }
     a {
       color: rgb(16, 16, 151);
       transition: color 0.35s;

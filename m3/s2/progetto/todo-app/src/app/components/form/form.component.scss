@@ -1,24 +1,49 @@
 .form {
+  @media screen and (min-width: 550px) {
   padding: 35px 0;
+
+}
+  padding: 15px 0;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 5px;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  background-color: rgb(202, 202, 202);
+}
+
 input[type="text"] {
-  font-size: 1.1rem;
+  font-size: .9rem;
+  width: 235px;
   padding: 4px;
+  margin: 15px 0;
+  @media screen and (min-width: 550px) {
+    font-size: 1.1rem;
+    margin: 0;
+    width: 260px;
+  }
 }
 
 .wrapper {
+  @media screen and (min-width: 550px) {
   display: flex;
   justify-content: center;
-  background-color: rgba(44, 44, 147, .3);
+}
+  background-color: rgba(44, 44, 147, 0.3);
   position: relative;
   box-shadow: 0px 3px 10px -7px black;
+  text-align: center;
 }
 
 .new-task-label {
-  margin-right: 8px;
-  font-size: 1.15rem;
+  @media screen and (min-width: 550px) {
+    margin-right: 8px;
+    font-size: 1.15rem;
+    display: block;
+  }
+  display: none;
 }
+

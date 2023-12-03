@@ -11,24 +11,24 @@
     </div>
   </div>
   <div class="buttons">
-    <button #delBtn class="del-btn" title="Elimina questo task" (click)="deleteTask()" *ngIf="!editMode">
+    <button class="del-btn" [disabled]="loading" title="Elimina questo task" (click)="deleteTask()" *ngIf="!editMode">
       <app-delete-icon></app-delete-icon>
     </button>
-    <button #editBtn class="edit-btn" title="Modifica questo task" (click)="edit()" *ngIf="!editMode">
+    <button class="edit-btn" [disabled]="loading" title="Modifica questo task" (click)="edit()" *ngIf="!editMode">
       <app-edit-icon></app-edit-icon>
     </button>
-    <button #cancelBtn class="cancel-btn" title="Annulla le modifiche" (click)="cancel()" *ngIf="editMode">
+    <button class="cancel-btn" [disabled]="loading" title="Annulla le modifiche" (click)="cancel()" *ngIf="editMode">
       <app-cancel-icon></app-cancel-icon>
     </button>
     <div *ngIf="!editMode">
-    <button #completeBtn class="complete-btn" title="Contrassegna come completato" (click)="setComplete()" *ngIf="!task.completed">
+    <button class="complete-btn" [disabled]="loading" title="Contrassegna come completato" (click)="setComplete()" *ngIf="!task.completed">
       <app-complete-icon></app-complete-icon>
     </button>
-    <button #incompleteBtn class="redo-btn" title="Riprisina come non completato" (click)="setIncomplete()" *ngIf="task.completed">
+    <button class="redo-btn" [disabled]="loading" title="Riprisina come non completato" (click)="setIncomplete()" *ngIf="task.completed">
       <app-redo-icon></app-redo-icon>
     </button>
     </div>
-    <button #saveBtn class="save-btn" title="Salva le modifiche" *ngIf="editMode" (click)="save()">
+    <button class="save-btn" [disabled]="loading" title="Salva le modifiche" *ngIf="editMode" (click)="save()">
       <app-save-icon></app-save-icon>
     </button>
     <div class="spacer"></div>

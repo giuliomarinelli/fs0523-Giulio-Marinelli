@@ -1,6 +1,8 @@
 <header id="header">
   <div class="logo-container">
-    <img src="../../../assets/logo.png" alt="myTodoList Logo" class="logo">
+    <a routerLink="/" title="myTodo List - Vai alla Home">
+      <img src="../../../assets/logo.png" alt="myTodoList Logo" class="logo" />
+    </a>
   </div>
-  <app-nav [navShadow]="navShadow"></app-nav>
+  <app-nav [navShadow]="navShadow" *ngIf="!noNav"></app-nav>
 </header>

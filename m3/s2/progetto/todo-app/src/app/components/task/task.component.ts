@@ -22,20 +22,12 @@ export class TaskComponent {
   }
   deleteTask() {
     this.loading = true
-    this.setInactiveElement(this.delBtn)
     this.todosSvc.remove(this.task.id).then(res => {
       this.onDelete.emit(this.task.id)
       this.loading = false
     })
   }
   @ViewChild('taskContent') taskContent!: ElementRef
-  @ViewChild('delBtn') delBtn!: ElementRef
-  @ViewChild('editBtn') editBtn!: ElementRef
-  @ViewChild('cancelBtn') cancelBtn!: ElementRef
-  @ViewChild('completeBtn') completeBtn!: ElementRef
-  @ViewChild('incompleteBtn') incompleteBtn!: ElementRef
-  @ViewChild('saveBtn') saveBtn!: ElementRef
-
   originalTitle!: string
 
   edit() {
@@ -66,7 +58,6 @@ export class TaskComponent {
     const objCopy: Todo = {...this.task}
     this.loading = true
     this.taskContent.nativeElement.contentEditable = "false"
-    this.saveBtn.nativeElement.disabled = "true"
     objCopy.title = this.taskContent.nativeElement.innerText
     objCopy.edited = true
     this.todosSvc.addOrUpdate(objCopy, objCopy.id).then(res => {
@@ -76,7 +67,6 @@ export class TaskComponent {
       this.editing = ''
       this.editTextStyle = ''
       this.editMode = false
-      this.saveBtn.nativeElement.disabled = "false"
     })
 
   }
@@ -94,14 +84,12 @@ export class TaskComponent {
     if (!objCopy.restoredToIncomplete) objCopy.restoredToIncomplete = true
     this.loading = true
     objCopy.completed = false
-    this.setInactiveElement(this.incompleteBtn)
     this.todosSvc.addOrUpdate(objCopy, objCopy.id).then(res => {
       this.task = res
       this.onUpdate.emit(this.task)
       this.loading = false
       this.editing = ''
       this.editTextStyle = ''
-      this.setActiveElement(this.incompleteBtn)
     })
   }
 
@@ -111,7 +99,6 @@ export class TaskComponent {
     objCopy.completedDate = new Date()
     this.loading = true
     objCopy.completed = true
-    this.setInactiveElement(this.completeBtn)
     this.todosSvc.addOrUpdate(objCopy, objCopy.id).then(res => {
       this.task = res
       this.onUpdate.emit(this.task)
@@ -119,15 +106,7 @@ export class TaskComponent {
       this.active = 'active'
       this.editing = ''
       this.editTextStyle = ''
-      this.setActiveElement(this.completeBtn)
     })
   }
 
-  setActiveElement(element: ElementRef) {
-    element.nativeElement.disabled = "false"
-  }
-
-  setInactiveElement(element: ElementRef) {
-    element.nativeElement.disabled = "false"
-  }
 }

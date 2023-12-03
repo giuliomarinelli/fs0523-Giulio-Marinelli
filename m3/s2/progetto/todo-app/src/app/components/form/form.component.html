@@ -1,13 +1,13 @@
 <div class="wrapper">
   <form class="form">
-    <label class="new-task-label" for="new-task">Aggiungi una nuova task: </label>
+    <label class="new-task-label" for="new-task">Aggiungi un nuovo task: </label>
     <input id="new-task"
       [(ngModel)]="newTask.title"
       type="text"
       name="title"
-      placeholder="Inserisci qui la tua task"
+      placeholder="Inserisci qui il tuo task..."
     />
-    <button (click)="add()">
+    <button (click)="add()" [disabled]="loading">
       <app-add-icon *ngIf="!loading"></app-add-icon>
       <app-btn-loader *ngIf="loading"></app-btn-loader>
     </button>

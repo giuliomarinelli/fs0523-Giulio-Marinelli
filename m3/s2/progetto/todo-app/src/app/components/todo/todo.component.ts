@@ -11,7 +11,6 @@ export class TodoComponent {
   constructor(private todosSvc: TodosService) { }
   contentLoaded: boolean = false;
   todos!: Todo[]
-  loading: boolean = false
   loadingForm: boolean = false
   noTodos: boolean = false
   completati: string = ''
@@ -34,7 +33,7 @@ export class TodoComponent {
       this.initialTodoHeight = 'initial-todo-height-completed'
       this.todosSvc.getOnlyCompleted().then(todos => {
         this.todos = todos
-        this.completati = ': completati'
+        this.completati = ' completati'
         this.todos.reverse()
         this.contentLoaded = true
         if (!this.todos.length) this.noTodos = true
