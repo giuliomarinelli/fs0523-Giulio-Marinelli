@@ -10,7 +10,7 @@
       "id": 1
     },
     {
-      "title": "Imparare Angular (diventa divertente quando hai il tempo per giocarci). Diciamo imparare le basi di Angular più che altro perché è un framework davvero complesso anche se una volta compresa la logica di base diventa divertente e puoi fare un sacco di cose. Faccio diventare verde questo task, ma mi raccomando, parliamo soltanto delle basi.",
+      "title": "Imparare Angular (diventa divertente quando hai il tempo per giocarci). Diciamo imparare le basi di Angular più che altro perché è un framework davvero complesso anche se una volta compresa la logica di base diventa divertente e puoi fare un sacco di cose. Faccio diventare verde questo task.",
       "completed": true,
       "edited": true,
       "added": "2023-12-03T16:33:46.854Z",
@@ -224,6 +224,96 @@
       "completedDate": "1899-12-30T23:00:00.000Z",
       "restoredToIncomplete": false,
       "id": 25
+    },
+    {
+      "title": "un altro task, questa volta modificato e poi completato",
+      "completed": true,
+      "edited": true,
+      "added": "2023-12-03T20:15:44.408Z",
+      "completedDate": "2023-12-03T20:16:07.908Z",
+      "restoredToIncomplete": false,
+      "id": 26
+    },
+    {
+      "title": "iniziare a progettare il mio sito, usando Laravel e MySQL. E magari Angular Universal.",
+      "completed": false,
+      "edited": true,
+      "added": "2023-12-03T20:24:36.617Z",
+      "completedDate": "1899-12-30T23:00:00.000Z",
+      "restoredToIncomplete": false,
+      "id": 27
+    },
+    {
+      "title": "Studiare finalmente backend",
+      "completed": false,
+      "edited": false,
+      "added": "2023-12-03T20:26:36.709Z",
+      "completedDate": "1899-12-30T23:00:00.000Z",
+      "restoredToIncomplete": false,
+      "id": 28
+    },
+    {
+      "title": "Nuovo task",
+      "completed": false,
+      "edited": false,
+      "added": "2023-12-03T21:28:57.831Z",
+      "completedDate": "1899-12-30T23:00:00.000Z",
+      "restoredToIncomplete": false,
+      "id": 29
+    },
+    {
+      "title": "Resta un bug grafico che non riesco a correggere, passando da una pagina all'altra parte del contenuto si muove",
+      "completed": false,
+      "edited": false,
+      "added": "2023-12-03T21:47:13.597Z",
+      "completedDate": "1899-12-30T23:00:00.000Z",
+      "restoredToIncomplete": false,
+      "id": 30
+    },
+    {
+      "title": "nuovo task!",
+      "completed": false,
+      "edited": true,
+      "added": "2023-12-03T23:10:20.512Z",
+      "completedDate": "2023-12-03T23:10:39.952Z",
+      "restoredToIncomplete": true,
+      "id": 31
+    },
+    {
+      "title": "Purtroppo nonostante i tentativi ripetuti non sono riuscito a risolvere il bug grafico, che si verifica solo a tutto schermo, non usando l'emulatore",
+      "completed": true,
+      "edited": false,
+      "added": "2023-12-03T23:45:05.410Z",
+      "completedDate": "2023-12-03T23:45:21.604Z",
+      "restoredToIncomplete": false,
+      "id": 32
+    },
+    {
+      "title": "In ogni caso l'applicazione per quanto riguarda il funzionamento è ok, i pulsanti quando è in corso un'operazione (completamento, cancellazione, ripristino, modifica) entrano automaticamente in fase di editing ossia diventano disabilitati per il tempo necessario ad ottenere una risposta dal server in seguito all'azione compiuta. C'è un loader rotante per ogni operazione: aggiunta => loader integrato nel pulsante (inattivo). Modifica/ cancellazione/completamento/inversione del completamento => loader affiancato ai pulsanti. Caricamento pagine: loader centrato in orizzontale e in verticale. Resta quella piccola imperfezione di spostamento del contenuto superiore al cambiamento di pagina, che sicuramente ha una soluzione.",
+      "completed": true,
+      "edited": true,
+      "added": "2023-12-03T23:46:21.759Z",
+      "completedDate": "2023-12-03T23:50:45.223Z",
+      "restoredToIncomplete": false,
+      "id": 33
+    },
+    {
+      "title": "Un ultimo task non completato prima di fare l'ultimo push e staccare!",
+      "completed": false,
+      "edited": false,
+      "added": "2023-12-03T23:53:58.423Z",
+      "completedDate": "1899-12-30T23:00:00.000Z",
+      "restoredToIncomplete": false,
+      "id": 34
+    },
+    {
+      "title": "Anzi ne aggiungo un altro. E lo modifico.",
+      "completed": false,
+      "edited": true,
+      "added": "2023-12-03T23:54:20.477Z",
+      "completedDate": "1899-12-30T23:00:00.000Z",
+      "restoredToIncomplete": false,
+      "id": 35
     }
   ]
 }

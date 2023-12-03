@@ -11,7 +11,12 @@
   padding: 10px;
   border-radius: 10px;
   background-color: rgba(213, 184, 213, 0.2);
+  width: 100%;
 
+}
+
+.p-5 {
+  padding: 5px 0;
 }
 
 .date-info {
@@ -20,6 +25,7 @@
   position: relative;
   bottom: -6px;
   font-weight: bold;
+  margin: 0;
 }
 
 .active {
@@ -34,6 +40,7 @@
 
 .task-content {
   font-family: 'Hedvig Letters Serif', serif;
+  margin: 0;
 }
 
 .edit-text-style {

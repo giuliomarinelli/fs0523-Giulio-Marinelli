@@ -2,14 +2,15 @@
   max-width: 1000px;
   width: 96%;
   padding: 5px 20px;
-  margin: 25px 0;
+  margin: 25px auto;
   box-shadow: 0px 0px 5px 0px black;
   border-radius: 15px;
 }
-.flex-wrapper {
-  display: flex;
-  justify-content: center;
+
+.hidden {
+  display: none;
 }
+
 .no-todo {
   display: flex;
   justify-content: center;
@@ -18,23 +19,35 @@
 }
 
 .initial-height-home {
-  height: calc(100vh - 183.28px - 94.65px - 101.44px);
+  min-height: calc(100vh - 183.28px - 101.44px - 112.65px);
 }
 
 .initial-height-completed {
-  height: calc(100vh - 183.28px - 94.65px);
+  min-height: calc(100vh - 183.28px - 112.65px);
+}
+
+.initial-loader-height-home {
+  min-height: calc(100vh - 183.28px - 112.65px);
+}
+
+.initial-loader-height-completed {
+  min-height: calc(100vh - 183.28px);
 }
 
 .initial-todo-height-home {
-  min-height: calc(100vh - 183.28px - 94.65px - 101.44px - 50px);
+  min-height: calc(100vh - 183.28px - 101.44px - 112.65px - 50px);
 }
 
 .initial-todo-height-completed {
-  min-height: calc(100vh - 183.28px - 94.65px - 50px);
+  min-height: calc(100vh - 183.28px - 112.65px - 50px);
 }
 
 .loader-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hidden {
+  display: none;
 }

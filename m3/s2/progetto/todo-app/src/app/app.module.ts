@@ -1,7 +1,7 @@
 
 import { Error404Component } from './pages/error-404/error-404.component'
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './components/todo/todo.component';
@@ -55,7 +55,7 @@ import { HelpComponent } from './components/help/help.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [Title],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

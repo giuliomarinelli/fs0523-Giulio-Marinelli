@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-help-readme',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './help-readme.component.scss'
 })
 export class HelpReadmeComponent {
-
+  public constructor(private titleSvc: Title) { }
+  ngOnInit() {
+    this.titleSvc.setTitle('myTodo List | Guida all\'uso');
+  }
 }

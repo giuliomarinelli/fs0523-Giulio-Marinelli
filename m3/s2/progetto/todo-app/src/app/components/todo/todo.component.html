@@ -1,5 +1,5 @@
 <app-form *ngIf="!onlyCompleted" (onAdd)="add($event)" [loading]="loadingForm"></app-form>
-<div *ngIf="contentLoaded" class="flex-wrapper">
+<div *ngIf="contentLoaded">
   <div *ngIf="!noTodos" [ngClass]="[initialTodoHeight, 'wrapper-2']">
     <h1>I miei task{{completati}}</h1>
     <div *ngFor="let task of todos">
@@ -10,9 +10,12 @@
       ></app-task>
     </div>
   </div>
+  <div *ngIf="noTodos" [ngClass]="[initialHeight, 'no-todo']">
+    <div>Ooops! Nessun toDo presente.</div>
+  </div>
+  <app-footer></app-footer>
 </div>
-<app-loader *ngIf="!contentLoaded" [ngClass]="[initialHeight, 'loader-container']"></app-loader>
-<div *ngIf="noTodos" [ngClass]="[initialHeight, 'no-todo']">
-  <div>Ooops! Nessun toDo presente.</div>
-</div>
+<app-loader *ngIf="!contentLoaded" [ngClass]="[initialLoaderHeight, 'loader-container']"></app-loader>
+
+
 

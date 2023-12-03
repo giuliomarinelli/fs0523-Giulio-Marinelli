@@ -1,13 +1,13 @@
 <div [ngClass]="['task', active, editing]">
   <div class="task-element">
     <div class="content">
-      <div #taskContent [ngClass]="['task-content', editTextStyle]">{{task.title}}</div>
-      <div #dateInfo class="date-info">
+      <p #taskContent [ngClass]="['task-content', editTextStyle]">{{task.title}}</p>
+      <p #dateInfo class="date-info">
         <span>Aggiunto il {{task.added | date : 'dd/MM/y ore HH:mm:ss'}}</span>
         <span *ngIf="task.edited">. Modificato</span>
         <span *ngIf="task.restoredToIncomplete">. Ripristinato da completo a incompleto</span>
         <span *ngIf="task.completed">. Completato il {{task.completedDate | date : 'dd/MM/y ore HH:mm:ss'}}</span>
-      </div>
+      </p>
     </div>
   </div>
   <div class="buttons">

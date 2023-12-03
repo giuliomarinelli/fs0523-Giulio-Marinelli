@@ -14,11 +14,12 @@
 }
 
 a {
-  color: rgb(116, 116, 212);
+  color: rgb(0, 162, 255);
   &:hover {
     text-decoration: underline;
   }
 }
+
 
 .active {
   background-color: rgba(83, 136, 83, 0.15);
