@@ -55,20 +55,23 @@ export class TaskComponent {
 
 
   save() {
-    const objCopy: Todo = {...this.task}
-    this.loading = true
-    this.taskContent.nativeElement.contentEditable = "false"
-    objCopy.title = this.taskContent.nativeElement.innerText
-    objCopy.edited = true
-    this.todosSvc.addOrUpdate(objCopy, objCopy.id).then(res => {
-      this.task = res
-      this.onUpdate.emit(this.task)
-      this.loading = false
-      this.editing = ''
-      this.editTextStyle = ''
-      this.editMode = false
-    })
-
+    if (this.taskContent.nativeElement.innerText) {
+      const objCopy: Todo = { ...this.task }
+      this.loading = true
+      this.taskContent.nativeElement.contentEditable = "false"
+      objCopy.title = this.taskContent.nativeElement.innerText
+      objCopy.edited = true
+      this.todosSvc.addOrUpdate(objCopy, objCopy.id).then(res => {
+        this.task = res
+        this.onUpdate.emit(this.task)
+        this.loading = false
+        this.editing = ''
+        this.editTextStyle = ''
+        this.editMode = false
+      })
+    } else {
+      this.cancel()
+    }
   }
 
   cancel() {
@@ -80,7 +83,7 @@ export class TaskComponent {
   }
 
   setIncomplete() {
-    const objCopy: Todo = {...this.task}
+    const objCopy: Todo = { ...this.task }
     if (!objCopy.restoredToIncomplete) objCopy.restoredToIncomplete = true
     this.loading = true
     objCopy.completed = false
@@ -93,7 +96,7 @@ export class TaskComponent {
   }
 
   setComplete() {
-    const objCopy: Todo = {...this.task}
+    const objCopy: Todo = { ...this.task }
     if (objCopy.restoredToIncomplete) objCopy.restoredToIncomplete = false
     objCopy.completedDate = new Date()
     this.loading = true
