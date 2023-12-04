@@ -52,7 +52,7 @@ export class TaskComponent {
     }
   }
 
-  @ViewChild('dateInfo') dateInfo!: ElementRef
+
 
   save() {
     const objCopy: Todo = {...this.task}
