@@ -15,8 +15,13 @@
 
 }
 
-.p-5 {
-  padding: 5px 0;
+.date-info {
+  span {
+    @media screen and (min-width: 550px) {
+      display: inline;
+    }
+    display: block;
+  }
 }
 
 .date-info {

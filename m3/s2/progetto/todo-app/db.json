@@ -314,6 +314,15 @@
       "completedDate": "1899-12-30T23:00:00.000Z",
       "restoredToIncomplete": false,
       "id": 35
+    },
+    {
+      "title": "E comunque sono riuscito a garantire anche una discreta responsivity di base! Dai 380px",
+      "completed": true,
+      "edited": true,
+      "added": "2023-12-04T00:02:41.964Z",
+      "completedDate": "2023-12-04T00:02:56.336Z",
+      "restoredToIncomplete": false,
+      "id": 36
     }
   ]
 }
