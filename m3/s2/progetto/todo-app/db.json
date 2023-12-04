@@ -377,6 +377,15 @@
       "completedDate": "1899-12-30T23:00:00.000Z",
       "restoredToIncomplete": false,
       "id": 42
+    },
+    {
+      "title": "ah adesso ho capito il perché di quel bug. Perché scompare la barra di scroll. In parte ha colpa anche il browser. A questo punto si può aggiustare facilmente, anche se ora è tardi. Però finalmente ho capito che non è un difetto del codice. Ora è tardi, ma considero il problema come risolvibile!",
+      "completed": true,
+      "edited": true,
+      "added": "2023-12-04T00:25:39.542Z",
+      "completedDate": "2023-12-04T00:32:14.198Z",
+      "restoredToIncomplete": false,
+      "id": 43
     }
   ]
 }
