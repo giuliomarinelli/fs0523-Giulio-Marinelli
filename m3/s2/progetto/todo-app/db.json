@@ -395,6 +395,15 @@
       "completedDate": "2023-12-04T01:32:19.189Z",
       "restoredToIncomplete": false,
       "id": 44
+    },
+    {
+      "title": "ho aggiunto 20px alle altezze minime così la barra di scroll è sempre presente e il contenuto non si sposta al suo apparire/scomparire. Ovviamente ci sono soluzioni migliori ma questa è la più rapida ed è efficace",
+      "completed": true,
+      "edited": false,
+      "added": "2023-12-04T05:17:30.504Z",
+      "completedDate": "2023-12-04T05:17:35.555Z",
+      "restoredToIncomplete": false,
+      "id": 45
     }
   ]
 }
