@@ -397,9 +397,9 @@
       "id": 44
     },
     {
-      "title": "ho aggiunto 20px alle altezze minime così la barra di scroll è sempre presente e il contenuto non si sposta al suo apparire/scomparire. Ovviamente ci sono soluzioni migliori ma questa è la più rapida ed è efficace",
+      "title": "ho aggiunto delle altezze minime leggermente maggiori di 100vh così la barra di scroll è sempre presente e il contenuto non si sposta al suo apparire/scomparire. Ovviamente ci sono soluzioni migliori ma questa è la più rapida e per consegnare il progetto senza quello scattino che fa muovere il contenuto lateralmente può funzionare",
       "completed": true,
-      "edited": false,
+      "edited": true,
       "added": "2023-12-04T05:17:30.504Z",
       "completedDate": "2023-12-04T05:17:35.555Z",
       "restoredToIncomplete": false,

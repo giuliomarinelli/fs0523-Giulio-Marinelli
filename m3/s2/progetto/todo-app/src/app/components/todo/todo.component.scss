@@ -19,11 +19,11 @@
 }
 
 .initial-height-home {
-  min-height: calc(100vh - 183.28px - 101.44px - 112.65px + 20px);
+  min-height: calc(100vh - 183.28px - 101.44px - 112.65px + 1px);
 }
 
 .initial-height-completed {
-  min-height: calc(100vh - 183.28px - 112.65px + 20px);
+  min-height: calc(100vh - 183.28px - 112.65px + 1px);
 }
 
 .initial-loader-height-home {
@@ -35,11 +35,11 @@
 }
 
 .initial-todo-height-home {
-  min-height: calc(100vh - 183.28px - 101.44px - 112.65px - 50px + 200px);
+  min-height: calc(100vh - 183.28px - 101.44px - 112.65px - 50px + 5px);
 }
 
 .initial-todo-height-completed {
-  min-height: calc(100vh - 183.28px - 112.65px - 50px + 20px);
+  min-height: calc(100vh - 183.28px - 112.65px - 50px + 5px);
 }
 
 .loader-container {
