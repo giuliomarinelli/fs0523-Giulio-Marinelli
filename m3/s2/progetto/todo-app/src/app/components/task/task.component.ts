@@ -88,8 +88,7 @@ export class TaskComponent {
       this.task = res
       this.onUpdate.emit(this.task)
       this.loading = false
-      this.editing = ''
-      this.editTextStyle = ''
+
     })
   }
 
@@ -103,9 +102,6 @@ export class TaskComponent {
       this.task = res
       this.onUpdate.emit(this.task)
       this.loading = false
-      this.active = 'active'
-      this.editing = ''
-      this.editTextStyle = ''
     })
   }
 

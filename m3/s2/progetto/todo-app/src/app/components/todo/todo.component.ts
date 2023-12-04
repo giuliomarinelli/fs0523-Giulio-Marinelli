@@ -17,7 +17,6 @@ export class TodoComponent {
   initialHeight: string = ''
   initialTodoHeight: string = ''
   initialLoaderHeight: string = ''
-  p5: string = ''
   @Input() onlyCompleted!: boolean
   ngOnInit() {
     if (!this.onlyCompleted) {
@@ -29,7 +28,6 @@ export class TodoComponent {
         this.todos.reverse()
         this.contentLoaded = true
         if (!this.todos.length) this.noTodos = true
-        this.p5 = 'p-5'
       })
     } else {
       this.initialHeight = 'initial-height-completed'
@@ -41,7 +39,6 @@ export class TodoComponent {
         this.todos.reverse()
         this.contentLoaded = true
         if (!this.todos.length) this.noTodos = true
-        this.p5 = 'p-5'
       })
     }
 

@@ -9,7 +9,6 @@ import { TodosService } from '../../todos.service';
 })
 export class FormComponent {
   newTask: Partial<Todo> = {}
-  constructor(private todosSvc: TodosService) { }
   @Output() onAdd: EventEmitter<Partial<Todo>> = new EventEmitter()
   @Input() loading: boolean = false
   add() {

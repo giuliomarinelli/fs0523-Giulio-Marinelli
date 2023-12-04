@@ -386,6 +386,15 @@
       "completedDate": "2023-12-04T00:32:14.198Z",
       "restoredToIncomplete": false,
       "id": 43
+    },
+    {
+      "title": "ultimo todo di test in fase di ottimizzazione del codice",
+      "completed": true,
+      "edited": false,
+      "added": "2023-12-04T01:02:15.761Z",
+      "completedDate": "2023-12-04T01:32:19.189Z",
+      "restoredToIncomplete": false,
+      "id": 44
     }
   ]
 }
