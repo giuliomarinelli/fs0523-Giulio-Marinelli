@@ -318,7 +318,7 @@
     {
       "title": "Un'applicazione così, una volta ottimizzata, potrebbe essere molto comoda",
       "completed": false,
-      "edited": false,
+      "edited": true,
       "added": "2023-12-04T00:17:54.544Z",
       "completedDate": "1899-12-30T23:00:00.000Z",
       "restoredToIncomplete": false,
