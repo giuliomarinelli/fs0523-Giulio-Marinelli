@@ -1,7 +1,9 @@
 <app-form *ngIf="!onlyCompleted" (onAdd)="add($event)" [loading]="loadingForm"></app-form>
 <div *ngIf="contentLoaded">
   <div *ngIf="!noTodos" [ngClass]="[initialTodoHeight, 'wrapper-2']">
-    <h1>I miei task{{completati}}</h1>
+    <div class="h1-wrapper">
+      <h1>I miei task{{completati}}</h1>
+    </div>
     <div *ngFor="let task of todos">
       <app-task
         [task]="task"
