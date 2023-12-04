@@ -7,7 +7,7 @@ import { Title } from '@angular/platform-browser'
   styleUrl: './help-readme.component.scss'
 })
 export class HelpReadmeComponent {
-  public constructor(private titleSvc: Title) { }
+  constructor(private titleSvc: Title) { }
   ngOnInit() {
     this.titleSvc.setTitle('myTodo List | Guida all\'uso');
   }

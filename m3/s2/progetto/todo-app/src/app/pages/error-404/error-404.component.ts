@@ -7,7 +7,7 @@ import { Title } from '@angular/platform-browser'
   styleUrl: './error-404.component.scss'
 })
 export class Error404Component {
-  public constructor(private titleSvc: Title) { }
+  constructor(private titleSvc: Title) { }
   ngOnInit() {
     this.titleSvc.setTitle('myTodo List | Errore 404');
   }

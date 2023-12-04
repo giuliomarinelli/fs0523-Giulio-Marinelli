@@ -7,7 +7,7 @@ import { Title } from '@angular/platform-browser'
   styleUrl: './completed.component.scss'
 })
 export class CompletedComponent {
-  public constructor(private titleSvc: Title) { }
+  constructor(private titleSvc: Title) { }
   ngOnInit() {
     this.titleSvc.setTitle('myTodo List | Task completati');
   }
