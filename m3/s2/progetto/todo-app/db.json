@@ -289,15 +289,6 @@
       "id": 32
     },
     {
-      "title": "In ogni caso l'applicazione per quanto riguarda il funzionamento è ok, i pulsanti quando è in corso un'operazione (completamento, cancellazione, ripristino, modifica) entrano automaticamente in fase di editing ossia diventano disabilitati per il tempo necessario ad ottenere una risposta dal server in seguito all'azione compiuta. C'è un loader rotante per ogni operazione: aggiunta => loader integrato nel pulsante (inattivo). Modifica/ cancellazione/completamento/inversione del completamento => loader affiancato ai pulsanti. Caricamento pagine: loader centrato in orizzontale e in verticale. Resta quella piccola imperfezione di spostamento del contenuto superiore al cambiamento di pagina, che sicuramente ha una soluzione.",
-      "completed": true,
-      "edited": true,
-      "added": "2023-12-03T23:46:21.759Z",
-      "completedDate": "2023-12-04T00:15:43.066Z",
-      "restoredToIncomplete": false,
-      "id": 33
-    },
-    {
       "title": "Un ultimo task non completato prima di fare l'ultimo push e staccare!",
       "completed": false,
       "edited": false,
@@ -314,15 +305,6 @@
       "completedDate": "1899-12-30T23:00:00.000Z",
       "restoredToIncomplete": false,
       "id": 35
-    },
-    {
-      "title": "E comunque sono riuscito a garantire anche una discreta responsivity di base! Dai 380px",
-      "completed": true,
-      "edited": true,
-      "added": "2023-12-04T00:02:41.964Z",
-      "completedDate": "2023-12-04T00:02:56.336Z",
-      "restoredToIncomplete": false,
-      "id": 36
     },
     {
       "title": "Aggiungo ancora qualche task",

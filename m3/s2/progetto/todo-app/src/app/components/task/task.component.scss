@@ -15,14 +15,20 @@
 
 }
 
-.date-info {
-  span {
+
+  .date-info-item {
     @media screen and (min-width: 550px) {
       display: inline;
     }
     display: block;
   }
-}
+  .dot-space {
+    @media screen and (min-width: 550px) {
+      display: inline;
+    }
+    display: none;
+  }
+
 
 .date-info {
   color: rgb(108, 107, 107);
