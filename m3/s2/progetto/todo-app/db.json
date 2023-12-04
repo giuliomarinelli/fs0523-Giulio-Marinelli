@@ -263,10 +263,10 @@
     },
     {
       "title": "Resta un bug grafico che non riesco a correggere, passando da una pagina all'altra parte del contenuto si muove",
-      "completed": false,
+      "completed": true,
       "edited": false,
       "added": "2023-12-03T21:47:13.597Z",
-      "completedDate": "1899-12-30T23:00:00.000Z",
+      "completedDate": "2023-12-04T06:04:08.456Z",
       "restoredToIncomplete": false,
       "id": 30
     },
@@ -278,15 +278,6 @@
       "completedDate": "2023-12-03T23:10:39.952Z",
       "restoredToIncomplete": true,
       "id": 31
-    },
-    {
-      "title": "Purtroppo nonostante i tentativi ripetuti non sono riuscito a risolvere il bug grafico, che si verifica solo a tutto schermo, non usando l'emulatore",
-      "completed": true,
-      "edited": false,
-      "added": "2023-12-03T23:45:05.410Z",
-      "completedDate": "2023-12-03T23:45:21.604Z",
-      "restoredToIncomplete": false,
-      "id": 32
     },
     {
       "title": "Un ultimo task non completato prima di fare l'ultimo push e staccare!",
