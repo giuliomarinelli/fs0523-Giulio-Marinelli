@@ -1,0 +1,143 @@
+<div class="footer-bottom">
+  <div class="container-md">
+    <h1 class="h1 text-center">Registrati</h1>
+    <hr class="hr" />
+
+    <form class="row g-3" [formGroup]="form" (submit)="submit()">
+      <div class="col-md-4">
+        <label for="nome" class="form-label">Nome</label>
+        <input
+          type="text"
+          [ngClass]="{
+            'form-control': true,
+            'is-valid': isValid('nome'),
+            'is-invalid': isInvalid('nome')
+          }"
+          id="nome"
+          formControlName="nome"
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Looks good!</div>
+      </div>
+      <div class="col-md-4">
+        <label for="cognome" class="form-label">Cognome</label>
+        <input
+          type="text"
+          [ngClass]="{
+            'form-control': true,
+            'is-valid': isValid('cognome'),
+            'is-invalid': isInvalid('cognome')
+          }"
+          id="cognome"
+          formControlName="cognome"
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="col-md-4">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          [ngClass]="{
+            'form-control': true,
+            'is-valid': isValid('username'),
+            'is-invalid': isInvalid('username')
+          }"
+          id="username"
+          formControlName="username"
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+
+      <div class="offset-md-1 col-md-6">
+        <label for="immagineProfilo" class="form-label"
+          >URL Immagine profilo</label
+        >
+        <input
+          type="text"
+          [ngClass]="{
+            'form-control': true,
+            'is-valid': isValid('immagineProfilo'),
+            'is-invalid': isInvalid('immagineProfilo')
+          }"
+          id="immagineProfilo"
+          formControlName="immagineProfilo"
+          aria-describedby="validationServer03Feedback"
+        />
+        <div id="validationServer03Feedback" class="invalid-feedback">
+          Please provide a valid city.
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="genere" class="form-label">Genere</label>
+        <select
+          [ngClass]="{
+            'form-select': true,
+            'is-valid': isValid('genere'),
+            'is-invalid': isInvalid('genere')
+          }"
+          id="genere"
+          formControlName="genere"
+        >
+          <option selected value="0">(Scegli un genere)</option>
+          <option value="Uomo">Uomo</option>
+          <option value="Donna">Donna</option>
+        </select>
+        <div id="validationServer04Feedback" class="invalid-feedback">
+          Please select a valid state.
+        </div>
+      </div>
+      <div class="offset-md-1"></div>
+      <div class="offset-md-3 col-md-6">
+        <label for="bio" class="form-label text-center d-block"
+          >Biografia</label
+        >
+        <textarea
+          [ngClass]="{
+            'form-control': true,
+            'is-valid': isValid('bio'),
+            'is-invalid': isInvalid('bio')
+          }"
+          id="bio"
+          formControlName="bio"
+          rows="3"
+        ></textarea>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="offset-md-3"></div>
+      <div class="offset-md-2 col-md-4">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          [ngClass]="{
+            'form-control': true,
+            'is-valid': isValid('password'),
+            'is-invalid': isInvalid('password')
+          }"
+          id="password"
+          formControlName="password"
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="col-md-4">
+        <label for="confermaPassword" class="form-label"
+          >Conferma password</label
+        >
+        <input
+          type="password"
+          [ngClass]="{
+            'form-control': true,
+            'is-valid': isValid('confermaPassword'),
+            'is-invalid': isInvalid('confermaPassword')
+          }"
+          id="confermaPassword"
+          formControlName="confermaPassword"
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="offset-md-2"></div>
+      <div class="col-12 text-center">
+        <button class="btn btn-success" type="submit">Registrati</button>
+      </div>
+    </form>
+  </div>
+</div>
