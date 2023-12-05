@@ -16,8 +16,8 @@
           id="nome"
           formControlName="nome"
         />
-        <div class="valid-feedback">Looks good!</div>
-        <div class="invalid-feedback">Looks good!</div>
+        <div class="valid-feedback">Nome digitato correttamente.</div>
+        <div class="invalid-feedback">{{errorMsg.nome}}</div>
       </div>
       <div class="col-md-4">
         <label for="cognome" class="form-label">Cognome</label>
@@ -31,7 +31,8 @@
           id="cognome"
           formControlName="cognome"
         />
-        <div class="valid-feedback">Looks good!</div>
+        <div class="valid-feedback">Cognome digitato correttamente.</div>
+        <div class="invalid-feedback">{{errorMsg.cognome}}</div>
       </div>
       <div class="col-md-4">
         <label for="username" class="form-label">Username</label>
@@ -45,13 +46,13 @@
           id="username"
           formControlName="username"
         />
-        <div class="valid-feedback">Looks good!</div>
+        <div class="valid-feedback">Username digitato correttamente.</div>
+        <div class="invalid-feedback">{{errorMsg.username}}</div>
       </div>
 
       <div class="offset-md-1 col-md-6">
         <label for="immagineProfilo" class="form-label"
-          >URL Immagine profilo</label
-        >
+          >URL Immagine profilo</label>
         <input
           type="text"
           [ngClass]="{
@@ -63,8 +64,11 @@
           formControlName="immagineProfilo"
           aria-describedby="validationServer03Feedback"
         />
-        <div id="validationServer03Feedback" class="invalid-feedback">
-          Please provide a valid city.
+        <div class="valid-feedback">
+          Formato supportato.
+        </div>
+        <div class="invalid-feedback">
+          {{errorMsg.immagineProfilo}}
         </div>
       </div>
       <div class="col-md-4">
@@ -76,21 +80,22 @@
             'is-invalid': isInvalid('genere')
           }"
           id="genere"
-          formControlName="genere"
-        >
+          formControlName="genere">
           <option selected value="0">(Scegli un genere)</option>
           <option value="Uomo">Uomo</option>
           <option value="Donna">Donna</option>
         </select>
-        <div id="validationServer04Feedback" class="invalid-feedback">
-          Please select a valid state.
+        <div class="valid-feedback">
+          Genere selezionato correttamente.
+        </div>
+        <div class="invalid-feedback">
+          {{errorMsg.genere}}
         </div>
       </div>
       <div class="offset-md-1"></div>
       <div class="offset-md-3 col-md-6">
         <label for="bio" class="form-label text-center d-block"
-          >Biografia</label
-        >
+          >Biografia</label>
         <textarea
           [ngClass]="{
             'form-control': true,
@@ -101,7 +106,7 @@
           formControlName="bio"
           rows="3"
         ></textarea>
-        <div class="valid-feedback">Looks good!</div>
+
       </div>
       <div class="offset-md-3"></div>
       <div class="offset-md-2 col-md-4">
