@@ -1,0 +1,13 @@
+@import '../node_modules/bootstrap/scss/functions';
+@import 'variables';
+
+
+$light: $blue-200;
+
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+.footer-bottom {
+  min-height: calc(100vh - 200.8px);
+  padding: 25px 0;
+}
