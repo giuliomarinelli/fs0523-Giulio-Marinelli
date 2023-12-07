@@ -1,1 +1,25 @@
-<router-outlet></router-outlet>
+<app-top-nav></app-top-nav>
+<div class="text-center footer-bottom" id="viewport-container" cz-shortcut-listen="true">
+
+  <main class="form-signin">
+    <form class="box" [formGroup]="form" (submit)="logIn()">
+      <img class="mb-4" src="../../../assets/logo.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 fw-normal">Accedi per poter continuare</h1>
+
+      <div class="form-floating">
+        <input formControlName="email" type="email" class="form-control is-invalid" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input formControlName="password" type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+        <div class="feedback mb-2">
+          Benvenuto nella nostra app! Clicca Accedi per continuare
+        </div>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+
+    </form>
+  </main>
+  </div>
+<app-footer></app-footer>

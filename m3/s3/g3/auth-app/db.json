@@ -1,3 +1,26 @@
 {
-  "users": []
+  "users": [
+    {
+      "email": "mario@rossi.it",
+      "password": "$2a$10$ggfB/D..R4mzCPoUy8NYEubD/aNJKFdCorSQIC6aX00do2UdALAGW",
+      "nome": "mario",
+      "cognome": "rossi",
+      "confermaPassword": "password",
+      "genere": "0",
+      "immagineProfilo": null,
+      "bio": null,
+      "id": 1
+    },
+    {
+      "email": "giulio.marinelli@icloud.com",
+      "password": "$2a$10$o0QUIHCU5iYEiYchWw92J.04NkF1GR6AtQxvzEr1jru8V.lCnb9um",
+      "nome": "Caio Giulio",
+      "cognome": "Cesare",
+      "confermaPassword": null,
+      "genere": "0",
+      "immagineProfilo": null,
+      "bio": null,
+      "id": 2
+    }
+  ]
 }

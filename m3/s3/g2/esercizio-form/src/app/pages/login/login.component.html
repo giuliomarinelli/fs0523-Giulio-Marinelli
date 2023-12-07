@@ -1,3 +1,44 @@
 <div class="footer-bottom">
+  <form class="box">
+    <img
+      class="mb-4"
+      src="../../../assets/logo.png"
+      alt=""
+      width="72"
+      height="72"
+    />
+    <h5 class="h5 mb-3 fw-normal">Accedi per poter continuare...</h5>
+    <div class="form-floating">
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name@example.com"
+      />
+      <label for="floatingInput">Indirizzo email</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Password"
+      />
+      <label for="floatingPassword">Password</label>
+    </div>
+    <div class="checkbox mb-3">
+      <label> <input type="checkbox" value="remember-me" /> Ricordami </label>
+    </div>
 
+    <button
+      type="submit"
+      class="w-100 btn btn-lg btn-primary"
+      style="margin-top: 20px"
+    >
+      LOGIN
+    </button>
+  </form>
 </div>
+<router-outlet></router-outlet>

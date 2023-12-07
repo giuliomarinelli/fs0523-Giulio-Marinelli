@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { TopNavComponent } from '../components/top-nav/top-nav.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { LoaderComponent } from '../components/loader/loader.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeRoutingModule } from './home/home-routing.module';
 import { LoginRoutingModule } from './login/login-routing.module';
 import { RegisterRoutingModule } from './register/register-routing.module';
-import { ProfileRoutingModule } from './profile/profile-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { UserFormComponent } from '../components/user-form/user-form.component';
 
 
 @NgModule({
@@ -16,19 +17,21 @@ import { ProfileRoutingModule } from './profile/profile-routing.module';
     HomeRoutingModule,
     LoginRoutingModule,
     RegisterRoutingModule,
-    ProfileRoutingModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   declarations: [
     TopNavComponent,
     FooterComponent,
-    LoaderComponent
+    LoaderComponent,
+    UserFormComponent
   ],
   exports: [
     TopNavComponent,
     FooterComponent,
     LoaderComponent,
-    CommonModule,
-    FormsModule
+    UserFormComponent,
+    CommonModule
   ]
 })
 export class SharedModule { }
