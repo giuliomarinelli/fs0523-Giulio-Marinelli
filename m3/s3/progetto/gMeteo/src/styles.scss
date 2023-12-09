@@ -30,7 +30,17 @@ a {
   font-size: 1.125rem;
   color: $white;
   transition: color .35s;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  .gm-nav-icon {
+    color: $white;
+    transition: color .35s;
+  }
   &:hover {
-    color: rgba($white, .75)
+    color: rgba($white, .75);
+    .gm-nav-icon {
+      color: rgba($white, .75);
+    }
   }
 }

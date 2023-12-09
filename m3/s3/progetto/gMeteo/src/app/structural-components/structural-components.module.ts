@@ -1,3 +1,4 @@
+import { AutocompleteModule } from './../autocomplete/autocomplete.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
@@ -30,7 +31,8 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
     AuthModule,
     NzTypographyModule,
     RouterModule,
-    NzDropDownModule
+    NzDropDownModule,
+    AutocompleteModule
   ],
   exports: [
     HeaderComponent,

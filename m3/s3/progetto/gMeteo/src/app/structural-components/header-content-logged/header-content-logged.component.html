@@ -2,16 +2,48 @@
   <div class="header-content-left">
     <div class="brand">
       <div class="logo-container">
-        <img src="../../../assets/logo-brand.png" alt="gMeteo Brand Logo" class="logo">
+        <img
+          src="../../../assets/logo-brand.png"
+          alt="gMeteo Brand Logo"
+          class="logo"
+        />
       </div>
-
+    </div>
+    <div>
+      <app-autocomplete></app-autocomplete>
     </div>
   </div>
   <div class="header-content-right">
     <nav id="logged-nav">
       <ul class="gm-nav">
-        <li class="gm-nav-item"><a href="" class="gm-nav-link"></a></li>
-        <li class="gm-nav-item"><a routerLink="" (click)="logOut()" class="gm-nav-link">Logout</a></li>
+        <li class="gm-nav-item">
+          <a nz-dropdown [nzDropdownMenu]="menu" class="gm-nav-link">
+            <span class="gm-nav-icon">
+              <i class="bi bi-person-circle"></i>
+            </span>
+            <span>Il mio Profilo</span
+            ><span class="dropdown-symbol"
+              ><i class="bi bi-caret-down-fill"></i
+            ></span>
+            <span nz-icon nzType="down"></span>
+          </a>
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu nzSelectable>
+              <li nz-menu-item>1st menu item</li>
+              <li nz-menu-item>2nd menu item</li>
+              <li nz-menu-item>3rd menu item</li>
+              <li nz-menu-item nzDanger>4th danger item</li>
+            </ul>
+          </nz-dropdown-menu>
+        </li>
+        <li class="gm-nav-item">
+          <a routerLink="" (click)="logOut()" class="gm-nav-link">
+            <span class="gm-nav-icon">
+              <i class="bi bi-box-arrow-left"></i>
+            </span>
+            <span>Logout</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </div>

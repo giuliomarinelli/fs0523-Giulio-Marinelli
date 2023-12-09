@@ -3,7 +3,7 @@
     <div class="content">
       <p #taskContent [ngClass]="['task-content', editTextStyle]">{{task.title}}</p>
       <p class="date-info">
-        <span class="date-info-item">Aggiunto il {{task.added | date : 'dd/MM/y ore HH:mm:ss'}}</span>
+        <span class="date-info-item">Aggiunto il {{task.added | date : 'dd/MM/y ore HH:mm'}}</span>
         <span class="date-info-item" *ngIf="task.edited"><span class="dot-space">.&nbsp;</span>Modificato</span>
         <span class="date-info-item" *ngIf="task.restoredToIncomplete">
           <span class="dot-space">.&nbsp;</span>Ripristinato da completo a incompleto

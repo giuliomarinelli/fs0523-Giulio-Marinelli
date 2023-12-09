@@ -1,0 +1,50 @@
+<div *ngIf="!wData">no dati</div>
+<div *ngIf="wData">
+  <h1 class="h1 text-center mb-4">{{ wData.city.name }}</h1>
+  <div class="alert alert-info" role="alert">
+    <p class="m-0">
+      Oggi a {{ wData.city.name }} il sole sorge alle
+      <strong>{{ wData.city.sunrise | date : "HH:mm:ss" }}</strong>
+      e tramonta alle <strong>{{ wData.city.sunset | date : "HH:mm:ss"}}</strong>
+    </p>
+  </div>
+  <div class="row">
+    <div class="col col-sm-6 col-md-4 col-lg-3 mb-3" *ngFor="let item of wData.list; let i = index">
+      <div class="card">
+        <h5 class="card-title card-header" *ngIf="!i">
+          Adesso
+        </h5>
+        <h5 class="card-title card-header" *ngIf="i">
+          {{ item.dt_txt | date : "dd/MM/y ore HH:mm" }}
+        </h5>
+        <div class="card-body">
+          <div class="d-flex gap-3 align-items-center">
+            <div class="icon-container">
+              <img
+                [src]="getIconPath(item.weather[0].icon)"
+                alt="Icona Meteo"
+              />
+            </div>
+            <p
+              class="m-0"
+              [innerHTML]="firstCapitalLetter(item.weather[0].description)"
+            ></p>
+          </div>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

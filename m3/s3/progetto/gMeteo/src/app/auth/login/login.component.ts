@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,9 @@ export class LoginComponent {
   logIn(): void {
     if (this.loginForm.valid) {
       console.log(this.loginForm)
-      this.authSvc.logIn(this.loginForm.value).subscribe(res => console.log(res))
+      this.authSvc.logIn(this.loginForm.value).subscribe(res => {
+        if (this.router.url === '/') this.router.navigate(['/my-gmeteo'])
+      })
     } else {
       Object.values(this.loginForm.controls).forEach(control => {
         if (control.invalid) {
@@ -27,5 +30,5 @@ export class LoginComponent {
     }
   }
 
-  constructor(private fb: FormBuilder, private authSvc: AuthService) {}
+  constructor(private fb: FormBuilder, private authSvc: AuthService, private router: Router) {}
 }

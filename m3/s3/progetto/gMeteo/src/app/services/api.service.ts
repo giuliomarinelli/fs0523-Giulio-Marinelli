@@ -2,10 +2,12 @@ import { iCityRes } from '../Models/api/city/i-city-res';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
-import { Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import { iCoord } from '../Models/api/weather/i-coord';
 import { iWeatherRes } from '../Models/api/weather/i-weather-res';
 import { LanguageService } from './language.service';
+import { iAuthData } from '../Models/auth/i-auth-data';
+import { iWeatherFiltered } from '../Models/api/weather/i-weather-filtered';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +38,19 @@ export class ApiService {
   }
 
   get5d3hWeatherForecast(coord: iCoord, lang: string) {
-    return this.http.get<iWeatherRes>(`${environment._5d3hForecastEndpoint}?lat=${coord.lat}&lon=${coord.lon}&apikey=${environment.apiKey}&lang=${lang}`)
+    return this.http.get<iWeatherRes>(`${environment._5d3hForecastEndpoint}?lat=${coord.lat}&lon=${coord.lon}&apikey=${environment.apiKey}&lang=${lang}&units=metric`)
+      .pipe(map((res: iWeatherRes) => {
+        const filteredData: iWeatherFiltered = {
+          list: res.list,
+          city: res.city
+        }
+        this.wSubject.next(filteredData)
+        return filteredData
+      }))
   }
+
+
+  wSubject = new BehaviorSubject<iWeatherFiltered | null>(null)
+  wData$: Observable<iWeatherFiltered | null> = this.wSubject.asObservable()
 
 }

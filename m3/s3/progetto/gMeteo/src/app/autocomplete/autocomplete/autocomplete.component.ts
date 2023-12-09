@@ -1,9 +1,9 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { iCityData } from '../../Models/api/city/i-city-data';
 import { FormControl, FormBuilder } from '@angular/forms';
-import { iWeatherRes } from '../../Models/api/weather/i-weather-res';
 import { LanguageService } from '../../services/language.service';
+import { iWeatherFiltered } from '../../Models/api/weather/i-weather-filtered';
 
 @Component({
   selector: 'app-autocomplete',
@@ -37,7 +37,7 @@ export class AutocompleteComponent {
     }
   }
 
-  obj!: iWeatherRes
+  obj!: iWeatherFiltered
 
   @ViewChild('auto') element!: any
 
