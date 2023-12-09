@@ -1,0 +1,6 @@
+<footer id="footer">
+  <div class="container">
+    <app-footer-content-logged *ngIf="isLoggedIn"></app-footer-content-logged>
+    <app-footer-content-no-logged *ngIf="!isLoggedIn"></app-footer-content-no-logged>
+</div>
+</footer>

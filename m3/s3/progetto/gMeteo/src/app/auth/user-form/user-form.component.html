@@ -1,0 +1,119 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-12 col-md-6 pe-md-4">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nome *</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            formControlName="name"
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Looks good!</div>
+          <div class="h"></div>
+        </div>
+        <div class="mb-3">
+          <label for="surname" class="form-label">Cognome *</label>
+          <input
+            type="text"
+            class="form-control"
+            id="surname"
+            value="Otto"
+            formControlName="surname"
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Looks good!</div>
+          <div class="h"></div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail *</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            value="Otto"
+            formControlName="email"
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Looks good!</div>
+          <div class="h"></div>
+        </div>
+        <div class="mb-3">
+          <label for="phoneNumber" class="form-label">Numero di telefono</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phoneNumber"
+            value="Otto"
+            formControlName="phoneNumber"
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Looks good!</div>
+          <div class="h"></div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 ps-md-4">
+        <div class="mb-3">
+          <label for="dateOfBirth" class="form-label">Data di nascita</label>
+          <input
+            type="date"
+            class="form-control"
+            id="dateOfBirth"
+            value="Otto"
+            formControlName="dateOfBirth"
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Looks good!</div>
+          <div class="h"></div>
+        </div>
+        <div class="mb-3">
+          <label for="gender" class="form-label">Genere *</label>
+          <select
+            class="form-select cursor-pointer"
+            id="gender"
+            aria-describedby="gender"
+            formControlName="gender"
+          >
+            <option selected value="0" class="px-2">(Scegli un genere...)</option>
+            <option value="M" class="px-2">Uomo</option>
+            <option value="F" class="px-2">Donna</option>
+
+          </select>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Looks good!</div>
+          <div class="h"></div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password *</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            value="Otto"
+            formControlName="password"
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Looks good!</div>
+          <div class="h"></div>
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Password *</label>
+          <input
+            type="confirmPassword"
+            class="form-control"
+            id="ConfirmPassword"
+            value="Otto"
+            formControlName="confirmPassword"
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Looks good!</div>
+          <div class="h"></div>
+        </div>
+      </div>
+    </div>
+    <button class="w-200px btn btn-lg btn-primary" type="submit">Registrati</button>
+  </div>
+
+</form>

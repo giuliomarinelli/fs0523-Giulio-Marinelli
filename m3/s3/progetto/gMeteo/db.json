@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "email": "giulio.marinelli@icloud.com",
+      "password": "$2a$10$Mh.qCJkB.W7WV7X1FSein.0mQ5gRFDO9NEzPCbhGVyn7mfF3r0jHG",
+      "name": "Giulio",
+      "surname": "Marinelli",
+      "confirmPassword": "s",
+      "gender": "0",
+      "phoneNumber": "3792116580",
+      "dateOfBirth": null,
+      "id": 1
+    },
+    {
+      "email": "lakikoj@mailinator.com",
+      "password": "$2a$10$ztUvEyVI.pMQS9DxQqnhteZDWyfN1FBJgbT99gLBi81i2jWyyizs2",
+      "name": "Baker Stout",
+      "surname": "Atkins",
+      "confirmPassword": "Culpa magna minima ",
+      "gender": "F",
+      "phoneNumber": "+1 (614) 281-4939",
+      "dateOfBirth": "2006-02-09",
+      "id": 2
+    },
+    {
+      "email": "cagy@mailinator.com",
+      "password": "$2a$10$wpJqbiT2OnZ0G/J.5o/jb.5LEvKwwEpwhgfn711eKypXk9Kf60inO",
+      "name": "Christian Webster",
+      "surname": "Dickson",
+      "confirmPassword": "Quo ducimus reprehe",
+      "gender": "M",
+      "phoneNumber": "+1 (393) 941-7942",
+      "dateOfBirth": "2021-10-21",
+      "id": 3
+    },
+    {
+      "email": "cagy@mailinator.co",
+      "password": "$2a$10$4hOkQ2BJ3kW3a30MtBPLJOGHArrhWhyF8S8LpmXanbSFNaeCvjUOy",
+      "name": "Christian Webster",
+      "surname": "Dickson",
+      "confirmPassword": "Quo ducimus reprehe",
+      "gender": "M",
+      "phoneNumber": "+1 (393) 941-7942",
+      "dateOfBirth": "2021-10-21",
+      "id": 4
+    },
+    {
+      "email": "giulio.marinelli@icloud.it",
+      "password": "$2a$10$xALNeffSsLycSoTTQlZp/e6tYXvJPs7gA.imKRvFT5JAsxo9yIto2",
+      "name": "Giulio",
+      "surname": "Marinelli",
+      "confirmPassword": null,
+      "gender": "0",
+      "phoneNumber": "3792116580",
+      "dateOfBirth": null,
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+<mat-autocomplete #auto="matAutocomplete">
+  @for (option of options; track option) {
+  <mat-option [value]="option">{{ option }}</mat-option>
+  }
+</mat-autocomplete>
+
+  <mat-label>Cerca una città</mat-label>
+  <input
+    type="text"
+    aria-label="Number"
+    class="autocomplete"
+    matInput
+    [formControl]="input"
+    [matAutocomplete]="auto"
+  />
+<app-change-detector [value]="input.value" (onChange)="setAutocomplete($event)"></app-change-detector>
+
+

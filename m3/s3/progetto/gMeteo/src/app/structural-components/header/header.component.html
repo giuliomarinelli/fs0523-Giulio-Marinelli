@@ -1,0 +1,7 @@
+<header id="header">
+  <div class="container">
+    <app-header-content-logged *ngIf="isLoggedIn"></app-header-content-logged>
+    <app-header-content-no-logged *ngIf="!isLoggedIn"></app-header-content-no-logged>
+  </div>
+</header>
+

@@ -1,0 +1,16 @@
+<div class="example-input">
+  <input
+    placeholder="Cerca una città..."
+    nz-input
+    [formControl]="input"
+    (input)="onInput($event)"
+    [nzAutocomplete]="auto"
+    class="autocomplete"
+  />
+  <nz-autocomplete #auto>
+    <div *ngFor="let option of options">
+      <nz-auto-option [nzValue]="option">{{option}}</nz-auto-option>
+    </div>
+  </nz-autocomplete>
+</div>
+{{obj | json}}

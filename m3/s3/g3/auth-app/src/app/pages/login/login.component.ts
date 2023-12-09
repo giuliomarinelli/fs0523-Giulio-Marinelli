@@ -16,7 +16,7 @@ export class LoginComponent {
       password: this.fb.control(null)
     })
   }
-
+  
   logIn() {
     this.authSvc.logIn(this.form.value).subscribe(res => console.log(res))
   }
