@@ -5,9 +5,8 @@ import { environment } from '../../environments/environment.development';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 import { iCoord } from '../Models/api/weather/i-coord';
 import { iWeatherRes } from '../Models/api/weather/i-weather-res';
-import { LanguageService } from './language.service';
-import { iAuthData } from '../Models/auth/i-auth-data';
 import { iWeatherFiltered } from '../Models/api/weather/i-weather-filtered';
+import { iCurrentWeather } from '../Models/api/weather/current/i-current-weather';
 
 @Injectable({
   providedIn: 'root'
@@ -49,6 +48,9 @@ export class ApiService {
       }))
   }
 
+  getCurrentWeatherData(coord: iCoord, lang: string) {
+    return this.http.get<iCurrentWeather>(`${environment.currentWeatherDataEndpoint}?lat=${coord.lat}&lon=${coord.lon}&apikey=${environment.apiKey}&lang=${lang}&units=metric`)
+  }
 
   wSubject = new BehaviorSubject<iWeatherFiltered | null>(null)
   wData$: Observable<iWeatherFiltered | null> = this.wSubject.asObservable()

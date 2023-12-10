@@ -4,7 +4,13 @@
   box-sizing: border-box;
 }
 
+.footer-bottom-no-logged {
+  min-height: calc(100vh - 82.95px - 91px)
+}
 
+.footer-bottom-logged {
+  min-height: calc(100vh - 82.95px - 126.8px)
+}
 
 .m-0 {
   margin: 0;
@@ -171,3 +177,13 @@ a {
 
 }
 
+
+
+.del-link {
+  color: $red-500;
+  transition: color .35s;
+  font-size: 2.25rem;
+  &:hover {
+    color: rgba($red-500, .75);
+  }
+}

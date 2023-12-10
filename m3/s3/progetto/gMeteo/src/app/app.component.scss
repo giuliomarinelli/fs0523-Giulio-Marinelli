@@ -1,7 +1,20 @@
-.footer-bottom-no-logged {
-  min-height: calc(100vh - 82.95px - 116.4px + 27px)
+
+.bg-animated {
+	background: linear-gradient(-45deg, #8c47db, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+  border-top: 1px solid #8c47db;
+  border-bottom: 1px solid #8c47db;
 }
 
-.footer-bottom-logged {
-  min-height: calc(100vh - 82.95px - 67.6px)
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

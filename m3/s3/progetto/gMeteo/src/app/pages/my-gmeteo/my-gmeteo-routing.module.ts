@@ -2,7 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MyGmeteoComponent } from './my-gmeteo.component';
 
-const routes: Routes = [{ path: '', component: MyGmeteoComponent }];
+const routes: Routes = [
+  {
+    path: '',
+    component: MyGmeteoComponent,
+  },
+  {
+    path: ':id',
+    component: MyGmeteoComponent,
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

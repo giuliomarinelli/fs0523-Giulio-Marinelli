@@ -3,4 +3,6 @@ export interface iFavourite {
   cityName: string
   id: number
   userId: number
+  lat: number
+  lon: number
 }

@@ -45,5 +45,9 @@ export class FavouritesService {
     }))
   }
 
+  getFavouriteById(favId: number) {
+
+  }
+
 
 }

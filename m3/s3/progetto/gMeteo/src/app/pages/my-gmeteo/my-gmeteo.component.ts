@@ -8,6 +8,8 @@ import { iAuthData } from '../../Models/auth/i-auth-data';
 import { FavouritesService } from '../../services/favourites.service';
 import { iFavourite } from '../../Models/i-favourite';
 import { iFavouriteInput } from '../../Models/i-favourite-input';
+import { findIndex } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-my-gmeteo',
@@ -15,29 +17,16 @@ import { iFavouriteInput } from '../../Models/i-favourite-input';
   styleUrl: './my-gmeteo.component.scss'
 })
 export class MyGmeteoComponent {
-  constructor(private apiSvc: ApiService, private langSvc: LanguageService, private icoSvc: WeathersIconsManagerService,
-    private authSvc: AuthService, private favouritesSvc: FavouritesService) { }
+
+  constructor(private apiSvc: ApiService, private icoSvc: WeathersIconsManagerService,
+    private authSvc: AuthService, private favouritesSvc: FavouritesService, private route: ActivatedRoute) { }
+
   wData!: iWeatherFiltered | null
   favourites: iFavourite[] = []
   isFavourite!: boolean
   ngOnInit() {
-    this.apiSvc.wData$.subscribe(wData => {
-      if (wData) {
-        wData.city.sunrise *= 1000
-        wData.city.sunset *= 1000
-      }
-      this.wData = wData
-      if (this.user && this.wData) {
-        this.favouritesSvc.isFavourite(7575755755756, 5).subscribe(res => {
-          this.isFavourite = res
-          console.log(this.isFavourite)
-        })
-        this.favouritesSvc.getFavourites(this.user.user.id).subscribe(res => {
-          this.favourites = res
-          console.log(this.favourites)
-        })
-      }
-    })
+
+
 
     this.authSvc.user$.subscribe(res => {
       if (res) {
@@ -46,11 +35,28 @@ export class MyGmeteoComponent {
       }
     })
 
+    this.apiSvc.wData$.subscribe(wData => {
+      if (wData) {
+        wData.city.sunrise *= 1000
+        wData.city.sunset *= 1000
+      }
+      this.wData = wData
+      if (this.user && this.wData) {
+        this.favouritesSvc.isFavourite(this.wData.city.id, this.user.user.id).subscribe(res => {
+          this.isFavourite = res
+
+        })
+        this.favouritesSvc.getFavourites(this.user.user.id).subscribe(res => {
+          this.favourites = res
+
+        })
+      }
+    })
+
+
+
 
   }
-
-
-
 
   user!: iAuthData
   userId!: number
@@ -60,5 +66,6 @@ export class MyGmeteoComponent {
   firstCapitalLetter(str: string) {
     return str.charAt(0).toUpperCase() + str.slice(1)
   }
+
 
 }

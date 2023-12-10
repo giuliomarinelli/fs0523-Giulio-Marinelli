@@ -76,7 +76,9 @@ export class HeaderContentLoggedComponent {
       const newFavourite: iFavouriteInput = {
         cityId: this.wData.city.id,
         cityName: this.wData.city.name,
-        userId: this.user.user.id
+        userId: this.user.user.id,
+        lat: this.wData.city.coord.lat,
+        lon: this.wData.city.coord.lon
       }
       this.favouritesSvc.addToFavourites(newFavourite).subscribe(res => {
         if (res) {
