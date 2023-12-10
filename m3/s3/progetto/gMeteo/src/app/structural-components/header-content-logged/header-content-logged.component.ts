@@ -91,7 +91,7 @@ export class HeaderContentLoggedComponent {
             this.delFadeIn = 'fade-in-animation'
             setTimeout(() => {
               this.delFadeIn = ''
-            })
+            }, 200)
           }, 200)
         }
       })
@@ -99,25 +99,31 @@ export class HeaderContentLoggedComponent {
   }
 
   removeFromFavourites() {
-    if (this.user && this.wData) {
-      this.favouritesSvc.removeFromFavourites().subscribe(res => {
-        if (res) {
-          this.favourites.push(res)
-          console.log(this.favourites)
-          this.addFadeOut = 'fade-out-animation'
 
-          setTimeout(() => {
-            this.delDNone = ''
-            this.addFadeOut = ''
-            this.addDNone = 'd-none'
-            this.delFadeIn = 'fade-in-animation'
+    if (this.user && this.wData) {
+      this.favouritesSvc.findIdFromUserAndCityData(this.wData.city.id, this.user.user.id).subscribe(res => {
+        if (res) {
+          this.favouritesSvc.removeFromFavourites(res).subscribe(res2 => {
+            const ind = this.favourites.findIndex(fav => fav.id === res)
+            this.favourites.splice(ind, 1)
+            console.log(this.favourites)
+            this.delFadeOut = 'fade-out-animation'
             setTimeout(() => {
-              this.delFadeIn = ''
-            })
-          }, 200)
+              this.addDNone = ''
+              this.delFadeOut = ''
+              this.delDNone = 'd-none'
+              this.addFadeIn = 'fade-in-animation'
+              setTimeout(() => {
+                this.addFadeIn = ''
+              }, 200)
+            }, 200)
+
+          })
         }
+
       })
     }
+
   }
 
 

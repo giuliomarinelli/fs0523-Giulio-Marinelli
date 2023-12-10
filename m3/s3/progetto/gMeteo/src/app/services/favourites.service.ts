@@ -37,6 +37,13 @@ export class FavouritesService {
     return this.http.delete<iFavourite>(`${this.endpoint}/favourites/${id}`)
   }
 
-  findIdFromUserAndCityData(cityId: number, userId: number)
+  findIdFromUserAndCityData(cityId: number, userId: number): Observable<number | null> {
+    return this.http.get<iFavourite[]>(`${this.endpoint}/favourites`).pipe(map(res => {
+      const founded = res.find(fav => fav.cityId === cityId && fav.userId === userId)
+      if (founded) return founded.id
+      return null
+    }))
+  }
+
 
 }

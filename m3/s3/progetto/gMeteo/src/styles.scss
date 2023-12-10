@@ -4,21 +4,20 @@
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-}
+
 
 .m-0 {
   margin: 0;
 }
 
-.footer-link {
+a {
   color: $white;
   font-size: 0.9rem;
   text-decoration: underline;
   transition: color 0.35s;
   &:hover {
     color: rgba(white, 0.8);
+    text-decoration: underline;
   }
 }
 
@@ -28,16 +27,17 @@ a {
 
 .gm-nav-link {
   font-size: 1.125rem;
-  color: $white;
   transition: color 0.35s;
   display: flex;
   gap: 5px;
   align-items: center;
+  text-decoration: none;
   .gm-nav-icon {
     color: $white;
     transition: color 0.35s;
   }
   &:hover {
+    text-decoration: none;
     color: rgba($white, 0.75);
     .gm-nav-icon {
       color: rgba($white, 0.75);
@@ -58,11 +58,11 @@ a {
 }
 
 .bg-pink {
-  background-color: rgba($pink-100, 0.5);
+  background-color: rgba($pink-100, 0.2);
 }
 
 .bg-green {
-  background-color: rgba($green-100, 0.5);
+  background-color: rgba($green-100, 0.25);
 }
 
 .bg-gray {
@@ -78,7 +78,7 @@ a {
 }
 
 .bg-purple {
-  background-color: rgba($purple-300, 0.25);
+  background-color: rgba($purple-100, 0.25);
 }
 
 .sea-lev {
@@ -101,7 +101,7 @@ a {
 }
 
 .gm-nav-link-text {
-  @media screen and (min-width: 790px) {
+  @media screen and (min-width: 1020px) {
     display: inline;
   }
   display: none;
@@ -170,3 +170,4 @@ a {
   width: 225px;
 
 }
+
