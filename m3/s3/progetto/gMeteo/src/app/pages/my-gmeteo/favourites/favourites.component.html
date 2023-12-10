@@ -4,7 +4,7 @@
     <div class="card-body">
       <div class="d-flex justify-content-between align-items-center">
         <div class="d-flex gap-3 align-items-center fit-content">
-          <strong>{{ fav.cityName }}</strong>
+          <a class="fav-link" [routerLink]="['/my-gmeteo', fav.id]"><strong>{{ fav.cityName }}</strong></a>
           <div class="icon-container">
             <img
               [src]="getIconPath(favouritesWeathers[i].weather[0].icon)"

@@ -1,57 +1,81 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
   <div class="container-md">
-    <div class="row">
+    <div class="row text-white">
       <div class="col-12 col-md-6 pe-md-4">
         <div class="mb-3">
           <label for="name" class="form-label">Nome *</label>
           <input
             type="text"
-            class="form-control"
+            [ngClass]="{
+              'form-control': true,
+              'is-valid': isValid('name'),
+              'is-invalid': isInvalid('name')
+            }"
             id="name"
             formControlName="name"
           />
-          <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">Looks good!</div>
-          <div class="h"></div>
+          <div class="valid-feedback">Ok</div>
+          <div class="invalid-feedback">{{ errorMsg.name }}</div>
+          <div
+            [ngClass]="{ h: true, 'd-none': form.controls['name'].dirty }"
+          ></div>
         </div>
         <div class="mb-3">
           <label for="surname" class="form-label">Cognome *</label>
           <input
             type="text"
-            class="form-control"
+            [ngClass]="{
+              'form-control': true,
+              'is-valid': isValid('surname'),
+              'is-invalid': isInvalid('surname')
+            }"
             id="surname"
-            value="Otto"
             formControlName="surname"
           />
-          <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">Looks good!</div>
-          <div class="h"></div>
+          <div class="valid-feedback">Ok</div>
+          <div class="invalid-feedback">{{ errorMsg.surname }}</div>
+          <div
+            [ngClass]="{ h: true, 'd-none': form.controls['surname'].dirty }"
+          ></div>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">E-mail *</label>
           <input
             type="text"
-            class="form-control"
+            [ngClass]="{
+              'form-control': true,
+              'is-valid': isValid('email'),
+              'is-invalid': isInvalid('email')
+            }"
             id="email"
-            value="Otto"
             formControlName="email"
           />
-          <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">Looks good!</div>
-          <div class="h"></div>
+          <div class="valid-feedback">Ok</div>
+          <div class="invalid-feedback">{{ errorMsg.email }}</div>
+          <div
+            [ngClass]="{ h: true, 'd-none': form.controls['email'].dirty }"
+          ></div>
         </div>
         <div class="mb-3">
           <label for="phoneNumber" class="form-label">Numero di telefono</label>
           <input
             type="text"
-            class="form-control"
+            [ngClass]="{
+              'form-control': true,
+              'is-valid': isValid('phoneNumber'),
+              'is-invalid': isInvalid('phoneNumber')
+            }"
             id="phoneNumber"
-            value="Otto"
             formControlName="phoneNumber"
           />
-          <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">Looks good!</div>
-          <div class="h"></div>
+          <div class="valid-feedback">Ok</div>
+          <div class="invalid-feedback">{{ errorMsg.phoneNumber }}</div>
+          <div
+            [ngClass]="{
+              h: true,
+              'd-none': form.controls['phoneNumber'].dirty
+            }"
+          ></div>
         </div>
       </div>
       <div class="col-12 col-md-6 ps-md-4">
@@ -59,14 +83,22 @@
           <label for="dateOfBirth" class="form-label">Data di nascita</label>
           <input
             type="date"
-            class="form-control"
+            [ngClass]="{
+              'form-control': true,
+              'is-valid': isValid('dateOfBirth'),
+              'is-invalid': isInvalid('dateOfBirth')
+            }"
             id="dateOfBirth"
-            value="Otto"
             formControlName="dateOfBirth"
           />
-          <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">Looks good!</div>
-          <div class="h"></div>
+          <div class="valid-feedback">Ok</div>
+          <div class="invalid-feedback">{{ errorMsg.dateOfBirth }}</div>
+          <div
+            [ngClass]="{
+              h: true,
+              'd-none': form.controls['dateOfBirth'].dirty
+            }"
+          ></div>
         </div>
         <div class="mb-3">
           <label for="gender" class="form-label">Genere *</label>
@@ -76,44 +108,59 @@
             aria-describedby="gender"
             formControlName="gender"
           >
-            <option selected value="0" class="px-2">(Scegli un genere...)</option>
             <option value="M" class="px-2">Uomo</option>
             <option value="F" class="px-2">Donna</option>
-
           </select>
-          <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">Looks good!</div>
-          <div class="h"></div>
+          <div class="valid-feedback">Ok</div>
+          <div class="invalid-feedback">{{ errorMsg.gender }}</div>
+          <div
+            [ngClass]="{ h: true, 'd-none': form.controls['gender'].dirty }"
+          ></div>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Password *</label>
           <input
             type="password"
-            class="form-control"
+            [ngClass]="{
+              'form-control': true,
+              'is-valid': isValid('password'),
+              'is-invalid': isInvalid('password')
+            }"
             id="password"
-            value="Otto"
             formControlName="password"
           />
-          <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">Looks good!</div>
-          <div class="h"></div>
+          <div class="valid-feedback">Ok</div>
+          <div class="invalid-feedback">{{ errorMsg.password }}</div>
+          <div
+            [ngClass]="{ h: true, 'd-none': form.controls['password'].dirty }"
+          ></div>
         </div>
         <div class="mb-3">
-          <label for="confirmPassword" class="form-label">Password *</label>
+          <label for="confirmPassword" class="form-label"
+            >Conferma password *</label
+          >
           <input
-            type="confirmPassword"
-            class="form-control"
+            type="password"
+            [ngClass]="{
+              'form-control': true,
+              'is-invalid': unmatch,
+              'is-valid': !unmatch
+            }"
             id="ConfirmPassword"
-            value="Otto"
             formControlName="confirmPassword"
           />
-          <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">Looks good!</div>
-          <div class="h"></div>
+          <div class="invalid-feedback">{{ errorMsg.confirmPassword }}</div>
+          <div
+            [ngClass]="{
+              h: true,
+              'd-none': form.controls['confirmPassword'].dirty
+            }"
+          ></div>
         </div>
       </div>
     </div>
-    <button class="w-200px btn btn-lg btn-primary" type="submit">Registrati</button>
+    <button class="w-200px btn btn-lg btn-primary" type="submit">
+      Registrati
+    </button>
   </div>
-
 </form>

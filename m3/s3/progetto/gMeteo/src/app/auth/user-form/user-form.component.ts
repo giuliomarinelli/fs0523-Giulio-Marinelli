@@ -16,6 +16,9 @@ export class UserFormComponent {
   @Input() formData!: iRegister
   form!: FormGroup
   errorMsg!: iRegister
+
+  unmatch: boolean = false
+
   ngDoCheck() {
     this.errorMsg = {
       name: this.setInvalidMessages('name'),
@@ -24,26 +27,30 @@ export class UserFormComponent {
       dateOfBirth: this.setInvalidMessages('immagineProfilo'),
       gender: this.setInvalidMessages('genere'),
       password: this.setInvalidMessages('password'),
-      confirmPassword: this.setInvalidMessages('confirmPassword'),
+      confirmPassword: (this.form.controls['confirmPassword'].value !== this.form.controls['password'].value) && (this.form.controls['confirmPassword'].dirty) ? 'Mancata corrispondenza' : this.setInvalidMessages('confirmPassword'),
       phoneNumber: this.setInvalidMessages('phoneNumber')
     }
-
+    console.log(this.form)
+    if (this.form.controls['confirmPassword'].value !== this.form.controls['password'].value) {
+      this.unmatch = true
+    } else {
+      this.unmatch = false
+    }
+    console.log(this.form)
   }
 
   setInvalidMessages(fieldName: string): string {
     const field: AbstractControl | null = this.form.get(fieldName)
     let errorMsg = ''
     if (field) {
+      console.log(field)
       if (field.errors) {
-        if (field.errors['required']) errorMsg += 'Campo vuoto. '
-        if (field.errors['minlength'] && (fieldName === 'nome' || fieldName === 'cognome')) errorMsg += 'Il campo deve avere almeno 2 caratteri. '
-        if (field.errors['minlength'] && (fieldName === 'password' || fieldName === 'confermaPassword')) errorMsg += 'Il campo deve avere almeno 12 caratteri. '
-        if (field.errors['pattern'] && (fieldName === 'nome' || fieldName === 'cognome')) errorMsg += 'Nome e cognome possono contenere sololettere dell\'alfabeto. '
-        if (field.errors['pattern'] && (fieldName === 'password')) errorMsg += 'La password non rispetta il formato richiesto. '
-        if (field.errors['pattern'] && (fieldName === 'email')) errorMsg += 'Lo username non rispetta il formato richiesto. '
-        if (field.errors['firstCapitalLetters']) errorMsg += 'I nomi devono iniziare sempre con una lettera maiuscola. '
-        if (field.errors['unSupportedFormat']) errorMsg += 'Formato non supportato. '
-        if (field.errors['genereUnSelected']) errorMsg += 'Devi selezionare un genere. '
+        if (field.errors['required']) errorMsg += 'Campo obbligatorio'
+        if (field.errors['minlength'] && (fieldName === 'name' || fieldName === 'surname')) errorMsg += 'Minimo 2 caratteri'
+        if (field.errors['minlength'] && (fieldName === 'password')) errorMsg += 'Minimo 12 caratteri'
+        if (field.errors['firstCapitalLetters'] && field.value?.length >= 2 && (fieldName === 'name' || fieldName==='surname')) errorMsg += 'Iniziale minuscola'
+        if (field.errors['pattern'] && (fieldName === 'name' || fieldName === 'surname')) errorMsg += ' - Ammesse solo lettere'
+        if (field.errors['email']) errorMsg += 'Formato non valido'
       }
 
     }
@@ -72,12 +79,12 @@ export class UserFormComponent {
       {
         name: this.fb.control(null, [Validators.required, Validators.minLength(2), Validators.pattern(/^[a-zA-Z\s]*$/), this.firstCapitalLetters]),
         surname: this.fb.control(null, [Validators.required, Validators.minLength(2), Validators.pattern(/^[a-zA-Z\s]*$/), this.firstCapitalLetters]),
-        password: this.fb.control(null, [Validators.required, Validators.minLength(12), Validators.pattern(/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/)]),
-        confirmPassword: this.fb.control(null, [Validators.required, Validators.minLength(12)]),
-        gender: this.fb.control('0', [Validators.required]),
+        password: this.fb.control(null, [Validators.required, Validators.minLength(12)]),
+        confirmPassword: this.fb.control(null),
+        gender: this.fb.control('M'),
         phoneNumber: this.fb.control(null),
-        dateOfBirth: this.fb.control(null),
-        email: this.fb.control(null, [Validators.required, Validators.pattern(/^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$/)])
+        dateOfBirth: this.fb.control(null, [Validators.pattern(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/)]),
+        email: this.fb.control(null, [Validators.required, Validators.email])
       }
     )
 

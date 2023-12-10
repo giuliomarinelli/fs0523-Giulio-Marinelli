@@ -10,6 +10,7 @@ import { iFavourite } from '../../Models/i-favourite';
 import { iFavouriteInput } from '../../Models/i-favourite-input';
 import { findIndex } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { iCoord } from '../../Models/api/weather/i-coord';
 
 @Component({
   selector: 'app-my-gmeteo',
@@ -48,7 +49,19 @@ export class MyGmeteoComponent {
         })
         this.favouritesSvc.getFavourites(this.user.user.id).subscribe(res => {
           this.favourites = res
-
+        })
+      } else {
+        this.route.params.subscribe((params: any) => {
+          console.log(params.id)
+          if (params.id) this.favouritesSvc.getFavouriteById(params.id).subscribe(res => {
+            const coord: iCoord = {
+              lat: res.lat,
+              lon: res.lon
+            }
+            this.apiSvc.get5d3hWeatherForecast(coord, 'it').subscribe(data => {
+              this.wData = data
+            })
+          })
         })
       }
     })

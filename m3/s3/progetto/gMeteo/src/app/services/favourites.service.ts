@@ -45,8 +45,8 @@ export class FavouritesService {
     }))
   }
 
-  getFavouriteById(favId: number) {
-
+  getFavouriteById(favId: number): Observable<iFavourite> {
+    return this.http.get<iFavourite>(`${this.endpoint}/favourites/${favId}`)
   }
 
 

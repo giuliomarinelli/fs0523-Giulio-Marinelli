@@ -88,14 +88,6 @@
   ],
   "favourites": [
     {
-      "cityId": 3175055,
-      "cityName": "Latisana",
-      "userId": 5,
-      "lat": 45.7777,
-      "lon": 12.9967,
-      "id": 1
-    },
-    {
       "cityId": 3173435,
       "cityName": "Milano",
       "userId": 5,
@@ -112,12 +104,20 @@
       "id": 3
     },
     {
+      "cityId": 3175055,
+      "cityName": "Latisana",
+      "userId": 5,
+      "lat": 45.7777,
+      "lon": 12.9967,
+      "id": 5
+    },
+    {
       "cityId": 5128581,
       "cityName": "New York",
       "userId": 5,
       "lat": 40.7127,
       "lon": -74.006,
-      "id": 4
+      "id": 6
     }
   ]
 }

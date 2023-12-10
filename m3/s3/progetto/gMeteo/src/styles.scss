@@ -178,12 +178,22 @@ a {
 }
 
 
-
 .del-link {
   color: $red-500;
   transition: color .35s;
   font-size: 2.25rem;
   &:hover {
     color: rgba($red-500, .75);
+  }
+}
+
+
+.fav-link {
+  color: $blue-400;
+  text-decoration: none;
+  transition: color .35s;
+  &:hover {
+    text-decoration: none;
+    color: rgba($blue-400, .75)
   }
 }
