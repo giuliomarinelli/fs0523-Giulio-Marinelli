@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { iAuthData } from '../Models/auth/i-auth-data';
-import { BehaviorSubject, Observable, map, tap } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, map, tap } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { iRegister } from '../Models/auth/i-register';
 import { iLoginData } from '../Models/auth/i-login-data';
+import { iFavourite } from '../Models/i-favourite';
+import { iFavouriteInput } from '../Models/i-favourite-input';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +17,7 @@ export class AuthService {
   authSubject = new BehaviorSubject<iAuthData | null>(null)
   user$: Observable<iAuthData | null> = this.authSubject.asObservable()
   isLoggedIn$: Observable<boolean> = this.user$.pipe(map(user => !!user))
+
   jwtH: JwtHelperService = new JwtHelperService()
   endpoint: string = `${environment.backendUrl}`
 
@@ -33,6 +36,7 @@ export class AuthService {
         localStorage.setItem('authData', JSON.stringify(data))
       }))
   }
+
 
   logOut() {
     this.authSubject.next(null)
@@ -54,6 +58,5 @@ export class AuthService {
     this.authSubject.next(accessData)
 
   }
-
 
 }

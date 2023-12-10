@@ -49,7 +49,6 @@ export class AutocompleteComponent {
 
   ngDoCheck() {
     if (this.element) {
-      console.log(this.element)
       if (this.element.activeItem?.selected) this.act(this.element.activeItem.nzValue)
       if (!this.element.activeItem || !this.element.activeItem?.selected) this.actOnceWhenItemSelected = false
     }

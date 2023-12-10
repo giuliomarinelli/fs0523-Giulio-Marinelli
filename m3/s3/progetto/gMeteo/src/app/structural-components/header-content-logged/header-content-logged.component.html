@@ -16,12 +16,28 @@
   <div class="header-content-right">
     <nav id="logged-nav">
       <ul class="gm-nav">
+        <li class="gm-nav-item" *ngIf="wData" [ngClass]="[addFadeOut, addFadeIn, addDNone]">
+          <a (click)="addToFavourites()" class="gm-nav-link">
+            <span class="gm-nav-icon">
+              <i class="bi bi-heart"></i>
+            </span>
+            <span class="gm-nav-link-text">Aggiungi ai preferiti</span>
+          </a>
+        </li>
+        <li class="gm-nav-item" *ngIf="wData" [ngClass]="[delFadeOut, delFadeIn, delDNone]">
+          <a (click)="removeFromFavourites()" class="gm-nav-link">
+            <span class="gm-nav-icon">
+              <i class="bi bi-heart-fill"></i>
+            </span>
+            <span class="gm-nav-link-text">Rimuovi dai preferiti</span>
+          </a>
+        </li>
         <li class="gm-nav-item">
           <a nz-dropdown [nzDropdownMenu]="menu" class="gm-nav-link">
             <span class="gm-nav-icon">
               <i class="bi bi-person-circle"></i>
             </span>
-            <span>Il mio Profilo</span
+            <span class="gm-nav-link-text">Il mio Profilo</span
             ><span class="dropdown-symbol"
               ><i class="bi bi-caret-down-fill"></i
             ></span>
@@ -41,7 +57,7 @@
             <span class="gm-nav-icon">
               <i class="bi bi-box-arrow-left"></i>
             </span>
-            <span>Logout</span>
+            <span class="gm-nav-link-text">Logout</span>
           </a>
         </li>
       </ul>

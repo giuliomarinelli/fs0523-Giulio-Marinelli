@@ -16,8 +16,8 @@ export class LoginComponent {
 
   logIn(): void {
     if (this.loginForm.valid) {
-      console.log(this.loginForm)
       this.authSvc.logIn(this.loginForm.value).subscribe(res => {
+        console.log(res)
         if (this.router.url === '/') this.router.navigate(['/my-gmeteo'])
       })
     } else {

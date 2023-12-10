@@ -1,8 +1,13 @@
+import { iFavourite } from "../i-favourite"
+
 export interface iUser {
-    nome: string
-    cognome: string
-    username: string
-    immagineProfilo: string
-    genere: string
-    bio: string
+  name: string | null
+  surname: string | null
+  email: string | null
+  phoneNumber: string | null
+  dateOfBirth: string | null
+  gender: string | null
+  password: string | null
+  id: number
+  favourites: iFavourite[]
 }

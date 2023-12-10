@@ -5,16 +5,16 @@
     <p class="m-0">
       Oggi a {{ wData.city.name }} il sole sorge alle
       <strong>{{ wData.city.sunrise | date : "HH:mm:ss" }}</strong>
-      e tramonta alle <strong>{{ wData.city.sunset | date : "HH:mm:ss"}}</strong>
+      e tramonta alle <strong>{{ wData.city.sunset | date : "HH:mm:ss"}}</strong> ({{wData.city.sunset | date : 'zzzz'}})
     </p>
   </div>
   <div class="row">
-    <div class="col col-sm-6 col-md-4 col-lg-3 mb-3" *ngFor="let item of wData.list; let i = index">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3" *ngFor="let item of wData.list; let i = index">
       <div class="card">
-        <h5 class="card-title card-header" *ngIf="!i">
+        <h5 class="card-title card-header text-center" *ngIf="!i">
           Adesso
         </h5>
-        <h5 class="card-title card-header" *ngIf="i">
+        <h5 class="card-title card-header text-center" *ngIf="i">
           {{ item.dt_txt | date : "dd/MM/y ore HH:mm" }}
         </h5>
         <div class="card-body">
@@ -30,13 +30,23 @@
               [innerHTML]="firstCapitalLetter(item.weather[0].description)"
             ></p>
           </div>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
+          <li class="list-group-item d-flex gap-2 bg-pink">
+            <i class="bi bi-thermometer min-temp"></i><p class="m-0 min-temp"><strong>Temperature minime: </strong>{{item.main.temp_min}} °C</p>
+          </li>
+          <li class="list-group-item d-flex gap-2 bg-green">
+            <i class="bi bi-thermometer-high max-temp"></i><p class="m-0 max-temp"><strong>Temperature massime: </strong>{{item.main.temp_max}} °C</p>
+          </li>
+          <li class="list-group-item d-flex gap-2 bg-gray">
+            <i class="bi bi-thermometer-sun press ms-1"></i><p class="m-0 press"><strong>Pressione: </strong>{{item.main.pressure}} hPa</p>
+          </li>
+          <li class="list-group-item d-flex gap-2 bg-cyan">
+            <i class="bi bi-droplet-half hum"></i><p class="m-0 hum"><strong>Umidità relativa: </strong>{{item.main.humidity}} %</p>
+          </li>
+          <li class="list-group-item d-flex gap-2 bg-purple">
+            <i class="bi bi-water sea-lev"></i><p class="m-0 sea-lev"><strong>Altitudine: </strong>{{item.main.sea_level}} s.l.m.</p>
+          </li>
           <li class="list-group-item">A second item</li>
           <li class="list-group-item">A third item</li>
         </ul>
