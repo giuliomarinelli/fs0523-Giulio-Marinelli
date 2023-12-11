@@ -12,7 +12,6 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { AuthModule } from '../auth/auth.module';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { RouterModule } from '@angular/router';
-import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 
 
 @NgModule({
@@ -31,7 +30,6 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
     AuthModule,
     NzTypographyModule,
     RouterModule,
-    NzDropDownModule,
     AutocompleteModule
   ],
   exports: [

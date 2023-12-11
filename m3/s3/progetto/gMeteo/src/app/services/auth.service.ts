@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { iAuthData } from '../Models/auth/i-auth-data';
-import { BehaviorSubject, Observable, Subject, map, tap } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, catchError, map, tap, throwError } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { environment } from '../../environments/environment.development';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { iRegister } from '../Models/auth/i-register';
 import { iLoginData } from '../Models/auth/i-login-data';
 import { iFavourite } from '../Models/i-favourite';
@@ -24,6 +24,8 @@ export class AuthService {
   constructor(private http: HttpClient) {
     this.restoreUserSession()
   }
+
+
 
   signUp(register: iRegister): Observable<iAuthData> {
     return this.http.post<iAuthData>(`${this.endpoint}/register`, register)

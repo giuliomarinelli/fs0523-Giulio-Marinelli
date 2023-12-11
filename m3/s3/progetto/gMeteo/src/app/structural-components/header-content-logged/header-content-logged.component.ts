@@ -1,12 +1,12 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
 import { iWeatherFiltered } from '../../Models/api/weather/i-weather-filtered';
 import { ApiService } from '../../services/api.service';
 import { iAuthData } from '../../Models/auth/i-auth-data';
 import { FavouritesService } from '../../services/favourites.service';
 import { iFavourite } from '../../Models/i-favourite';
 import { iFavouriteInput } from '../../Models/i-favourite-input';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,8 +24,20 @@ export class HeaderContentLoggedComponent {
   user!: iAuthData
   favourites!: iFavourite[]
   isFavourite!: boolean
-
+  favourite!: boolean
   ngOnInit() {
+
+    this.favouritesSvc.favourite$.subscribe(res => {
+      this.favourite = res
+      if (this.favourite) {
+        this.addDNone = 'd-none'
+        this.delDNone = 'd-none'
+      } else {
+        this.addDNone = ''
+        this.delDNone = ''
+      }
+    })
+
     this.apiSvc.wData$.subscribe(wData => {
       if (wData) {
         wData.city.sunrise *= 1000
@@ -128,15 +140,10 @@ export class HeaderContentLoggedComponent {
 
   }
 
-
-
-
   logOut() {
     this.authSvc.logOut()
   }
 
 }
-function ngDoCheck() {
-  throw new Error('Function not implemented.');
-}
+
 

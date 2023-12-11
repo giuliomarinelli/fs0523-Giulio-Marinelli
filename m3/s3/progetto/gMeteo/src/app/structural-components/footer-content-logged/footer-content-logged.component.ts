@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-footer-content-logged',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class FooterContentLoggedComponent {
 
+  constructor(private authSvc: AuthService) { }
+
+  logOut() {
+    this.authSvc.logOut()
+  }
 }

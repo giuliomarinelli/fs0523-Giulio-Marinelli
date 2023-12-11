@@ -1,5 +1,8 @@
 .form-signin {
-  width: 400px;
+  width: 96%;
+  @media screen and (min-width: 450px) {
+    width: 400px;
+  }
 }
 
 
@@ -26,4 +29,12 @@
 
 .feedback {
   font-size: 0.875rem;
+}
+
+.invalid {
+  color: var(--bs-form-invalid-color);
+}
+
+.valid {
+  color: var(--bs-form-valid-color);
 }

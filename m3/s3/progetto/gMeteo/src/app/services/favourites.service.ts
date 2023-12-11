@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import { iFavourite } from '../Models/i-favourite';
 import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
@@ -11,6 +11,9 @@ import { iFavouriteInput } from '../Models/i-favourite-input';
 export class FavouritesService {
 
   constructor(private http: HttpClient) { }
+
+  favouritePageSbj = new BehaviorSubject<boolean>(false)
+  favourite$ = this.favouritePageSbj.asObservable()
 
   endpoint: string = `${environment.backendUrl}`
 

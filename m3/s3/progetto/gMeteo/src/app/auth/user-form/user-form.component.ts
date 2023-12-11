@@ -5,6 +5,7 @@ import { iAuthData } from '../../Models/auth/i-auth-data';
 import { AuthService } from '../../services/auth.service';
 
 
+
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
@@ -30,20 +31,19 @@ export class UserFormComponent {
       confirmPassword: (this.form.controls['confirmPassword'].value !== this.form.controls['password'].value) && (this.form.controls['confirmPassword'].dirty) ? 'Mancata corrispondenza' : this.setInvalidMessages('confirmPassword'),
       phoneNumber: this.setInvalidMessages('phoneNumber')
     }
-    console.log(this.form)
+
     if (this.form.controls['confirmPassword'].value !== this.form.controls['password'].value) {
       this.unmatch = true
     } else {
       this.unmatch = false
     }
-    console.log(this.form)
+
   }
 
   setInvalidMessages(fieldName: string): string {
     const field: AbstractControl | null = this.form.get(fieldName)
     let errorMsg = ''
     if (field) {
-      console.log(field)
       if (field.errors) {
         if (field.errors['required']) errorMsg += 'Campo obbligatorio'
         if (field.errors['minlength'] && (fieldName === 'name' || fieldName === 'surname')) errorMsg += 'Minimo 2 caratteri'
@@ -51,6 +51,7 @@ export class UserFormComponent {
         if (field.errors['firstCapitalLetters'] && field.value?.length >= 2 && (fieldName === 'name' || fieldName==='surname')) errorMsg += 'Iniziale minuscola'
         if (field.errors['pattern'] && (fieldName === 'name' || fieldName === 'surname')) errorMsg += ' - Ammesse solo lettere'
         if (field.errors['email']) errorMsg += 'Formato non valido'
+        if (field.errors['pattern'] && fieldName === 'phoneNumber') errorMsg += 'Formato non valido'
       }
 
     }
@@ -82,8 +83,8 @@ export class UserFormComponent {
         password: this.fb.control(null, [Validators.required, Validators.minLength(12)]),
         confirmPassword: this.fb.control(null),
         gender: this.fb.control('M'),
-        phoneNumber: this.fb.control(null),
-        dateOfBirth: this.fb.control(null, [Validators.pattern(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/)]),
+        phoneNumber: this.fb.control(null, [Validators.pattern(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/)]),
+        dateOfBirth: this.fb.control(null),
         email: this.fb.control(null, [Validators.required, Validators.email])
       }
     )
@@ -106,9 +107,26 @@ export class UserFormComponent {
     return { firstCapitalLetters: true }
   }
 
+  registered: boolean = false
+
   submit() {
-    delete this.form.value.controllaPassword
-    this.authSvc.signUp(this.form.value).subscribe((res: iAuthData) => console.log(res))
+    if (this.form.valid) {
+      const defValue: any = {...this.form.value}
+      delete defValue.confirmPassword
+      this.authSvc.signUp(this.form.value).subscribe(
+          res => this.registered = true,
+          err => {
+            if (err.error === 'Email already exists' && err.status ===400) this.showModal()
+          }
+      )
+    } else {
+      Object.values(this.form.controls).forEach(control => {
+        if (control.invalid) {
+          control.markAsDirty();
+          control.updateValueAndValidity({ onlySelf: true });
+        }
+      });
+    }
   }
 
   isValid(fieldName: string) {
@@ -118,5 +136,16 @@ export class UserFormComponent {
   isInvalid(fieldName: string) {
     return !this.form.get(fieldName)?.valid && this.form.get(fieldName)?.dirty
   }
+
+  isVisible = false;
+
+  showModal(): void {
+    this.isVisible = true;
+  }
+
+  handleOk(): void {
+    this.isVisible = false;
+  }
+
 
 }

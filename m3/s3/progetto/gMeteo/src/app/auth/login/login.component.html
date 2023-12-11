@@ -4,7 +4,7 @@
       <input
         formControlName="email"
         type="email"
-        class="form-control"
+        [ngClass]="{ 'form-control': true, 'is-invalid': isInvalid('email'), 'is-valid': isValid('email') }"
         id="floatingInput"
         placeholder="name@example.com"
       />
@@ -14,15 +14,39 @@
       <input
         formControlName="password"
         type="password"
+        [ngClass]="{ 'form-control': true, 'is-invalid': isInvalid('password'), 'is-valid': isValid('password') }"
         class="form-control"
         id="floatingPassword"
         placeholder="Password"
       />
       <label for="floatingPassword">Password</label>
-      <div class="feedback mb-2">
-        <p class="m-0">Non sei ancora registrato? <a routerLink="/register">Registrati subito</a></p>
+      <div class="h">
+        <p *ngIf="loginForm.dirty">
+        <span class="valid" *ngIf="valid">
+          Ok
+        </span>
+        <span class="invalid" *ngIf="!valid">
+          {{msg}}
+        </span>
+        </p>
+      </div>
+      <div class="mb-2">
+        <p class="m-0 text-white fs-1rem">
+          Non sei ancora registrato?
+          <a routerLink="/register">Registrati subito</a>
+        </p>
       </div>
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
   </form>
 </div>
+<nz-modal [(nzVisible)]="isVisible1" [nzCancelText]="null" nzTitle="Errore 400" (nzOnOk)="handleOk1()">
+  <ng-container *nzModalContent>
+    <p>Email e/o password errate!</p>
+  </ng-container>
+</nz-modal>
+<nz-modal [(nzVisible)]="isVisible2" [nzCancelText]="null" nzTitle="Errore 400" (nzOnOk)="handleOk2()">
+  <ng-container *nzModalContent>
+    <p>Errore di autenticazione</p>
+  </ng-container>
+</nz-modal>

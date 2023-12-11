@@ -10,19 +10,9 @@
 <div *ngIf="wData" class="bg-animated">
   <div class="container-sm py-3">
     <h1 class="display-1 text-white text-center mb-4">{{ wData.city.name }}</h1>
-    <div class="alert alert-info" role="alert">
-      <p class="m-0">
-        Oggi a {{ wData.city.name }} il sole sorge alle
-        <strong>{{ wData.city.sunrise | date : "HH:mm:ss" }}</strong>
-        e tramonta alle
-        <strong>{{ wData.city.sunset | date : "HH:mm:ss" }}</strong> ({{
-          wData.city.sunset | date : "zzzz"
-        }})
-      </p>
-    </div>
     <div class="row">
       <div
-        class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3"
+        class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4"
         *ngFor="let item of wData.list; let i = index"
       >
         <div class="card">
@@ -76,13 +66,20 @@
                 <strong>Altitudine: </strong>{{ item.main.sea_level }} s.l.m.
               </p>
             </li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
+            <li class="list-group-item d-flex gap-2 bg-gray">
+              <i class="bi bi-wind min-temp"></i>
+              <p class="m-0 min-temp">
+                <strong>Vento: </strong>{{ item.wind.speed }} km/h
+              </p>
+            </li>
+            <li class="list-group-item d-flex gap-2 bg-cyan">
+              <i class="bi bi-eyeglasses max-temp"></i>
+              <p class="m-0 max-temp">
+                <strong>Visibilità: </strong>{{ item.visibility }} m
+              </p>
+            </li>
+
           </ul>
-          <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-          </div>
         </div>
       </div>
     </div>

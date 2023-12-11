@@ -13,6 +13,8 @@ import { iCurrentWeather } from '../Models/api/weather/current/i-current-weather
 })
 export class ApiService {
 
+  favourites: boolean = false
+
   constructor(private http: HttpClient) { }
 
   getGeoDataByCityName(cityName: string, lang: string) {

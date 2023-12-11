@@ -25,7 +25,10 @@ export class MyGmeteoComponent {
   wData!: iWeatherFiltered | null
   favourites: iFavourite[] = []
   isFavourite!: boolean
+  favourite!: boolean
   ngOnInit() {
+
+
 
 
 
@@ -38,6 +41,7 @@ export class MyGmeteoComponent {
 
     this.apiSvc.wData$.subscribe(wData => {
       if (wData) {
+
         wData.city.sunrise *= 1000
         wData.city.sunset *= 1000
       }
@@ -50,16 +54,15 @@ export class MyGmeteoComponent {
         this.favouritesSvc.getFavourites(this.user.user.id).subscribe(res => {
           this.favourites = res
         })
-      } else {
+      } else if (this.user) {
         this.route.params.subscribe((params: any) => {
-          console.log(params.id)
           if (params.id) this.favouritesSvc.getFavouriteById(params.id).subscribe(res => {
             const coord: iCoord = {
               lat: res.lat,
               lon: res.lon
             }
             this.apiSvc.get5d3hWeatherForecast(coord, 'it').subscribe(data => {
-              this.wData = data
+              this.apiSvc.wSubject.next(data)
             })
           })
         })
@@ -80,5 +83,7 @@ export class MyGmeteoComponent {
     return str.charAt(0).toUpperCase() + str.slice(1)
   }
 
-
+  ngOnDestroy() {
+    this.apiSvc.wSubject.next(null)
+  }
 }

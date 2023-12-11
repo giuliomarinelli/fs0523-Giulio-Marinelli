@@ -2,14 +2,16 @@
   <div class="header-content-left">
     <div class="brand">
       <div class="logo-container">
+        <a routerLink="/">
         <img
           src="../../../assets/logo-brand.png"
           alt="gMeteo Brand Logo"
           class="logo"
         />
+      </a>
       </div>
     </div>
-    <div>
+    <div *ngIf="!favourite">
       <app-autocomplete></app-autocomplete>
     </div>
   </div>
@@ -32,25 +34,21 @@
             <span class="gm-nav-link-text">Rimuovi dai preferiti</span>
           </a>
         </li>
-        <li class="gm-nav-item">
-          <a nz-dropdown [nzDropdownMenu]="menu" class="gm-nav-link">
+        <li class="gm-nav-item" *ngIf="favourite">
+          <a routerLink="/my-gmeteo" class="gm-nav-link">
             <span class="gm-nav-icon">
-              <i class="bi bi-person-circle"></i>
+              <i class="bi bi-brightness-high-fill"></i>
             </span>
-            <span class="gm-nav-link-text">Il mio Profilo</span
-            ><span class="dropdown-symbol"
-              ><i class="bi bi-caret-down-fill"></i
-            ></span>
-            <span nz-icon nzType="down"></span>
+            <span class="gm-nav-link-text">my-gMeteo</span>
           </a>
-          <nz-dropdown-menu #menu="nzDropdownMenu">
-            <ul nz-menu nzSelectable>
-              <li nz-menu-item>1st menu item</li>
-              <li nz-menu-item>2nd menu item</li>
-              <li nz-menu-item>3rd menu item</li>
-              <li nz-menu-item nzDanger>4th danger item</li>
-            </ul>
-          </nz-dropdown-menu>
+        </li>
+        <li class="gm-nav-item">
+          <a routerLink="/favourites" class="gm-nav-link">
+            <span class="gm-nav-icon">
+              <i class="bi bi-arrow-through-heart-fill"></i>
+            </span>
+            <span class="gm-nav-link-text">I miei preferiti</span>
+          </a>
         </li>
         <li class="gm-nav-item">
           <a routerLink="" (click)="logOut()" class="gm-nav-link">

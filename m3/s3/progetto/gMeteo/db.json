@@ -84,6 +84,160 @@
       "phoneNumber": "3792116580",
       "dateOfBirth": null,
       "id": 5
+    },
+    {
+      "email": "hybecu@mailinator.com",
+      "password": "$2a$10$AWZPZmNu130vL4vCHs0TMOwy.KATtRCjHVrRPGIZJF4KIeuX2aLGu",
+      "name": "Germaine Larson",
+      "surname": "Molina",
+      "confirmPassword": "Pa$$w0rd!111",
+      "gender": "M",
+      "phoneNumber": "+1 (957) 652-6674",
+      "dateOfBirth": "1991-03-14",
+      "id": 6
+    },
+    {
+      "email": "cepy@mailinator.com",
+      "password": "$2a$10$HSqO/wWcreVdG8FyfIKQPOHUd.eOaLEvCwaD3wn3wf9PqAJxvwD9e",
+      "name": "Lilah Gordon",
+      "surname": "Gallegos",
+      "confirmPassword": "Pa$$w0rd!222",
+      "gender": "M",
+      "phoneNumber": "+1 (184) 611-2445",
+      "dateOfBirth": "2015-07-21",
+      "id": 7
+    },
+    {
+      "email": "nopyzy@mailinator.com",
+      "password": "$2a$10$H75wNHxlEfGnxwfke3WcvOyEY/sR/6xPfZqU44dECsWE8i1krV4ta",
+      "name": "Alexa Armstrong",
+      "surname": "Graham",
+      "confirmPassword": "Pa$$w0rd!111",
+      "gender": "M",
+      "phoneNumber": "+1 (616) 179-7554",
+      "dateOfBirth": "1974-10-08",
+      "id": 8
+    },
+    {
+      "email": "nohox@mailinator.com",
+      "password": "$2a$10$BcBC5Cxf.zKzX3TVWiamZOszUpIuFyZwqjaPnX.dOjrerwSaXvGAO",
+      "name": "Brett Spence",
+      "surname": "Morton",
+      "confirmPassword": "Pa$$w0rd!111",
+      "gender": "F",
+      "phoneNumber": "+1 (292) 667-8658",
+      "dateOfBirth": "2005-10-12",
+      "id": 9
+    },
+    {
+      "email": "botelinys@mailinator.com",
+      "password": "$2a$10$Z1FE1wU/ZYRVSgbNmpSbGu41.8b8aInrbU4C1JQj1rk75V02qf2WO",
+      "name": "Emmanuel Cummings",
+      "surname": "Morgan",
+      "confirmPassword": "Pa$$w0rd!111",
+      "gender": "M",
+      "phoneNumber": "+1 (759) 485-4778",
+      "dateOfBirth": "1989-03-02",
+      "id": 10
+    },
+    {
+      "email": "fufonos@mailinator.com",
+      "password": "$2a$10$Uiz5J5HcXia0JhwXwI0MAecJ8xdFec7n/34/lgePS16HjpiJXoIE6",
+      "name": "Cheyenne Dickerson",
+      "surname": "Roach",
+      "confirmPassword": "Pa$$w0rd!111",
+      "gender": "M",
+      "phoneNumber": "+1 (578) 459-7681",
+      "dateOfBirth": "1986-07-04",
+      "id": 11
+    },
+    {
+      "email": "nuruz@mailinator.com",
+      "password": "$2a$10$id9WsqQ30n5SaX/7ZyfTUekIfNPhiodVZrjdcSh8tGJu85vWd9H3.",
+      "name": "Tanner Blankenship",
+      "surname": "Austin",
+      "confirmPassword": "Pa$$w0rd!111",
+      "gender": "M",
+      "phoneNumber": "+1 (868) 773-3062",
+      "dateOfBirth": "1975-12-11",
+      "id": 12
+    },
+    {
+      "email": "sisofe@mailinator.com",
+      "password": "$2a$10$KhURSxujUvaDNw/aluD8R.2.vhINLEkC94WA6g2Kwti1KCmthdxF6",
+      "name": "Austin Hanson",
+      "surname": "Macdonald",
+      "confirmPassword": "Pa$$w0rd!111",
+      "gender": "M",
+      "phoneNumber": "+1 (499) 255-8769",
+      "dateOfBirth": "1974-12-09",
+      "id": 13
+    },
+    {
+      "email": "qawa@mailinator.com",
+      "password": "$2a$10$WXGMyVyNiKDaJ6WwvizvPOiba7WSTxsVYFzi9H7W26R/b4P/Yq2ia",
+      "name": "Gavin Mcintosh",
+      "surname": "Lee",
+      "confirmPassword": "Pa$$w0rd!444",
+      "gender": "M",
+      "phoneNumber": "+1 (522) 826-8758",
+      "dateOfBirth": "1978-12-13",
+      "id": 14
+    },
+    {
+      "email": "najexok@mailinator.com",
+      "password": "$2a$10$ZB599CAlqqvzaxrE.nB4VO3zHydoe13qGNEHoIaP4RI4bbQwOTXi2",
+      "name": "Preston Bartlett",
+      "surname": "Blackburn",
+      "confirmPassword": "Pa$$w0rd!111",
+      "gender": "M",
+      "phoneNumber": "+1 (302) 781-2913",
+      "dateOfBirth": "2008-02-14",
+      "id": 15
+    },
+    {
+      "email": "vovicywyl@mailinator.com",
+      "password": "$2a$10$JAY4s.fRl5eziBDIeHTNUeD87OOHyeoTkdRVgu2ThRg2MwdpRUKpS",
+      "name": "Levi Terry",
+      "surname": "Kelly",
+      "confirmPassword": "Pa$$w0rd!111",
+      "gender": "F",
+      "phoneNumber": "+1 (217) 511-9873",
+      "dateOfBirth": "2011-08-25",
+      "id": 16
+    },
+    {
+      "email": "hyhov@mailinator.com",
+      "password": "$2a$10$wokDixFWl1ljc0zs9/u5nugrkpOHBZ8m3j0EL8UPIvDIhZLDTIh9W",
+      "name": "Victor Robbins",
+      "surname": "Fuentes",
+      "confirmPassword": "Pa$$w0rd!111",
+      "gender": "F",
+      "phoneNumber": "+1 (338) 646-4615",
+      "dateOfBirth": "2021-01-17",
+      "id": 17
+    },
+    {
+      "email": "pefacuz@mailinator.com",
+      "password": "$2a$10$qHw.F9sVq/XIZwJmW38.IOPYu9dKlxIm6LoO9LRywAJAPHlrvTSri",
+      "name": "Hedley Roberts",
+      "surname": "Miranda",
+      "confirmPassword": "Pa$$w0rd!qqq",
+      "gender": "M",
+      "phoneNumber": "+1 (195) 819-1384",
+      "dateOfBirth": "1986-06-12",
+      "id": 18
+    },
+    {
+      "email": "nobik@mailinator.com",
+      "password": "$2a$10$UmR87thbI2sI4jOXVObz.uZhhvNE1iLq0l32HU9pEdzYXX4iIwtra",
+      "name": "Leandra Franco",
+      "surname": "Bryant",
+      "confirmPassword": "Pa$$w0rd!222",
+      "gender": "F",
+      "phoneNumber": "+1 (338) 472-7181",
+      "dateOfBirth": "1972-03-30",
+      "id": 19
     }
   ],
   "favourites": [
@@ -93,15 +247,7 @@
       "userId": 5,
       "lat": 45.4642,
       "lon": 9.1896,
-      "id": 2
-    },
-    {
-      "cityId": 3169070,
-      "cityName": "Roma",
-      "userId": 5,
-      "lat": 41.8933,
-      "lon": 12.4829,
-      "id": 3
+      "id": 7
     },
     {
       "cityId": 3175055,
@@ -109,15 +255,7 @@
       "userId": 5,
       "lat": 45.7777,
       "lon": 12.9967,
-      "id": 5
-    },
-    {
-      "cityId": 5128581,
-      "cityName": "New York",
-      "userId": 5,
-      "lat": 40.7127,
-      "lon": -74.006,
-      "id": 6
+      "id": 8
     }
   ]
 }

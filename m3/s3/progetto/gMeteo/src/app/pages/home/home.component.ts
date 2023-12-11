@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +9,13 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HomeComponent {
 
-  constructor(private authSvc: AuthService) { }
+  constructor(private authSvc: AuthService, private router: Router) { }
 
   ngOnInit() {
 
-    this.authSvc.user$.subscribe(data => console.log(data))
+    this.authSvc.isLoggedIn$.subscribe(res => {
+      if (res) this.router.navigate(['/my-gmeteo'])
+    })
 
   }
 

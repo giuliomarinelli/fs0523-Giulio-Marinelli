@@ -23,7 +23,11 @@ export class FavouritesComponent {
   user!: iAuthData
   gotUser: boolean = false
   gotWeather: boolean = false
+  favourite!:boolean
   ngOnInit() {
+
+    this.favouritesSvc.favouritePageSbj.next(true)
+    this
     this.authSvc.user$.subscribe(res => {
       if (res) {
         this.user = res
@@ -69,6 +73,10 @@ removeFromFavourites(favId: number) {
   })
 
 
+}
+
+ngOnDestroy() {
+  this.apiSvc.wSubject.next(null)
 }
 
 }

@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
+<form [formGroup]="form" (ngSubmit)="submit()" *ngIf="!registered">
   <div class="container-md">
     <div class="row text-white">
       <div class="col-12 col-md-6 pe-md-4">
@@ -13,6 +13,7 @@
             }"
             id="name"
             formControlName="name"
+            placeholder="Inserisci il nome..."
           />
           <div class="valid-feedback">Ok</div>
           <div class="invalid-feedback">{{ errorMsg.name }}</div>
@@ -31,6 +32,7 @@
             }"
             id="surname"
             formControlName="surname"
+            placeholder="Inserisci il cognome..."
           />
           <div class="valid-feedback">Ok</div>
           <div class="invalid-feedback">{{ errorMsg.surname }}</div>
@@ -49,6 +51,7 @@
             }"
             id="email"
             formControlName="email"
+            placeholder="Inserisci la mail..."
           />
           <div class="valid-feedback">Ok</div>
           <div class="invalid-feedback">{{ errorMsg.email }}</div>
@@ -67,6 +70,7 @@
             }"
             id="phoneNumber"
             formControlName="phoneNumber"
+            placeholder="+39 123 122 4567"
           />
           <div class="valid-feedback">Ok</div>
           <div class="invalid-feedback">{{ errorMsg.phoneNumber }}</div>
@@ -84,20 +88,13 @@
           <input
             type="date"
             [ngClass]="{
-              'form-control': true,
-              'is-valid': isValid('dateOfBirth'),
-              'is-invalid': isInvalid('dateOfBirth')
+              'form-control': true
             }"
             id="dateOfBirth"
             formControlName="dateOfBirth"
           />
-          <div class="valid-feedback">Ok</div>
-          <div class="invalid-feedback">{{ errorMsg.dateOfBirth }}</div>
           <div
-            [ngClass]="{
-              h: true,
-              'd-none': form.controls['dateOfBirth'].dirty
-            }"
+            class="h"
           ></div>
         </div>
         <div class="mb-3">
@@ -114,7 +111,7 @@
           <div class="valid-feedback">Ok</div>
           <div class="invalid-feedback">{{ errorMsg.gender }}</div>
           <div
-            [ngClass]="{ h: true, 'd-none': form.controls['gender'].dirty }"
+            class="h"
           ></div>
         </div>
         <div class="mb-3">
@@ -164,3 +161,12 @@
     </button>
   </div>
 </form>
+<nz-modal [(nzVisible)]="isVisible" [nzCancelText]="null" nzTitle="Errore 400" (nzOnOk)="handleOk()">
+  <ng-container *nzModalContent>
+    <p>L'utente è già registrato oppure si è verificato un errore imprevisto!</p>
+  </ng-container>
+</nz-modal>
+<div *ngIf="registered" class="text-center">
+<p class="display-5 text-success">Registrazione avvenuta con successo</p>
+<a routerLink="/" class="display-5">Vai al Login</a>
+</div>
