@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { iFavourite } from '../../../Models/i-favourite';
 import { ApiService } from '../../../services/api.service';
 import { WeathersIconsManagerService } from '../../../services/weathers-icons-manager.service';
@@ -7,6 +7,7 @@ import { FavouritesService } from '../../../services/favourites.service';
 import { iAuthData } from '../../../Models/auth/i-auth-data';
 import { iCoord } from '../../../Models/api/weather/i-coord';
 import { iCurrentWeather } from '../../../Models/api/weather/current/i-current-weather';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-favourites',
@@ -16,17 +17,30 @@ import { iCurrentWeather } from '../../../Models/api/weather/current/i-current-w
 export class FavouritesComponent {
 
   constructor(private apiSvc: ApiService, private icoSvc: WeathersIconsManagerService,
-    private authSvc: AuthService, private favouritesSvc: FavouritesService) { }
+    private authSvc: AuthService, private favouritesSvc: FavouritesService, private router: Router) { }
+
+
 
   favourites: iFavourite[] = []
   favouritesWeathers: iCurrentWeather[] = []
   user!: iAuthData
   gotUser: boolean = false
   gotWeather: boolean = false
-  favourite!:boolean
+
   ngOnInit() {
 
-    this.favouritesSvc.favouritePageSbj.next(true)
+    if (window.localStorage) {
+      if (!localStorage.getItem('fav')) {
+        localStorage['fav'] = true;
+        window.location.reload();
+      }
+      else
+        localStorage.removeItem('fav');
+    }
+
+    this.favouritesSvc.currentRoute.next(this.router.url)
+
+    this.apiSvc.wSubject.next(null)
     this
     this.authSvc.user$.subscribe(res => {
       if (res) {
@@ -37,7 +51,6 @@ export class FavouritesComponent {
     if (this.user) {
       this.favouritesSvc.getFavourites(this.user.user.id).subscribe(res => {
         this.favourites = res
-        console.log(this.favourites)
         this.favourites.forEach((el: iFavourite) => {
           const coord: iCoord = {
             lat: el.lat,
@@ -51,6 +64,8 @@ export class FavouritesComponent {
 
   }
 
+
+
   firstCapitalLetter(str: string) {
     return str.charAt(0).toUpperCase() + str.slice(1)
   }
@@ -63,20 +78,20 @@ export class FavouritesComponent {
       (Error)
     }
     return path
-}
+  }
 
-removeFromFavourites(favId: number) {
-  this.favouritesSvc.removeFromFavourites(favId).subscribe(res => {
-    const ind = this.favourites.findIndex(fav => fav.id === favId)
-    this.favourites.splice(ind, 1)
-    this.favouritesWeathers.splice(ind, 1)
-  })
+  removeFromFavourites(favId: number) {
+    this.favouritesSvc.removeFromFavourites(favId).subscribe(res => {
+      const ind = this.favourites.findIndex(fav => fav.id === favId)
+      this.favourites.splice(ind, 1)
+      this.favouritesWeathers.splice(ind, 1)
+    })
 
 
-}
+  }
 
-ngOnDestroy() {
-  this.apiSvc.wSubject.next(null)
-}
+  ngOnDestroy() {
+    this.apiSvc.wSubject.next(null)
+  }
 
 }

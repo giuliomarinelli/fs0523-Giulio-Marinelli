@@ -27,8 +27,10 @@ export class HeaderContentLoggedComponent {
   favourite!: boolean
   ngOnInit() {
 
-    this.favouritesSvc.favourite$.subscribe(res => {
-      this.favourite = res
+
+    this.favouritesSvc.currentRoute$.subscribe(res => {
+      if (res.startsWith('/my-gmeteo')) this.favourite = false
+      if (res.startsWith('/favourites')) this.favourite = true
       if (this.favourite) {
         this.addDNone = 'd-none'
         this.delDNone = 'd-none'
@@ -38,17 +40,18 @@ export class HeaderContentLoggedComponent {
       }
     })
 
+
+
+
     this.apiSvc.wData$.subscribe(wData => {
       if (wData) {
         wData.city.sunrise *= 1000
         wData.city.sunset *= 1000
-        console.log(wData)
         this.wData = wData
         if (this.wData) {
           this.favouritesSvc.isFavourite(this.wData.city.id, this.user.user.id).subscribe(res => {
             this.isFavourite = res
-            console.log(res)
-            console.log('ciao')
+            console
             if (this.isFavourite) {
               this.addDNone = 'd-none'
               this.delDNone = ''
@@ -68,7 +71,7 @@ export class HeaderContentLoggedComponent {
 
 
 
-    this.favouritesSvc.getFavourites(this.user.user.id).subscribe(res => { this.favourites = res; console.log(this.favourites) })
+    this.favouritesSvc.getFavourites(this.user.user.id).subscribe(res => this.favourites = res)
 
 
   }
@@ -95,7 +98,7 @@ export class HeaderContentLoggedComponent {
       this.favouritesSvc.addToFavourites(newFavourite).subscribe(res => {
         if (res) {
           this.favourites.push(res)
-          console.log(this.favourites)
+
           this.addFadeOut = 'fade-out-animation'
 
           setTimeout(() => {
@@ -120,7 +123,7 @@ export class HeaderContentLoggedComponent {
           this.favouritesSvc.removeFromFavourites(res).subscribe(res2 => {
             const ind = this.favourites.findIndex(fav => fav.id === res)
             this.favourites.splice(ind, 1)
-            console.log(this.favourites)
+
             this.delFadeOut = 'fade-out-animation'
             setTimeout(() => {
               this.addDNone = ''

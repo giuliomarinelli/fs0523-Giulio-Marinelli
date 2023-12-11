@@ -64,7 +64,6 @@ export class LoginComponent {
           this.valid = false
           if (err.status === 400 && err.error === "Cannot find user") {
             this.showModal1()
-            console.log('err')
           } else {
             this.showModal2()
           }

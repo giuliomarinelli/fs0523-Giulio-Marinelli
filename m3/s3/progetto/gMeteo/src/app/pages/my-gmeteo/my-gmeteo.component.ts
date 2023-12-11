@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { iWeatherFiltered } from '../../Models/api/weather/i-weather-filtered';
-import { LanguageService } from '../../services/language.service';
 import { WeathersIconsManagerService } from '../../services/weathers-icons-manager.service';
 import { AuthService } from '../../services/auth.service';
 import { iAuthData } from '../../Models/auth/i-auth-data';
 import { FavouritesService } from '../../services/favourites.service';
 import { iFavourite } from '../../Models/i-favourite';
-import { iFavouriteInput } from '../../Models/i-favourite-input';
-import { findIndex } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { iCoord } from '../../Models/api/weather/i-coord';
 
 @Component({
@@ -20,7 +17,8 @@ import { iCoord } from '../../Models/api/weather/i-coord';
 export class MyGmeteoComponent {
 
   constructor(private apiSvc: ApiService, private icoSvc: WeathersIconsManagerService,
-    private authSvc: AuthService, private favouritesSvc: FavouritesService, private route: ActivatedRoute) { }
+    private authSvc: AuthService, private favouritesSvc: FavouritesService, private route: ActivatedRoute,
+    private router: Router) { }
 
   wData!: iWeatherFiltered | null
   favourites: iFavourite[] = []
@@ -29,13 +27,13 @@ export class MyGmeteoComponent {
   ngOnInit() {
 
 
+    this.favouritesSvc.currentRoute.next(this.router.url)
 
-
+    this.apiSvc.wSubject.next(null)
 
     this.authSvc.user$.subscribe(res => {
       if (res) {
         this.user = res
-        console.log(this.user)
       }
     })
 
@@ -86,4 +84,6 @@ export class MyGmeteoComponent {
   ngOnDestroy() {
     this.apiSvc.wSubject.next(null)
   }
+
+
 }

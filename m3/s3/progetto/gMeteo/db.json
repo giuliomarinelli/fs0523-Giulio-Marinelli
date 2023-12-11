@@ -238,16 +238,27 @@
       "phoneNumber": "+1 (338) 472-7181",
       "dateOfBirth": "1972-03-30",
       "id": 19
+    },
+    {
+      "email": "marco.azzurri@libero.it",
+      "password": "$2a$10$Wyjvy2qpdJ7bcY7z21VsEeDaQSEdGNtl6jku1gmkaSNW3o3yOnh1i",
+      "name": "Marco",
+      "surname": "Azzurri",
+      "confirmPassword": "MarcoAzzurri",
+      "gender": "M",
+      "phoneNumber": "+39 123 123 1234",
+      "dateOfBirth": "2023-12-01",
+      "id": 20
     }
   ],
   "favourites": [
     {
-      "cityId": 3173435,
-      "cityName": "Milano",
+      "cityId": 3172394,
+      "cityName": "Napoli",
       "userId": 5,
-      "lat": 45.4642,
-      "lon": 9.1896,
-      "id": 7
+      "lat": 40.8359,
+      "lon": 14.2488,
+      "id": 10
     },
     {
       "cityId": 3175055,
@@ -255,7 +266,39 @@
       "userId": 5,
       "lat": 45.7777,
       "lon": 12.9967,
-      "id": 8
+      "id": 11
+    },
+    {
+      "cityId": 3173435,
+      "cityName": "Milano",
+      "userId": 5,
+      "lat": 45.4642,
+      "lon": 9.1896,
+      "id": 12
+    },
+    {
+      "cityId": 3167962,
+      "cityName": "San Michele al Tagliamento",
+      "userId": 20,
+      "lat": 45.7652,
+      "lon": 12.9952,
+      "id": 14
+    },
+    {
+      "cityId": 3174729,
+      "cityName": "Lignano Sabbiadoro",
+      "userId": 20,
+      "lat": 45.6902,
+      "lon": 13.1408,
+      "id": 15
+    },
+    {
+      "cityId": 3182057,
+      "cityName": "Bibione",
+      "userId": 20,
+      "lat": 45.6384,
+      "lon": 13.0614,
+      "id": 16
     }
   ]
 }
