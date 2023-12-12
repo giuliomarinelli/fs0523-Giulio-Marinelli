@@ -1,6 +1,5 @@
 {
   "users": [
-
     {
       "email": "marco.azzurri@libero.it",
       "password": "$2a$10$Wyjvy2qpdJ7bcY7z21VsEeDaQSEdGNtl6jku1gmkaSNW3o3yOnh1i",
@@ -11,56 +10,102 @@
       "phoneNumber": "+39 123 123 1234",
       "dateOfBirth": "2023-12-01",
       "id": 20
+    },
+    {
+      "email": "le@le.it",
+      "password": "$2a$10$8BUx.RQ1q8I4LoKlC9MOEuPpxGF5q3aDBdPxng7azfJacK10OY8tG",
+      "name": "Ludovico",
+      "surname": "Einaudi",
+      "confirmPassword": "LudovicoEinaudi",
+      "gender": "M",
+      "phoneNumber": "+1 (162) 585-3182",
+      "dateOfBirth": "1975-02-07",
+      "id": 21
+    },
+    {
+      "email": "giulio.marinelli@icloud.com",
+      "password": "$2a$10$Vrk2biCyzf4xwIbiRC7sYO8ahyuuR9fF6jcj1pkqDDO79jzSth2me",
+      "name": "Giulio",
+      "surname": "Marinelli",
+      "confirmPassword": "Applicazione",
+      "gender": "M",
+      "phoneNumber": "+39 379 211 6580",
+      "dateOfBirth": null,
+      "id": 22
     }
   ],
   "favourites": [
-    {
-      "cityId": 3172394,
-      "cityName": "Napoli",
-      "userId": 5,
-      "lat": 40.8359,
-      "lon": 14.2488,
-      "id": 10
-    },
-    {
-      "cityId": 3175055,
-      "cityName": "Latisana",
-      "userId": 5,
-      "lat": 45.7777,
-      "lon": 12.9967,
-      "id": 11
-    },
-    {
-      "cityId": 3173435,
-      "cityName": "Milano",
-      "userId": 5,
-      "lat": 45.4642,
-      "lon": 9.1896,
-      "id": 12
-    },
     {
       "cityId": 3167962,
       "cityName": "San Michele al Tagliamento",
       "userId": 20,
       "lat": 45.7652,
       "lon": 12.9952,
-      "id": 14
+      "id": 18
     },
     {
-      "cityId": 3174729,
-      "cityName": "Lignano Sabbiadoro",
+      "cityId": 3175055,
+      "cityName": "Latisana",
       "userId": 20,
-      "lat": 45.6902,
-      "lon": 13.1408,
-      "id": 15
+      "lat": 45.7777,
+      "lon": 12.9967,
+      "id": 19
     },
     {
-      "cityId": 3182057,
-      "cityName": "Bibione",
+      "cityId": 3173435,
+      "cityName": "Milano",
       "userId": 20,
-      "lat": 45.6384,
-      "lon": 13.0614,
-      "id": 16
+      "lat": 45.4642,
+      "lon": 9.1896,
+      "id": 20
+    },
+    {
+      "cityId": 3173435,
+      "cityName": "Milano",
+      "userId": 21,
+      "lat": 45.4642,
+      "lon": 9.1896,
+      "id": 22
+    },
+    {
+      "cityId": 3169070,
+      "cityName": "Roma",
+      "userId": 21,
+      "lat": 41.8933,
+      "lon": 12.4829,
+      "id": 23
+    },
+    {
+      "cityId": 5128581,
+      "cityName": "New York",
+      "userId": 21,
+      "lat": 40.7127,
+      "lon": -74.006,
+      "id": 25
+    },
+    {
+      "cityId": 2523920,
+      "cityName": "Palermo",
+      "userId": 21,
+      "lat": 38.1112,
+      "lon": 13.3524,
+      "id": 26
+    },
+    {
+      "cityId": 3174659,
+      "cityName": "Livorno",
+      "userId": 21,
+      "lat": 43.5507,
+      "lon": 10.3091,
+      "id": 27
+    },
+    {
+      "cityId": 3173435,
+      "cityName": "Milano",
+      "userId": 22,
+      "lat": 45.4642,
+      "lon": 9.1896,
+      "id": 29
     }
   ]
 }

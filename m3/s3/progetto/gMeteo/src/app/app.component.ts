@@ -9,7 +9,7 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
 
-  constructor(private langSvC: LanguageService, private authSvc: AuthService) { }
+  constructor(private langSvC: LanguageService, private authSvc: AuthService, private authGard: AuthService) { }
 
   isLoggedIn: boolean = false
   footerBottom: string = ''

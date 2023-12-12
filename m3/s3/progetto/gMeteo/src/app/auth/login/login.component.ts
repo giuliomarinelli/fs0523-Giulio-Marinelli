@@ -20,6 +20,8 @@ export class LoginComponent {
   valid!: boolean
   msg!: string
   errorMsg!: iLoginData
+  emailMsg: string = ''
+  passwordMsg: string = ''
 
   ngDoCheck() {
     this.errorMsg = {
