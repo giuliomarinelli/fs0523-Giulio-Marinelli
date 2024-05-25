@@ -46,7 +46,9 @@ export class AuthService {
   }
 
   autoLogOut(jwt: string) {
-    const expDate = this.jwtH.getTokenExpirationDate(jwt) as Date
+    // const expDate = this.jwtH.getTokenExpirationDate(jwt) as Date
+    //una piccola modifica perché non funziona json-server-auth
+    const expDate = new Date(2999)
     const remainingMs = expDate.getTime() - new Date().getTime()
     setTimeout(this.logOut, remainingMs)
   }
